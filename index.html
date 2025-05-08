@@ -99,9 +99,7 @@
                     <p>las variables se declaran antes de usarse, por ejemplo: var a = 1; var b = 2;</p>
                     <p>otra forma de declararlas es var a = 2, b = "hola", c = true;</p>
                     <p>separandolas por comas</p>
-                    <p>se debe usar let y const para declarar variables, let se usa para declarar variables que no se van a cambiar, const se usa para declarar variables que se van a cambiar, si no declaras una variable como por ejemplo</p>
-                    <p>a = 1;</p>
-                    <p>esto por defecto usara var que lo que no se recomienda usar, siempre usen let o const, ya que var es para variables globales, let y const limitan el alcance de la variable</p>
+                    <p>se debe usar let y const para declarar variables, let se usa para declarar variables que se van a cambiar, const se usa para declarar variables que no se van a cambiar, si no declaras una variable como por ejemplo a = 1; esto por defecto usara var que lo que no se recomienda usar, siempre usen let o const, ya que var es para variables globales, let y const limitan el alcance de la variable</p>
                     <p>let variable = 1;</p>
                     <p>se pone el alcance de la variable. luego el nombre de la variable y que almacenara, estas las usaremos luego como por ejemplo console.log(variable); o alert(variable);</p>
                     <h3>Parte practica</h3>
@@ -262,7 +260,7 @@
                         let variable5 = 1 == 1; // comparara si son iguales los valores, true <br>
                         let variable6 = 1 != 1; // comparara si son distintos los valores, false <br>
                         let variable7 = 1 === "1"; // comparara si son iguales los valores y el tipo de dato, false en este caso por comparar un caracter con un numero <br>
-                        let variable8 = 1 !== 1; // comparara si son distintos los valores y el tipo de dato, true en este caso<br>
+                        let variable8 = 1 !== "1"; // comparara si son distintos los valores y el tipo de dato, true en este caso<br>
                         <h3>Extra: operadores logicos y otros</h3>
                         <p>los operadores logicos son operadores que devuelven valores booleanos</p>
                         <p>
@@ -278,7 +276,7 @@
                             -= restar una variable con un valores <br>
                             *= multiplicar una variable con un valores <br>
                             /= dividir una variable con un valores <br>
-                            %= modulo una variable con un valores, significa que devuelve el residuo de una division <br>
+                            let 2 % 2; modulo una variable con un valores, significa que devuelve el residuo de una division <br>
                             **= potenciar una variable con un valores <br>
                             let variable = 10;
                             variable += 5; // 15 <br>
@@ -326,7 +324,7 @@
                         <span>tambien funciona si le pasamos 1, ya que representa valrores booleanos donde 0 es false y 1 es true, tambien solo pasar una cadena de texto vacia "", array vacio [] o un objeto vacio {} retornara false por eso es importante los operadores de comparacion</span>
                     </p>
                     <p>
-                        let hora = 0; <br>
+                        let hora = 1; <br>
                         while (hora == 24) { // se detendra cuando la variable hora valga 24<br>
                             console.log("hola mundo"); // pegara la variable hora en consola<br>
                             hora++; // aumentara el valor de la variable en una unidad<br> 
@@ -445,7 +443,7 @@
                         // las funciones flecha con un solo parametro pueden no llevar parentesis<br>
                         // pero si no tiene parametros igual se ponen los () <br>
                         const potencia = numero => {<br>
-                            numero ** 2;<br>
+                            return numero ** 2;<br>
                         } <br>
                         potencia(2);<br>
                     </p>
@@ -531,7 +529,7 @@
                     </p>
                     <h3>Callbacks</h3>
                     <p>son funciones que se pasan como parametro a otra funcion</p>
-                    <p>es una funcion que se ejecuta despues de que la funcion principal haya terminado su proceso</p>
+                    <p>es una funcion que se pasa como argumento a otra y se ejecutan cuando las llamamos adentro de nuestras funciones</p>
                     <p>Ejemplo:</p>
                     <p>
                         function procesar(nombre, callback){ // primer parametro nombre, segundo es la funcion callback <br>
@@ -628,7 +626,7 @@
                         import { sumar, resta } from "./codigo.js"; <br>
                         sumar();<br>
                         // version con alias
-                        import { sumar as add, resta as sub } from "./codigo.js"; <br>
+                        const { sumar: add, resta: sub } = require("./codigo.js"); <br>
                         add();<br>
                         sub();<br>
                         version con alias mas recomendada usando metodos para llamar funciones<br>
@@ -647,9 +645,9 @@
                     <p>Una vez que sabes usar Javascript utilizas Node.js y Express.js es muy sencillo porque son lo mismo, es JavaScript y lo unico que veremos extra del tema es <span>Asincronia</span></p>
                     <h4>Asincronia</h4>
                     <p>Cuando queremos leer un archivo o hacer una peticion a un servidor usamos asincronia</p>
-                    <p>en JavaScript el codigo se lee linea por linea y esta bien hasta que pedimos informacion de un archivo o base de datos porque estas tardan mas que una linea de codigo normal, en Javascript agregas una linea de codigo como un console.log() y se ejecuta al instante que lo lee, pero en una peticion a una base de datos lo que sucede es que primero pide la informacion y se tarda mas porque esta esperando, ya no es tarea de el codigo de los comandos si no depende de la base de datos el tiempo que tarde en responder y puede tardar mas o menos, o tambien en una peticion de archivos, esta tarda porque ya es trabajo de la computadora, del procesador que devuelva el archivo, hay muchas formas de tener asincronia pero nosotros solo veremos <span>Async/Await</span> esto es importante porque puede pasar que no devuelva informacion porque el servidor se tardo en responder y el codigo ya se ejecuto, tiene que esperar a la respuesta de la base de datos de hecho los <span>callbacks</span> tambien funcionan como metodos asincronos y lo veremos tambien luego ya que Async/Await es para una peticion a una base de datos y callback es para peticion de archivos</p>
+                    <p>Javascript utiliza un modelo de concurrencia basado en un bucle de eventos(Event Loop) y un sistema de colas,Javascript es un lenguaje de un solo hilo, lo que significa que solo puede ejecutar una tarea a la vez, sin embargo puede manejar multiples tareas de manera asincrona, hay muchas formas de tener asincronia, lo que ayuda a que no se quede esperando a que se ejecute una tarea, pero nosotros solo veremos <span>Async/Await</span> esto es importante porque puede pasar que no devuelva informacion porque el servidor se tardo en responder y el codigo ya se ejecuto, tiene que esperar a la respuesta de la base de datos de hecho los <span>callbacks</span> tambien funcionan como metodos asincronos y lo veremos tambien luego ya que Async/Await es para una peticion a una base de datos y callback es para peticion de archivos</p>
                     <h3>npm</h3>
-                    <p>o node package manager nos ayuda a instalar dependencias en nuestro programa, para usar express no tenemos que instalarlo de buscar en el navegador un archivo ejecutable, express sirve para crear facilmente APIs y se instala con npm, en npm podemos descargar se puede decir que codigo que ya han creado otras personas como express y otros codigos mas para facilitar no crear desde cero todo</p>
+                    <p>es un gestor de paquetes, permite instalar, actualizar y desinstalar paquetes, maneja dependencias del proyecto, resuelve conflictos entre versiones, gestiona proyectos, crea y mantiene el archivo package.json define scripts para automatizar tareas, gestiona la configuracion del proyecto, npm init: inicializa un nuevo proyecto, npm install: instala dependencias, nom run: ejecuta scripts definidos en package.json, npm update: actualiza paquetes, npm autit: verifica vulnerabilidades</p>
                     <h4>como usar npm</h4>
                     <p>si estan en vscode sera mas sencillo, tienen que presionar las teclas Ctrl + ` la tecla control seguido de template string que esta alapar de la p esto abre la terminal de visual studio code, para cerrarlo pueden usar el mismo comando o arriba a la derecha hay una equis <span>importante: deberan verificar en la terminal que estan en la carpeta correcta ya que si no podrian instalar las dependencias en otro lugar, una cosa que pueden hacer es arrastrar la carpeta donde van a hacer su app con express, crean la carpeta llamada express la arrastran hasta vscode para que en la terminal esten en el lugar correcto y en esa misma carpeta crear el archivo Javascript, app.js, si lo ponen en una carpeta mas adelante puede que ocurran errores</span></p>
                     <p>ya que estan en el lugar correcto abren la terminal de vscode y ponen el siguiente comando: npm init <span>este comando creara un archivo llamado package,json, que es un archivo para administrar las dependencias que se usaran como express, importante no tocar nada de ahi y si le instala alguna otra cosa tampoco tocarlo ya que les puede dar error</span></p>
@@ -664,7 +662,7 @@
                         //usaremos la version antigua para importar ya que es la que tiene por defecto<br>
                         // si no han descargado express, cors, path o dotenv les dara error el codigo, solo fs creo que es nativo <br>
                         const express = require('express');// para usar express<br>
-                        const cors = require('cors'); // para un solucionar un error muy especifico<br>
+                        const cors = require('cors'); // para un solucionar un error muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
                         const fs = require('fs'); // para leer el archivo<br>
                         const path = require('path'); // para las rutas<br>
                         require('dotenv').config(); // para cargar variables de entorno<br>
