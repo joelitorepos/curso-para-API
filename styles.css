@@ -7,7 +7,7 @@ body {
     color: #fff;
     font-family: 'montserrat', Sans-serif;
     margin: 0;
-    --color-a:#ffcc66;
+    --color-a:#ddd;
     --color-h:#5ccfe6;
     --color-p:#bae67e;
     --color-span:#ffd580;
@@ -16,17 +16,12 @@ body {
 
 h1, h2 ,h3, h4, h5, h6 {
     color: var(--color-h);
-    display: block;
-    width: clamp(100px, 100%, 900px);
-    margin: 10px auto;
     font-size: 1.5rem;
 }
 
 p {
     color: var(--color-p);
     display: block;
-    width: clamp(100px, 100%, 900px);
-    margin: 20px auto;
     word-wrap: pretty;
 }
 
@@ -40,8 +35,6 @@ span {
 
 ul{
     display: block;
-    width: clamp(100px, 100%, 900px);
-    margin: 20px auto;
 }
 
 li {
@@ -55,7 +48,12 @@ pre {
     overflow-x: auto;
     white-space: pre-wrap;  
     word-wrap: break-word;  
-  }
+}
+
+section {
+    width: clamp(100px, 100%, 900px);
+    margin: 20px auto;
+}
 
 .imagen-extencion {
     width: min(600px, 100%);
@@ -64,4 +62,8 @@ pre {
 
 .imagen-container {
     text-align: center;
+}
+
+.code {
+    color: var(--color-a);
 }

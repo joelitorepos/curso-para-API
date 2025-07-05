@@ -1,0 +1,8 @@
+{
+  "workbench.colorTheme": "Halcyon",
+  "editor.smoothScrolling": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false
+}

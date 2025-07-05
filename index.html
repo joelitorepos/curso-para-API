@@ -9,12 +9,16 @@
 </head>
     <body>
         <div>
-            <h1>Plan de Estudios: JavaScript, Node.js y Express.js para Crear una API</h1>
             <div>
-                <section class="section-for-config">
-                    <h2>Herramientas recomendadas por el momento</h2>
+                <!-- seccion para configuraciones y recomendaciones antes de empezar a programar -->
+                <section class="configuraciones">
+                    <h1>Plan de Estudios: JavaScript, Node.js y Express.js para Crear una API</h1>
+                    <h2>Herramientas recomendadas:</h2>
                     <h3>Visual Studio Code</h3>
-                    <p>Recomendado porque puedes integrar inteligencia artificial, hay extenciones que indican donde puede haber un error en tu codigo y herramientas utiles <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a></p>
+                    <p>
+                        Visual Studio Code es el IDE preferido para escribir codigo, con muchas extensiones que ayudan como extensiones que resaltan errores en el codigo y otras que pueden ayudar a ser mas productivo al completar codigo por ti, aunque hayan mas IDEs o lugares para escribir codigo para el curso asumire que lo tienen instalado asi que sera mas optimo que lo tengan
+                        <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>
+                    </p>
                     <h4>Configuracion y extensiones recomendadas</h4>
                     <p>Ala izquierda veran opciones que son herramientas utiles, en este caso es el apartado de extensiones</p>
                     <div class="imagen-container">
@@ -24,45 +28,51 @@
                     <div class="imagen-container">
                         <img src="./imagenes/extensiones-n2.png" class="imagen-extencion">
                     </div>
-                    <p><span class="subtitle">Halcyon theme:</span> es para añadir un tema oscuro que no daña los ojos y hace diferenciar el texto de codigo</p>
+                    <p>
+                        <span class="subtitle">Halcyon theme: </span>
+                        es para añadir un tema oscuro que no daña los ojos, hace que el codigo se diferencie mejor, otra extension para tema de colores es One Dark Pro, lo pueden perzonalizar a su gusto
+                    </p>
                     <div class="imagen-container">
                         <img src="./imagenes/extensiones-n3.png" class="imagen-extencion">
                     </div>
-                    <p><span class="subtitle">Supermave:</span> inteligencia artificial para completar codigo, le dar a la tecla Tab para aceptar el autocompletado que te de</p>
+                    <p>
+                        <span class="subtitle">Supermaven: </span>
+                        inteligencia artificial para completar codigo, le dar a la tecla Tab para aceptar el autocompletado que te de
+                    </p>
                     <div class="imagen-container">
                         <img src="./imagenes/extensiones-n4.png" class="imagen-extencion">
                     </div>
-                    <p><span class="subtitle">ESLint:</span> extencion necesaria para verificar errores en el codigo</p>
+                    <p>
+                        <span class="subtitle">ESLint:</span> 
+                        una extension que ayuda para ayudar con posibles errores en el codigo
+                    </p>
                     <div class="imagen-container">
                         <img src="./imagenes/extensiones-n5.png" class="imagen-extencion">
                     </div>
-                    <p><span class="subtitle">Error lens:</span> te dira la linea en donde hay un error y detalles del error, le pueden decir a una ia en que linea hay un error, los detalles que te indica y darle el archivo a una ia como grok o deepseeko chatGPT</p>
+                    <p>
+                        <span class="subtitle">Error lens:</span> 
+                        te dira la linea en donde hay un error y detalles del error, resaltara esa linea donde haya un error con rojo y te dira detalles de por que hay un error
+                    </p>
                     <div class="imagen-container">
                         <img src="./imagenes/configuraciones-n1.jpg" class="imagen-extencion">
                     </div>
-                    <p>Esta es otra configuracion: en su teclado presionen las teclas Ctrl + Shift + P</p>
-                    <p>Esto les abrira una barra de busqueda, busquen: <span class="command">Preferences: Open Settings (JSON)</span></p>
-                    <p>presionen en esa opcion y les abrira un archivo donde deberan escribir lo siguiente</p>
-                    <pre class="code-block">
-                    {
-                        "workbench.colorTheme": "Halcyon",
-                        "editor.smoothScrolling": true,
-                        "files.autoSave": "afterDelay",
-                        "files.autoSaveDelay": 5000,
-                        "editor.wordWrap": "on",
-                        "editor.minimap.enabled": false,
-                    }
-                    </pre>
+                    <p>
+                        Esta es otra configuracion: en su teclado presionen las teclas Ctrl + Shift + P, Esto les abrira una barra de busqueda,<br>
+                        busquen: <span class="command">Preferences: Open Settings (JSON)</span> presionen en esa opcion y les abrira un archivo, descarguen el archivo que les pasare, copien el contenido y peguenlo en el lugar donde iran sus configuraciones reales <a href="./ejemplos/config.json" download="config.json">config.json</a>
+                    </p>
                     <div class="imagen-container">
                         <img src="./imagenes/configuraciones-n2.jpg" class="imagen-extencion">
                     </div>
-                    <p>para activar el tema de color que instalaron, animacion para scroll, auto guardar, auto guardar despues de 5 segundos, desactivar minimapa y hacer que el texto se acomode a su pantalla</p>
+                    <p>
+                        para activar el tema de color que instalaron, animacion para scroll, auto guardar, auto guardar despues de 5 segundos, desactivar minimapa y hacer que el texto se acomode a su pantalla
+                    </p>
                     <p>por ultimo la carpeta donde estaran sus archivos arrastrenlo hasta la aplicacion de vscode hasta que les indique la aplicacion que se abrira correctamente</p>
                 </section>
-                <section class="Javascript-init">
+
+                <!-- seccion para introduccion al lenguaje  -->
+                <section class="introduccion">
                     <h2>JavaScript</h2>
                     <p>JavaScript es un lenguaje de programación interpretado, de código abierto, dinámico y orientado a objetos. Es un lenguaje de programación de propósito general, que puede ser usado en cualquier contexto para crear aplicaciones web, móviles y de escritorio.</p>
-                    <p>los que no quieran instalarlo tienen notepad o bloc de notas para escribir codigo</p>
                     <h3>Características importantes</h3>
                     <ul>
                         <li>Interpretado</li>
@@ -74,13 +84,24 @@
                     <h3>Lenguaje interpretado</h3>
                     <p>con el ejemplo de C++ es un lenguaje compilado porque hay que compilar todo el codigo, crea todo un archivo aparte para ejecutarlo, en el caso de JavaScript es interpretado porque no creara un archivo nuevo, el codigo se suele ejecutar directamente en el navegador, que interpretara linea por linea cada linea del codigo, lee una linea, la interpreta y ejecuta</p>
                     <h3>Lenguaje orientado a objetos</h3>
-                    <p>es un paradigma de programacion pero no lo veremos</p>
+                    <p>es un paradigma de programacion muy util que lo veremos mas adelante cuando entremos a Node.js</p>
                     <h3>Tipado dinamico</h3>
-                    <p>en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: var a = 1; a = "hola"; a = true;</p>
+                    <p>
+                        en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br> 
+                        <span class="code">
+                            var a = 1;<br>
+                            a = "hola";<br>
+                            a = true;
+                        </span>
+                    </p>
                     <h3>Propósito general</h3>
-                    <p>Este lenguaje es usado comunmente en la web pero también se usa en otros contextos, como el servidor, el sistema operativo, etc.</p>
+                    <p>
+                        Este lenguaje es usado comunmente en la web pero también se usa en otros contextos, no solo para desarrollar aplicaciones web si no tambien aplicaciones desarrollo mobile, aplicaciones de consola entre etros.
+                    </p>
                     <h3>Utiliza camelCase</h3>
-                    <p>para escribir variables o funciones usamos camelCase que es una forma de escribir donde si hay varias palabras la primera palabra se escribe en minusculas ejemplo: variable. y luego las demas palabras empiezan por mayusculas, ejemplo: sumarNumero, funcionParaSumarVariables. funciones integradas estan escritas asi por eso es importante</p>
+                    <p>
+                        para escribir variables o funciones usamos camelCase que es una forma de escribir donde si hay varias palabras la primera palabra se escribe en minusculas ejemplo: variable. y luego las demas palabras empiezan por mayusculas, ejemplo: sumarNumero, funcionParaSumarVariables. funciones integradas estan escritas asi por eso es importante
+                    </p>
                     <h3>Conceptos básicos</h3>
                     <ul>
                         <li>Variables</li>
@@ -94,16 +115,54 @@
                         <li>Módulos</li>
                         <li>Eventos</li>
                     </ul>
+                </section>
+
+                <!-- seccion para el tema variables -->
+                <section class="variables">
                     <h3>Variables</h3>
-                    <p>Las variables son espacios en memoria donde se almacenan los datos</p>
-                    <p>las variables se declaran antes de usarse, por ejemplo: var a = 1; var b = 2;</p>
-                    <p>otra forma de declararlas es var a = 2, b = "hola", c = true;</p>
-                    <p>separandolas por comas</p>
-                    <p>se debe usar let y const para declarar variables, let se usa para declarar variables que se van a cambiar, const se usa para declarar variables que no se van a cambiar, si no declaras una variable como por ejemplo a = 1; esto por defecto usara var que lo que no se recomienda usar, siempre usen let o const, ya que var es para variables globales, let y const limitan el alcance de la variable</p>
-                    <p>let variable = 1;</p>
-                    <p>se pone el alcance de la variable. luego el nombre de la variable y que almacenara, estas las usaremos luego como por ejemplo console.log(variable); o alert(variable);</p>
+                    <p>
+                        Las variables son espacios en memoria donde se almacenan los datos las variables se declaran antes de usarse, por ejemplo:
+                        <span class="code">
+                            var a = 1;<br>
+                            var b = 2;<br>
+                        </span>
+                        otra forma de declararlas es:<br>
+                        <span class="code">
+                            var a = 2, b = "hola", c = true;<br>
+                        </span>
+                        separandolas por comas, de esta forma se declaran todas las variables en una sola linea, pero puede ser mas interesante hacerlo en lineas separadas para mejorar la legibilidad del codigo.<br>
+                        <br>
+                        para poder usar una variable primero hay que declararla, para declarar una nueva variable se usan las palabras var, let y const, que no se recomienda usar var, al declarar una variable con var su alcance sera global, por lo que podra existir y usarse en todos los ambitos del programa, pero es mejor practica que las variables sean let o const que tienen un alcance local, que usualmente tambien mas comun es let ya que const es para variables constantes, en otros lenguajes se dice que no son variables constantes, ya que o son variables por que pueden cambiar, o constantes porque son solo de lectura son inmutables por lo que no pueden cambiar de valor, pero en JavaScript si, evita que una variable se reasigne a otro valor, pero no garantiza la inmutabilidad del contenido, a diefrencia de otros lenguajes donde esto es mas estricto, si creas una variable como por ejemplo:<br>
+                        <span class="code">
+                            a = 10;<br>
+                        </span>
+                        esta valiable por defecto usara var por lo que es recomendable siempre usar let o const<br>
+                        Ejemplo:<br>
+                        <span class="code">
+                            let a = 10;<br>
+                            const PI = 3.14159;<br>
+                            let c;<br>
+                        </span>
+                        como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan eesctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
+                        ejemplo simple:<br>
+                        <span class="code">
+                            let c = 1;<br>
+                            let a = 10;<br>
+                            let b = a<br>
+                            ++c<br>
+                        </span>
+                        el interprete puede llegar a verlo como<br>
+                        <span class="code">
+                            let c = 1;<br>
+                            let a = 10;<br>
+                            let b = a++c<br>
+                        </span>
+                        lo que seria un error de sintaxis.
+                    </p>
                     <h3>Parte practica</h3>
-                    <p>en una carpeta creen un archivo index.html y un archivo app.js, en el archivo index.html escriban</p>
+                    <p>
+                        en una carpeta creen un archivo index.html y un archivo app.js, en el archivo index.html escriban
+                    </p>
                     <p>en el archivo index.html escriban</p>
                     <pre>
                         &lt;!DOCTYPE html&gt;
@@ -144,6 +203,10 @@
                         <span> en src=" " adentro de las comillas si el archivo.js no esta en la misma carpeta, por ejemplo si esta en la misma carpeta buscara el nombre en esa misma carpeta tambien si le dices ./ por ejemplo src="./archivo.js" le decimos que esta en la carpeta actual, si esta afuera de la carpeta ponemos ../ y luego el nombre del archivo src="../archivo.js" le estamos diciendo que la carpeta esta una carpeta afuera de donde esta index.html src="../../archivo.js" el archivo esta dos carpetas afuera, si encambio el index.html esta en la carpeta actual y creamos otra carpeta adentro y ahi metemos el codigo entonces se pone ./nombre_de_la_carpeta/archivo.js por ejemplo src="./carpeta/codigo.js" creo que en windows en la separacion entre carpetas se pone \\ src=".\\carpeta\\codigo.js" prueben con ambos</span>
                     </p>
                     <p><span style="color: #ef6b73;">eviten poner nombres con espacios, utilizen camelCase para evitar estos espacios en los nombres de las carpetas</span></p>
+                </section>
+
+                <!-- seccion para los tipos de datos -->
+                <section class="tipos-de-datos">
                     <h3>Tipos de datos</h3>
                     <p>los tipos que puede almacenar una variable</p>
                     <ul>
@@ -204,6 +267,10 @@
                     <div class="imagen-container">
                         <img src="./imagenes/consola.jpg" class="imagen-extencion">
                     </div>
+                </section>
+
+                <!-- seccion para los arrays -->
+                <section class="arrays">
                     <h3>Arrays</h3>
                     <p>los arrays son una coleccion de datos, pueden ser de diferentes tipos y tambien pueden contener otros arrays</p>
                     <p>let array1 = [1, 2, 3, 4, 5];</p>
@@ -219,23 +286,27 @@
                     <p>tambien los array pueden contener variables</p>
                     <p>let variable = "hola mundo", variable2 = 2;</p>
                     <p>let array3 = [variable, variable2];</p>
+                </section>
+
+                <!-- seccion para los objetos -->
+                <section>
                     <h3>Objetos</h3>
                     <p>los objetos son una coleccion de datos, pueden ser de diferentes tipos y tambien pueden contener otros objetos, la diferencia entre un objeto y un array es como se accede a su valor y la forma que tienen</p>
                     <p>let objeto1 = {nombre: "victor", edad: 20, sexo: "masculino"};</p>
                     <p>clave valor, en el un array la clave es el indice que esta determinado implicitamente por su posicion, en el caso de los objetos la cave es el nombre que le asignamos a un valor y el valor es el contenido de ese dato</p>
                     <p>
                         let objeto = {<br>
-                            nombre: "victor", // la clave es nombre: y el contenido "victor"<br> 
-                            edad: 20, // la clave es edad: y el contenido 20<br>
-                            sexo: "masculino", // la clave es sexo: y el contenido masculino<br>
+                             nombre: "victor", // la clave es nombre: y el contenido "victor"<br> 
+                             edad: 20, // la clave es edad: y el contenido 20<br>
+                             sexo: "masculino", // la clave es sexo: y el contenido masculino<br>
                         }
                     </p>
                     <p>// las dos diagonales son una forma de comentar el codigo, es texto que no se ejecutara y se ignorara en el codigo</p>
                     <p>otra forma de comentar el contenido es /*comentario*/</p>
                     <p>la forma de acceder al contenido es poner el nombre del objeto seguido un punto y seguido poner el nombre de la clave</p>
-                    <p>console.log(objeto.nombre); // buscara en el objeto la clave nombre e imprimira su contenido</p>
+                     <p>console.log(objeto.nombre); // buscara en el objeto la clave nombre e imprimira su contenido</p>
                     <p>si quieres cambiar el valor de un elemento en un objeto accede a su clave y cambia el valor</p>
-                    <p>objeto.nombre = "joelito"; // accedera al objeto y cambiara el nombre a joelito</p>
+                     <p>objeto.nombre = "joelito"; // accedera al objeto y cambiara el nombre a joelito</p>
                     <p>los objetos son especiales en JavaScript porque se dice que todo en JavaScript es un objeto porque los tipos de datos se "encapsulan" en objetos y de ahi es que pueden cambiar el tipo de dato de una variable</p>
                     <h3>Parte practica</h3>
                     <p>Recomiendo que practiquen todo lo aprendido que hagan ejercicios y guarden los codigo que crean ya que les servira para recordar lo que estan aprendiendo <span>importante: cada valor tanto en arrays como objetos los datos se separan con comas</span></p>
@@ -249,6 +320,10 @@
                         {nombre: "joelito", edad: 21}, <br>
                     ];
                     </p>
+                </section>
+
+                <!-- seccion para operadores -->
+                <section>                    
                     <h3>Operadores de comparacion</h3>
                     <p>sirven para comparar dos datos o mas y devuelven valores booleanos</p>
                     <p>
@@ -284,24 +359,28 @@
                             variable *= 5; // 50 <br>
                             variable /= 5; // 10 <br>
                         </p>
-                        <h3>Condicionales</h3>
-                        <p>los condicionales sirven para ejecutar codigo solo en caso de que se cumpla una condicion if, else if, else</p>
-                        <p>
-                            let edad = 10; <br>
-                            if (edad > 18) { // entre parentesis se pone la condicion, si la cumple retornara true y ejecutara el codigo que se ponga entre las llaves
-                                console.log("Eres mayor de edad"); <br>
-                            } <br>
-                            // en caso de no cumplir la condicion no se ejecutara y pasara de largo 
-                        </p>
-                        <p>el if else sirve en caso de que la primera condicion no se cumpla, creamos una nueva condicion</p>
-                        <p>
-                            let numero = "10"; <br>
-                            if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
-                                console.log("no es un numero"); <br>
-                            } else if(10 !== numero){ // true <br>
-                                console.log("es un numero"); <br>
-                            } <br>
-                            // en caso de no cumplir la condicion no se ejecutara y pasara de largo
+                </section>
+
+                <!-- seccion para los condicionales -->
+                <section>
+                    <h3>Condicionales</h3>
+                    <p>los condicionales sirven para ejecutar codigo solo en caso de que se cumpla una condicion if, else if, else</p>
+                    <p>
+                        let edad = 10; <br>
+                        if (edad > 18) { // entre parentesis se pone la condicion, si la cumple retornara true y ejecutara el codigo que se ponga entre las llaves
+                            console.log("Eres mayor de edad"); <br>
+                        } <br>
+                        // en caso de no cumplir la condicion no se ejecutara y pasara de largo 
+                    </p>
+                    <p>el if else sirve en caso de que la primera condicion no se cumpla, creamos una nueva condicion</p>
+                    <p>
+                        let numero = "10"; <br>
+                        if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
+                            console.log("no es un numero"); <br>
+                        } else if(10 !== numero){ // true <br>
+                            console.log("es un numero"); <br>
+                        } <br>
+                        // en caso de no cumplir la condicion no se ejecutara y pasara de largo
                     </p>
                     <p>else se ejecutara en el caso de que ninguna condicion anteror se cumpla y no necesita asignarle una condicion</p>
                     <p>
@@ -313,6 +392,10 @@
                         } <br>
                         // en caso de no cumplir la condicion no se ejecutara y pasara de largo
                     </p>
+                </section>
+
+                <!-- seccion parra los bucles -->
+                <section>
                     <h3>Bucles</h3>
                     <p>sirven para repetir codigo y son muy importantes en JavaScript y tambien son varios tipos</p>
                     <h4>While</h4>
@@ -372,6 +455,10 @@
                         4 % 2 dara como residuo 0 <br>
                         </span></p>
                     </p>
+                </section>
+
+                <!-- seccion para las funciones -->
+                <section>
                     <h3>Funciones, funciones flecha y metodos</h3>
                     <p>Definicion: es un bloque de comandos que se ejecutaran cuando se llame a esta misma, sirven para no repetir codigo y hacer codigo mas legible</p>
                     <p>Ejemplo:</p>
@@ -527,6 +614,10 @@
                         crear un bucle que termine hasta que el usuario ingrese un valor valido <br>
                         mostrar el resultado con alert()
                     </p>
+                </section>
+
+                <!-- seccion para callbacks -->
+                <section>
                     <h3>Callbacks</h3>
                     <p>son funciones que se pasan como parametro a otra funcion</p>
                     <p>es una funcion que se pasa como argumento a otra y se ejecutan cuando las llamamos adentro de nuestras funciones</p>
@@ -566,6 +657,10 @@
                         // se llama a la funcion y donde pide la funcion enves de crearla afuera y luego llamarla dentro<br>
                         // creamos una funcion flecha anonima adentro del parametro <br>
                     </p>
+                </section>
+
+                <!-- seccion para modulos -->
+                <section>
                     <h3>Modulos</h3>
                     <p><span>en JavaScript podemos trabajar con diferentes archivos separados para en un archivo trabajar una cosa y en otro archivo manejamos la logica de otra cosa y hay dos formas de trabajar con archivos separados</span></p>
                     <p>
@@ -636,8 +731,16 @@
                         math.sumar();
                     </p>
                     <p><span>prueben ambos</span></p>
-                    <h3>Eventos</h3>
+                </section>
+
+                <!-- seccion para eventos -->
+                <section>
+                    <h2>Eventos</h2>
                     <p style="color: #ef6b73;">en Javascript podemos manejar eventos pero no lo veremos aqui ya que los eventos que podemos manejar en una pagina web son cuando se da click a un boton, cuando se envia un formulario, cuando se hace scroll, en Node.js los eventos suelen ser cuando se hace una peticion no estamos viendo para paginas web asi que chau</p>
+                </section>
+
+                <!-- seccion para la parte de Node.js -->
+                <section>
                     <h2>Node.js</h2>
                     <p>Node.js es un entorno de ejecucion de JavaScript, en el navegador existen ciertas restricciones, en Node.js el entorno de ejecucion ya no es una pagina web si no un entorno local, con el tiene aceso a mucha informacion sobre tu computadora</p>
                     <p><a href="https://nodejs.org/en/download" target="_blank" style="color:#ef6b73;">Instalacion Node.js</a></p>
