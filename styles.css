@@ -55,6 +55,11 @@ section {
     margin: 20px auto;
 }
 
+code {
+    word-break: break-all;
+    white-space: normal;
+}
+
 .imagen-extencion {
     width: min(600px, 100%);
     max-height: 400px;

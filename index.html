@@ -94,11 +94,11 @@
             <h3>Tipado dinamico</h3>
             <p>
                 en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br> 
-                <span class="code">
+                <code class="code">
                     var a = 1;<br>
                     a = "hola";<br>
                     a = true;
-                </span>
+                </code>
             </p>
             <h3>Propósito general</h3>
             <p>
@@ -128,41 +128,41 @@
             <h2>Variables</h2>
             <p>
                 Las variables son espacios en memoria donde se almacenan los datos las variables se declaran antes de usarse, por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     var a = 1;<br>
                     var b = 2;<br>
-                </span>
+                </code>
                 otra forma de declararlas es:<br>
-                <span class="code">
+                <code class="code">
                     var a = 2, b = "hola", c = true;<br>
-                </span>
+                </code>
                 separandolas por comas, de esta forma se declaran todas las variables en una sola linea, pero puede ser mas interesante hacerlo en lineas separadas para mejorar la legibilidad del codigo.<br>
                 <br>
                 para poder usar una variable primero hay que declararla, para declarar una nueva variable se usan las palabras var, let y const, que no se recomienda usar var, al declarar una variable con var su alcance sera global, por lo que podra existir y usarse en todos los ambitos del programa, pero es mejor practica que las variables sean let o const que tienen un alcance local, que usualmente tambien mas comun es let ya que const es para variables constantes, en otros lenguajes se dice que no son variables constantes, ya que o son variables por que pueden cambiar, o constantes porque son solo de lectura son inmutables por lo que no pueden cambiar de valor, pero en JavaScript si, evita que una variable se reasigne a otro valor, pero no garantiza la inmutabilidad del contenido, a diefrencia de otros lenguajes donde esto es mas estricto, si creas una variable como por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     a = 10;<br>
-                </span>
+                </code>
                 esta valiable por defecto usara var por lo que es recomendable siempre usar let o const<br>
                 Ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let a = 10;<br>
                     const PI = 3.14159;<br>
                     let c;<br>
-                </span>
+                </code>
                 como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan esctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
                 ejemplo simple:<br>
-                <span class="code">
+                <code class="code">
                     let c = 1;<br>
                     let a = 10;<br>
                     let b = a<br>
                     ++c<br>
-                </span>
+                </code>
                 el interprete puede llegar a verlo como<br>
-                <span class="code">
+                <code class="code">
                     let c = 1;<br>
                     let a = 10;<br>
                     let b = a++c<br>
-                </span>
+                </code>
                 lo que seria un error de sintaxis.
             </p>
             <h3>Parte practica</h3>
@@ -180,7 +180,7 @@
     &lt;script src="app.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-                </pre>
+            </pre>
             <p>
                 la etiqueta script es para incluir archivos o codigo Javascript en un archivo aparte creas un archivo con el nombre que quieran pero con la extension .js y en el archivo index.html adentro de la etiqueta
             </p>
@@ -209,33 +209,33 @@
             </pre>
             <p>
                 en el archivo.js esciban una variable y muestrenlo con alert(), como por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let a = 10;<br>
                     alert(a);<br>
-                </span>
+                </code>
                 dirijanse a donde crearon su archivo .html de su proyecto, deberan darle click derecho al archivo .html y deberan escoger un navegador para ejecutar el codigo, como por ejemplo darle click derecho y elegir google, si siguieron bien los pasos anteriores deberian ver una alerta con el valor de la variable que hayan puesto.<br>
                 <br>
                 <span>
                     deberan tener en cuenta el sitio donde colocaron los archivos para el src="", en el caso que solo hayan puesto el nombre de su archivo como por ejemplo:<br>
-                    <span class="code">
+                    <code class="code">
                         src="sript.js"<br>
-                    </span>
+                    </code>
                     buscara en la misma carpeta un archivo con ese nombre, tambien sucedera con ./ al principio del nombre, le estas indicando explicitamente que tu archivo esta en la misma carpeta que tu archivo .html, por ejemplo:<br>
-                    <span class="code">
+                    <code class="code">
                         src="./script.js"<br>
-                    </span>
+                    </code>
                     tambien otra opcion es que tengan la logica en una carpeta aparte adentro de la misma carpeta, lo cual puede ser una opcion muy buena en este caso ya que en el curso se haran varios ejercicios y en lugar de borrar lo que ya han hecho y escribir otro ejercicio estaria bien que crearan diferentes archivos con estension .js y solo tendrian que cambiar la ruta del src="" en el html, lo que les ayudara a tener guardada la logica y poder revisarla en un futuro cuando la necesiten para repasar, un ejemplo es que creen una carpeta llamada logica, en la carpeta logica creen un archivo llamado script.js y luego en su html en la ruta coloquen:<br>
-                    <span class="code">
+                    <code class="code">
                         src="./carpeta/script.js"<br>
-                    </span>
+                    </code>
                     luego otro caso es que tengan su archivo index.html en una carpeta y su logica este afuera de esa carpeta, en ese caso tendran que usar ../ donde se le indica que nuestra logica se encuentra una carpeta afuera de donde esta nuestro html, si estuviera dos carpetas afuera usariamos ../../ y asi susecivamente cuanto mas afuera este nuestra logica, por ejemplo:<br>
-                    <span class="code">
+                    <code class="code">
                         src="../script.js"<br>
-                    </span>
+                    </code>
                     y el ultimo ejemplo es que tengan el html en una carpeta y el codigo JavaScript en otra carpeta adentro de una carpeta que los contenga, que puede ser comun cuando trabajamos en un proyecto mas grande, como por ejemplo:<br>
-                    <span class="code">
+                    <code class="code">
                         src="../logica/script.js"<br>
-                    </span>
+                    </code>
                     que se puede entender como, busca una carpeta afuera, busca la carpeta logica, busca el archivo script.js y si lo encuentra usara esa logica.
                 </span>
             </p>
@@ -266,40 +266,40 @@
             <h4>String</h4>
             <p>
                 un tipo comun en JavaScript es el tipo string, para inicializar una variable para que contenga un string solo hay que colocar el texto adentro de comillas, ya sean dobles " ", simples ' ' o template strings ` `, estas cadenas de texto tienen ciertas interacciones interesantes con los operadores que los veremos luego, uno interesante es el operador + que es para sumar, pero con las cadenas de texto este los concatena o dicho de otra manera los une, por lo que si tenemos "texto1" + "texto2" nos dara como resultado "texto1texto2", esto pasara aunque los textos sean numeros, ya que podemos tener "22" y no lo vera como un numero si no como un string, al hacer la suma "22" + "10" nos devolvera un "2210", un ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let cadena = "hola ";<br>
                     let texto = "mundo";<br>
                     let holaMundo = cadena + texto;<br>
                     alert(holaMundo);<br>
-                </span>
+                </code>
                 y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScrpit, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador - que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let numero1 = "1";<br>
                     let numero2 = "1";<br>
                     let numero3 = numero1 + numero2;<br>
                     alert(numero3);<br>
-                </span>
+                </code>
                 este nos devolvera un 0, porque JavaScript tambien es dinamico, lo que hace que va a intenta convertir los tipos de datos para que tu programa funcione, en este caso el operador - no se puede usar con cadenas de texto, se usan con numeros por lo que JavaScript intentara convertir el texto a tipo numerico y de ahi viene la interaccion tan curiosa que en otros lenguajes de programacion serian solo un error.
             </p>
             <h3>Number</h3>
             <p>
                 para guardar tipos de datos numericos que pueden ser decimales o enteros, un ejmpelo de decimal seria 30.10, y entero 100, estos tienen interacciones con operadores aritmeticos, como lo son + para la suma, - para la resta de numeros, * para la multiplicacion, / para la division y % que es para modulo o dicho de otra forma es el residuo de la division, son muy comunes y no se deben confundir con numeros que sean enrealidad strings, como por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let numero1 = 1;<br>
                     let numero2 = 1.5;<br>
                     let numero3 = nomero1 + numero2;<br>
                     let numeroCadena = "1";<br>
                     numero1 = "4";<br>
-                </span>
+                </code>
                 que como vemos en este caso numero uno cambio de ser tipo numerico a ser de tipo texto y asi se puede cambiar cuantas veces se quiera o necesite en la logica.
             </p>
             <h3>Boolean</h3>
             <p>
                 para almacenar datos booleanos que son solo dos valores, verdadero o falso, true or false, que tambien se pueden representar con 1 o 0, estos valores son muy utiles y muy utilizados en programacion en general, su uso lo veremos mas adelante, ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let bool = true;<br>
                     let bool2 = false;<br>
-                </span>
+                </code>
             </p>
             <h3>Array</h3>
             <p>
@@ -312,18 +312,18 @@
             <h3>Null</h3>
             <p>
                 este es un tipo de dato que lo definimos nosotros, en el caso de que nuestra variable querramos que este vacia al inicio, ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let vacio = null;<br>
-                </span>
+                </code>
                 y lo podran ver al usar alert, que les mostrara que el tipo de dato es null, o exxplicitamente vacio.
             </p>
             <h3>Undefined</h3>
             <p>
                 este tipo de dato como su nombre en ingles lo indica, es un tipo de dato sin definir, cuando no se le agrega null para que este vacio, si no que no se le ha dicho que contendra.<br>
-                <span class="code">
+                <code class="code">
                     let sinDato;<br>
                     alert(sinDato);<br>
-                </span>
+                </code>
                 al hacer esta alerta podremos ver que lo que nos mostrara sera undefined.
             </p>
             <h3>Any</h3>
@@ -343,17 +343,17 @@
             </div>
             <p>
                 bien, ya estan en la consola de comandos, ahora en su programa, en su archivo con extension .js tendran que mostrar los datos solicitados, ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let num = 1;<br>
                     console.log(num);<br>
                     console.log(typeof num);<br>
-                </span>
+                </code>
                 luego de haber escrito este ejemplo tendran que ir a su pagina web, recargar la pagina y revisar en la consola, les tendran que aparecer los datos, tanto lo que almacenaba la variable como el tipo de dato, console.log() lo que hara sera que mostrara en la consola todo lo que le hayas puesto, tanto texto con comillas, numeros y variables, y la palabra typeof antes de la variable adentro del console.log() nos mostrara el tipo de dato de lo que venga despues de decir el typeof, algunos ejemplos de console.log():<br>
-                <span class="code">
+                <code class="code">
                     console.log("texto");<br>
                     console.log(12 + 12);<br>
                     console.log(true);<br>
-                </span>
+                </code>
             </p>
         </section>
 
@@ -362,15 +362,15 @@
             <h2>Arrays</h2>
             <p>
                 array como ya mencionamos son colecciones de datos o listas de datos, ejemplo de un array:<br>
-                <span class="code">
+                <code class="code">
                     let lista = [];<br>
-                </span>
+                </code>
                 que en este caso es un array vacio, no contiene nigun dato, otros lenguajes de programacion los array solo pueden contener un tipo de dato, como si son numeros, no puede almacenar otro tipo de dato que no sea numero, pero en JavaScript los datos pueden ser mixtos, como por ejemplo:<br>
-                <span class="code">
+                <code class="code">
                     let coleccion = [true, "texto", 12];<br>
-                </span>
+                </code>
                 lo mas comun y recomendado es que los datos todos tengan relacion entre si, en lugar de nosotros escribir algo como:<br>
-                <span class="code">
+                <code class="code">
                     let lunes = "lunes";<br>
                     let martes = "martes";<br>
                     let miercoles = "miercoles";<br>
@@ -379,14 +379,14 @@
                     let sabado = "sabado";<br>
                     let domingo = "domingo";<br>
                     console.log(lunes,martes,miercoles,jueves,sabado,domingo);<br>
-                </span>
+                </code>
                 que son muchas variables que contienen los dias de la semana, y asi pueden ser otras muchas variables mas que hagan el codigo largo y el programar mas tardado, en lugar de eso puedes hacer algo como:<br>
-                <span class="code">
+                <code class="code">
                     let diasDeLaSemana = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"]<br>
                     console.log(diasDeLaSemana);<br>
-                </span>
+                </code>
                 copien ambos ejemplos y veran que ambos muestran que ambos muestran los dias de la semana pero con una diferencia, que el primero mostrara el valor de todos las variables, en el otro mostrara entre parentesis cuantos datos contienen a lista de datos, mostrara la lista de datos, y tambien habra una flechita a la que deberan darle click, les mostrara numeros de un lado y valores del otro, que es la posicion de cada valor, "lunes" esta en la primera posicion, pero los arrays comienzan con la posicion 0, por lo que veran algo como<br>
-                <span class="code">
+                <code class="code">
                     0: "lunes"<br>
                     1: "martes"<br>
                     2: "miercoles"<br>
@@ -394,33 +394,33 @@
                     4: "viernes"<br>
                     5: "sabado"<br>
                     6: "domingo"<br>
-                </span>
+                </code>
                 como veran son enrealidad listas clave valor, donde a cada valor le corresponde una clave numerica, que correspondera a su posicion empezando desde cero, llendo en direccion de izquierda a derecha, y para acceder a un valor en concreto hay que hacerlo mediante su posicion, por lo que si queremos mostrar solamente el dia lunes seria algo asi:
-                <span class="code">
+                <code class="code">
                     console.log(diasDeLaSemana[0]);<br>
-                </span>
+                </code>
                 hay que colocar el nombre de la lista segido de corchetes [] y por ultimo colocarle la posicion que se quiera mostrar, y esto se puede usar tambien de otras maneras, y les dare un apr de ejemplos:<br>
-                <span class="code">
+                <code class="code">
                     let numero;<br>
                     let numeros = [1,2,3,4];<br>
                     numero = numeros[0];<br>
-                </span>
+                </code>
                 ahora la variable numero contendra el valor que tiene la posicion 0 de la lista numeros, por lo que numero ahora vale 1.
-                <span class="code">
+                <code class="code">
                     let numero = 10;<br>
                     let numeros = [1,2,3,4];<br>
                     numeros[0] = numero;<br>
-                </span>
+                </code>
                 en este caso en la lista numeros en la posicion 0 el valor se cambiara por el valor de la variable numero, la lista se veria algo asi [10,2,3,4]<br>
-                <span class="code">
+                <code class="code">
                     let arr = [1,2,3,4];<br>
                     let numeros = [arr,5,6,7];<br>
-                </span>
+                </code>
                 en este este caso que vemos que los arrays tambien pueden contener otros arrays la lista se veria algo asi [[1,2,3,4],5,6,7]<br>
-                <span class="code">
+                <code class="code">
                     let arr = [1,2,3,4];<br>
                     arr.push(5);<br>
-                </span>
+                </code>
                 .push es un metodo que tienen todos los arrays, secribes el nombre del array, llamas a .push seguido de parentesis y adentro de los parametros hay que darle un valor, este valor lo guardara en la lista al final, por lo que la lista quedaria algo asi [1,2,3,4,5] asi puedes hacer crecer la lista y agregar nuevos valores, no se preocupen si no entienden un termino que luego lo veremos.
             </p>
         </section>
@@ -430,36 +430,36 @@
             <h2>Objetos</h2>
             <p>
                 los objetos tambien son una coleccion de datos clave valor, pero a diferencia de los arrays las claves las ponemos nosotros, un ejemplo de un objeto:<br>
-                <span class="code">
+                <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
-                </span>
+                </code>
                 el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave calor se separa por comas, para acceder a sus valores se puede hacer algo asi:
-                <span class="code">
+                <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
                     console.log(persona.nombre);<br>
                     console.log(persona);<br>
-                </span>
+                </code>
                 donde ya no accedemos al valor por su posicion si no por su clave, los arrays y objetos pueden hacer combinaciones interesantes ya que, los objetos pueden contener a su vez, otros objetos, los arrays pueden contener arrays, los arrays pueden contener objetos, y los objetos arrays, por lo lo que algo frecuentemente usado es tener arrays de objetos, estas listas tambien pueden guardar variables, tambien se suelen usar saltos de linea para hacer que todo sea mas legible, por lo que mostrare unos ejemplos:<br>
-                <span class="code">
+                <code class="code">
                     let listaDeEstudiantes = [<br>
                         { nombre: "julia", promedio: 75, cursos: ["matematicas","calculo"]},<br>
                         { nombre: "jose", promedio: 68, cursos: ["matematicas","programacion","estadistica"]},<br>
                     ];<br>
-                </span>
+                </code>
                 una array que contiene objetos, que tambien esos objetos contienen arrays y aun asu vez esos arrays adentro de los objetos podrian contener arrays u objetos, pero en este caso tiene logica que esten de esa forma, para acceder al valor de un curso de uno de los alumnos podemos hacer algo como:<br>
-                <span class="code">
+                <code class="code">
                     console.log(listaDeEstudiantes[0].cursos[0]);<br>
                     listaDeEstudiantes[0].cursos[0] = "ingles";<br>
-                </span>
+                </code>
                 que primero buscara la posicion 0, luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codicgo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, saber que hace el codigo se los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
-                <span class="code">
+                <code class="code">
                     // este es un comentario de una sola linea, para comentar algo especifico del programa<br>
                     /* este es un comentario multilinea y se emple cuando el comentario es muy grande */<br>
                     /*<br>
                         el /* indica cuando el comentario empieza<br>
                         */ indica el final de un comentario<br>
                     */<br>
-                </span>
+                </code>
                 todo lo que escribamos adentro de comentarios no se ejecutara y sera ignorado durante la ejecucion, son muy utiles mientras desarrollamos y recomiendo comentar todo los que les parezca nuevo asi cuando vuelvan a leer sus repasos les sera mas facil recordar todo lo que han hecho.
             </p>
 
