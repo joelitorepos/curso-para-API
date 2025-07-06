@@ -67,3 +67,7 @@ section {
 .code {
     color: var(--color-a);
 }
+
+.important {
+    color: #ef6b73;
+}

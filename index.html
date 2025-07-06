@@ -8,813 +8,974 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <body>
-        <div>
-            <div>
-                <!-- seccion para configuraciones y recomendaciones antes de empezar a programar -->
-                <section class="configuraciones">
-                    <h1>Plan de Estudios: JavaScript, Node.js y Express.js para Crear una API</h1>
-                    <h2>Herramientas recomendadas:</h2>
-                    <h3>Visual Studio Code</h3>
-                    <p>
-                        Visual Studio Code es el IDE preferido para escribir codigo, con muchas extensiones que ayudan como extensiones que resaltan errores en el codigo y otras que pueden ayudar a ser mas productivo al completar codigo por ti, aunque hayan mas IDEs o lugares para escribir codigo para el curso asumire que lo tienen instalado asi que sera mas optimo que lo tengan
-                        <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>
-                    </p>
-                    <h4>Configuracion y extensiones recomendadas</h4>
-                    <p>Ala izquierda veran opciones que son herramientas utiles, en este caso es el apartado de extensiones</p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/extensiones-n1.png" class="imagen-extencion">
-                    </div>
-                    <p>cuando lo presionen veran arriba una barra de busqueda para encontrar las extensiones que les mostrare</p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/extensiones-n2.png" class="imagen-extencion">
-                    </div>
-                    <p>
-                        <span class="subtitle">Halcyon theme: </span>
-                        es para añadir un tema oscuro que no daña los ojos, hace que el codigo se diferencie mejor, otra extension para tema de colores es One Dark Pro, lo pueden perzonalizar a su gusto
-                    </p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/extensiones-n3.png" class="imagen-extencion">
-                    </div>
-                    <p>
-                        <span class="subtitle">Supermaven: </span>
-                        inteligencia artificial para completar codigo, le dar a la tecla Tab para aceptar el autocompletado que te de
-                    </p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/extensiones-n4.png" class="imagen-extencion">
-                    </div>
-                    <p>
-                        <span class="subtitle">ESLint:</span> 
-                        una extension que ayuda para ayudar con posibles errores en el codigo
-                    </p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/extensiones-n5.png" class="imagen-extencion">
-                    </div>
-                    <p>
-                        <span class="subtitle">Error lens:</span> 
-                        te dira la linea en donde hay un error y detalles del error, resaltara esa linea donde haya un error con rojo y te dira detalles de por que hay un error
-                    </p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/configuraciones-n1.jpg" class="imagen-extencion">
-                    </div>
-                    <p>
-                        Esta es otra configuracion: en su teclado presionen las teclas Ctrl + Shift + P, Esto les abrira una barra de busqueda,<br>
-                        busquen: <span class="command">Preferences: Open Settings (JSON)</span> presionen en esa opcion y les abrira un archivo, descarguen el archivo que les pasare, copien el contenido y peguenlo en el lugar donde iran sus configuraciones reales <a href="./ejemplos/config.json" download="config.json">config.json</a>
-                    </p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/configuraciones-n2.jpg" class="imagen-extencion">
-                    </div>
-                    <p>
-                        para activar el tema de color que instalaron, animacion para scroll, auto guardar, auto guardar despues de 5 segundos, desactivar minimapa y hacer que el texto se acomode a su pantalla
-                    </p>
-                    <p>por ultimo la carpeta donde estaran sus archivos arrastrenlo hasta la aplicacion de vscode hasta que les indique la aplicacion que se abrira correctamente</p>
-                </section>
-
-                <!-- seccion para introduccion al lenguaje  -->
-                <section class="introduccion">
-                    <h2>JavaScript</h2>
-                    <p>JavaScript es un lenguaje de programación interpretado, de código abierto, dinámico y orientado a objetos. Es un lenguaje de programación de propósito general, que puede ser usado en cualquier contexto para crear aplicaciones web, móviles y de escritorio.</p>
-                    <h3>Características importantes</h3>
-                    <ul>
-                        <li>Interpretado</li>
-                        <li>Orientado a objetos</li>
-                        <li>Tiene tipado dinamico</li>
-                        <li>De propósito general</li>
-                        <li>Utiliza camelCase</li>
-                    </ul>
-                    <h3>Lenguaje interpretado</h3>
-                    <p>con el ejemplo de C++ es un lenguaje compilado porque hay que compilar todo el codigo, crea todo un archivo aparte para ejecutarlo, en el caso de JavaScript es interpretado porque no creara un archivo nuevo, el codigo se suele ejecutar directamente en el navegador, que interpretara linea por linea cada linea del codigo, lee una linea, la interpreta y ejecuta</p>
-                    <h3>Lenguaje orientado a objetos</h3>
-                    <p>es un paradigma de programacion muy util que lo veremos mas adelante cuando entremos a Node.js</p>
-                    <h3>Tipado dinamico</h3>
-                    <p>
-                        en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br> 
-                        <span class="code">
-                            var a = 1;<br>
-                            a = "hola";<br>
-                            a = true;
-                        </span>
-                    </p>
-                    <h3>Propósito general</h3>
-                    <p>
-                        Este lenguaje es usado comunmente en la web pero también se usa en otros contextos, no solo para desarrollar aplicaciones web si no tambien aplicaciones desarrollo mobile, aplicaciones de consola entre etros.
-                    </p>
-                    <h3>Utiliza camelCase</h3>
-                    <p>
-                        para escribir variables o funciones usamos camelCase que es una forma de escribir donde si hay varias palabras la primera palabra se escribe en minusculas ejemplo: variable. y luego las demas palabras empiezan por mayusculas, ejemplo: sumarNumero, funcionParaSumarVariables. funciones integradas estan escritas asi por eso es importante
-                    </p>
-                    <h3>Conceptos básicos</h3>
-                    <ul>
-                        <li>Variables</li>
-                        <li>Tipos de datos</li>
-                        <li>Arrays</li>
-                        <li>Objetos</li>
-                        <li>Operadores de comparacion</li>
-                        <li>Condicionales</li>
-                        <li>Bucles</li>
-                        <li>Funciones</li>
-                        <li>Módulos</li>
-                        <li>Eventos</li>
-                    </ul>
-                </section>
-
-                <!-- seccion para el tema variables -->
-                <section class="variables">
-                    <h3>Variables</h3>
-                    <p>
-                        Las variables son espacios en memoria donde se almacenan los datos las variables se declaran antes de usarse, por ejemplo:
-                        <span class="code">
-                            var a = 1;<br>
-                            var b = 2;<br>
-                        </span>
-                        otra forma de declararlas es:<br>
-                        <span class="code">
-                            var a = 2, b = "hola", c = true;<br>
-                        </span>
-                        separandolas por comas, de esta forma se declaran todas las variables en una sola linea, pero puede ser mas interesante hacerlo en lineas separadas para mejorar la legibilidad del codigo.<br>
-                        <br>
-                        para poder usar una variable primero hay que declararla, para declarar una nueva variable se usan las palabras var, let y const, que no se recomienda usar var, al declarar una variable con var su alcance sera global, por lo que podra existir y usarse en todos los ambitos del programa, pero es mejor practica que las variables sean let o const que tienen un alcance local, que usualmente tambien mas comun es let ya que const es para variables constantes, en otros lenguajes se dice que no son variables constantes, ya que o son variables por que pueden cambiar, o constantes porque son solo de lectura son inmutables por lo que no pueden cambiar de valor, pero en JavaScript si, evita que una variable se reasigne a otro valor, pero no garantiza la inmutabilidad del contenido, a diefrencia de otros lenguajes donde esto es mas estricto, si creas una variable como por ejemplo:<br>
-                        <span class="code">
-                            a = 10;<br>
-                        </span>
-                        esta valiable por defecto usara var por lo que es recomendable siempre usar let o const<br>
-                        Ejemplo:<br>
-                        <span class="code">
-                            let a = 10;<br>
-                            const PI = 3.14159;<br>
-                            let c;<br>
-                        </span>
-                        como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan eesctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
-                        ejemplo simple:<br>
-                        <span class="code">
-                            let c = 1;<br>
-                            let a = 10;<br>
-                            let b = a<br>
-                            ++c<br>
-                        </span>
-                        el interprete puede llegar a verlo como<br>
-                        <span class="code">
-                            let c = 1;<br>
-                            let a = 10;<br>
-                            let b = a++c<br>
-                        </span>
-                        lo que seria un error de sintaxis.
-                    </p>
-                    <h3>Parte practica</h3>
-                    <p>
-                        en una carpeta creen un archivo index.html y un archivo app.js, en el archivo index.html escriban
-                    </p>
-                    <p>en el archivo index.html escriban</p>
-                    <pre>
-                        &lt;!DOCTYPE html&gt;
-                        &lt;html lang="es"&gt;
-                        &lt;head&gt;
-                            &lt;meta charset="UTF-8"&gt;
-                            &lt;title&gt;Mi Página&lt;/title&gt;
-                        &lt;/head&gt;
-                        &lt;body&gt;
-                            &lt;script src="app.js"&gt;&lt;/script&gt;
-                        &lt;/body&gt;
-                        &lt;/html&gt;
-                        </pre>
-                    <p>la etiqueta script es para incluir archivos o codigo Javascript en un archivo aparte creas un archivo con el nombre que quieran pero con la extension .js y en el archivo index.html adentro de la etiqueta</p>
-                    <pre>&lt;body&gt;&lt;/body&gt;</pre>
-                    <p>adentro de esta etiqueta body debe ir al final de todo la etiqueta script y en src="" adentro de las comillar pones el nombre del archivo y trabajar escribiendo codigo desde ese archivo.js que es lo que recomiendo</p>
-                    <pre>
-                        &lt;body&gt;
-                            &lt;script src="codigo.js&gt;&lt;/script&gt;
-                        &lt;/body&gt;
-                    </pre>
-                    <p>otra forma es escribiendo desde la etiqueta script el codigo sin poner src=""</p>
-                    <pre>
-                        &lt;body&gt;
-                            &lt;script&gt;
-                                let variable = "texto";
-                                let numero = 1;
-                                let booleano = true;
-                            &lt;/script&gt;
-                        &lt;/body&gt;
-                    </pre>
-                    <p>en el archivo.js esciban una variable y muestrenlo con alert(), como por ejemplo</p>
-                    <p>let variable = "hola mundo";</p>
-                    <p>alert(variable);</p>
-                    <p>es buena practica escribir punto y coma al final de cada instruccion, puede funcionar sin pero puede llegar a resultar en errores en algunos casos</p>
-                    <p>vayan a donde esta su archivo index.html, denle click derecho y elijan un navegador por ejemplo: google chrome para abrir el archivo, les saldra arriba una alerta mostrando los datos, recarguen la pagina para volver a ver la alerta </p>
-                    <p>
-                        <span> en src=" " adentro de las comillas si el archivo.js no esta en la misma carpeta, por ejemplo si esta en la misma carpeta buscara el nombre en esa misma carpeta tambien si le dices ./ por ejemplo src="./archivo.js" le decimos que esta en la carpeta actual, si esta afuera de la carpeta ponemos ../ y luego el nombre del archivo src="../archivo.js" le estamos diciendo que la carpeta esta una carpeta afuera de donde esta index.html src="../../archivo.js" el archivo esta dos carpetas afuera, si encambio el index.html esta en la carpeta actual y creamos otra carpeta adentro y ahi metemos el codigo entonces se pone ./nombre_de_la_carpeta/archivo.js por ejemplo src="./carpeta/codigo.js" creo que en windows en la separacion entre carpetas se pone \\ src=".\\carpeta\\codigo.js" prueben con ambos</span>
-                    </p>
-                    <p><span style="color: #ef6b73;">eviten poner nombres con espacios, utilizen camelCase para evitar estos espacios en los nombres de las carpetas</span></p>
-                </section>
-
-                <!-- seccion para los tipos de datos -->
-                <section class="tipos-de-datos">
-                    <h3>Tipos de datos</h3>
-                    <p>los tipos que puede almacenar una variable</p>
-                    <ul>
-                        <li>String</li>
-                        <li>Number</li>
-                        <li>Boolean</li>
-                        <li>Array</li>
-                        <li>Object</li>
-                        <li>Null</li>
-                        <li>Undefined</li>
-                        <li>Any</li>
-                    </ul>
-                    <h4>String</h4>
-                    <p>para almacenar cadenas de texto, estos se pueden concatenar con un +</p>
-                    <p>let string = "hola ";</p>
-                    <p>let string2 = "mundo";</p>
-                    <p>let string3 = string + string2;</p>
-                    <p>alert(string3);</p>
-                    <p>prueben esto en el archivo.js que crearon, deberia mostrar "hola mundo" y tengan en cuenta que tambien cuentan los espacios " " entre las palabras</p>
-                    <h4>Number</h4>
-                    <p>para almacenar numeros, pueden ser enteros o decimales</p>
-                    <p>let numero1 = 1;</p>
-                    <p>let numero2 = 1.5;</p>
-                    <p>let numero3 = nomero + numero2;</p>
-                    <p>al tener tipado dinamico, pueden cambiar de tipo</p>
-                    <p>let numero1 = "1";</p>
-                    <p>let numero2 = "1.5"</p>
-                    <p>let numero3 = numero1 + numero2;</p>
-                    <p>este ya no se toma como numero si no como una cadena de texto y enves de sumarse y dar 2.5, este va a devolver "11.5" porque se estan concatenando los strings</p>
-                    <h4>Boolean</h4>
-                    <p>para almacenar booleanos, es un tipo de dato que solo puede tener dos valores: true o false</p>
-                    <p>let booleano = true;</p>
-                    <p>let booleano2 = false;</p>
-                    <p>estos tipos son especiales para condicionales que veremos luego</p>
-                    <h4>Array</h4>
-                    <p>lo veremos en un momento</p>
-                    <h4>Object</h4>
-                    <p>lo veremos en un momento</p>
-                    <h4>Null</h4>
-                    <p>este tipo de dato lo definimos nosotrs en un tipo de dato para decir que no contendra nada por el momento solo lo estamos declarando</p>
-                    <p>let vacio = null;</p>
-                    <h4>Undefined</h4>
-                    <p>esto es cuando el dato por defecto cuando declaramos un tipo de dato sin valor </p>
-                    <p>let sinDato;</p>
-                    <p>console.log(sinDato) nos mostrara undefined</p>
-                    <h4>Any</h4>
-                    <p>este dato viene por defecto en cualquier variable cuando la declaramos ya quesignifica que puede contener cualquier valor</p>
-                    <p>cuando cambiamos el valor de una variable lo que sucede es por ejemplo en un dato number si lo cambiamos a true el dato que estaba almacenado se borra y se guarda el nuevo dato</p>
-                    <p>let numero = 1;</p>
-                    <p>numero = true;</p>
-                    <p>console.log(numero) nos mostrara true</p>
-                    <h3>Parte practica</h3>
-                    <p>en el archivo JavaScript que crearon, creen variables de diferentes tipos y muestren sus valores</p>
-                    <p>let string = "hola mundo";</p>
-                    <p>console.log(typeof string);</p>
-                    <p>typeof devuelve el tipo de dato de una variable</p>
-                    <p>para ver lo que devolvio console.log() tienen que abrir el arrchivo index.html en un navegador y luego dar click derecho encima del navegador en el espacio en blanco, en el contenido desplegable seleccionen "Inspeccionar" podran ver una interfaz y habra una seccion llamada Console donde podran ver lo que hayan puesto con console.log()</p>
-                    <div class="imagen-container">
-                        <img src="./imagenes/consola.jpg" class="imagen-extencion">
-                    </div>
-                </section>
-
-                <!-- seccion para los arrays -->
-                <section class="arrays">
-                    <h3>Arrays</h3>
-                    <p>los arrays son una coleccion de datos, pueden ser de diferentes tipos y tambien pueden contener otros arrays</p>
-                    <p>let array1 = [1, 2, 3, 4, 5];</p>
-                    <p>let array2 = ["hola", "mundo", true, 1.5, array1];</p>
-                    <p>en lugar de guardar los datos en multiples Variables, pueden guardarlos en un array</p>
-                    <p>let dia1 = "lunes", dia2 = "martes", dia3 = "miercoles", dia4 = "jueves", dia5 = "viernes", dia6 = "sabado", dia7 = "domingo";</p>
-                    <p>let diasDeLaSemana = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];</p>
-                    <p>el contenido de un array se puede acceder mediante su indice, el indice de un array comienza desde cero de izquierda a derecha</p>
-                    <p>console.log(diasDeLaSemana[0]); // imprime el lunes ya que es el primer dato del array, si se pone 1 accedera al segunde elemento, 2 al tercero y así sucesivamente</p>
-                    <p>console.log(diasDeLaSemana); // imprime todos los datos del array</p>
-                    <p>si quieres cambiar el valor de un elemento en un array accede a su indice y cambia el valor</p>
-                    <p>diasDeLaSemana[0] = "miercoles"; // accedera al primer elemento y lo remplazara por la palabra miercoles</p>
-                    <p>tambien los array pueden contener variables</p>
-                    <p>let variable = "hola mundo", variable2 = 2;</p>
-                    <p>let array3 = [variable, variable2];</p>
-                </section>
-
-                <!-- seccion para los objetos -->
-                <section>
-                    <h3>Objetos</h3>
-                    <p>los objetos son una coleccion de datos, pueden ser de diferentes tipos y tambien pueden contener otros objetos, la diferencia entre un objeto y un array es como se accede a su valor y la forma que tienen</p>
-                    <p>let objeto1 = {nombre: "victor", edad: 20, sexo: "masculino"};</p>
-                    <p>clave valor, en el un array la clave es el indice que esta determinado implicitamente por su posicion, en el caso de los objetos la cave es el nombre que le asignamos a un valor y el valor es el contenido de ese dato</p>
-                    <p>
-                        let objeto = {<br>
-                             nombre: "victor", // la clave es nombre: y el contenido "victor"<br> 
-                             edad: 20, // la clave es edad: y el contenido 20<br>
-                             sexo: "masculino", // la clave es sexo: y el contenido masculino<br>
-                        }
-                    </p>
-                    <p>// las dos diagonales son una forma de comentar el codigo, es texto que no se ejecutara y se ignorara en el codigo</p>
-                    <p>otra forma de comentar el contenido es /*comentario*/</p>
-                    <p>la forma de acceder al contenido es poner el nombre del objeto seguido un punto y seguido poner el nombre de la clave</p>
-                     <p>console.log(objeto.nombre); // buscara en el objeto la clave nombre e imprimira su contenido</p>
-                    <p>si quieres cambiar el valor de un elemento en un objeto accede a su clave y cambia el valor</p>
-                     <p>objeto.nombre = "joelito"; // accedera al objeto y cambiara el nombre a joelito</p>
-                    <p>los objetos son especiales en JavaScript porque se dice que todo en JavaScript es un objeto porque los tipos de datos se "encapsulan" en objetos y de ahi es que pueden cambiar el tipo de dato de una variable</p>
-                    <h3>Parte practica</h3>
-                    <p>Recomiendo que practiquen todo lo aprendido que hagan ejercicios y guarden los codigo que crean ya que les servira para recordar lo que estan aprendiendo <span>importante: cada valor tanto en arrays como objetos los datos se separan con comas</span></p>
-                    <p><span>Tengan varios codigos javascript para diferentes proyectos con su respectivo index.html, pueden ponerle nombres descriptivos como array.js y array.html o otro mas recomendado en la misma carpeta tener varias carpetas cada una con index.html y script.js</span></p>
-                    <p>creen un array que contenga objetos y muestren sus valores en consola</p>
-                    <p>ejemplo: let array = [{nombre: "victor", edad: 20, sexo: "masculino"}, {nombre: "joelito", edad: 21, sexo: "masculino"}];</p>
-                    <p>console.log(array[0].nombre);</p>
-                    <p>una manera mas ordenada de crear array de objetos</p>
-                    <p>let array = [ <br>
-                        {nombre: "victor", edad:20}, <br>
-                        {nombre: "joelito", edad: 21}, <br>
-                    ];
-                    </p>
-                </section>
-
-                <!-- seccion para operadores -->
-                <section>                    
-                    <h3>Operadores de comparacion</h3>
-                    <p>sirven para comparar dos datos o mas y devuelven valores booleanos</p>
-                    <p>
-                        let variable = 1 < 2; <br>
-                        console.log(variable); // imprime true porque 1 es menor que 2 <br>
-                        let variable2 = 1 > 2; // false <br>
-                        let variable3 = 1 <= 1; // menor o igual que, en este caso es true <br>
-                        let variable4 = 1 >= ; // mayor o igual que, truee <br>
-                        let variable5 = 1 == 1; // comparara si son iguales los valores, true <br>
-                        let variable6 = 1 != 1; // comparara si son distintos los valores, false <br>
-                        let variable7 = 1 === "1"; // comparara si son iguales los valores y el tipo de dato, false en este caso por comparar un caracter con un numero <br>
-                        let variable8 = 1 !== "1"; // comparara si son distintos los valores y el tipo de dato, true en este caso<br>
-                        <h3>Extra: operadores logicos y otros</h3>
-                        <p>los operadores logicos son operadores que devuelven valores booleanos</p>
-                        <p>
-                            && sirve para comparar que ambos devuelvan true en caso contrario sera false <br>
-                            || almenos uno debe retornar true para devolver true <br>
-                            ! negara el valor que se le pase <br>
-                            let variable = true && true // true <br>
-                            let variable2 = true || false // true <br>
-                            let variable3 = !true // false <br>
-                        </p>
-                        <p>
-                            += sumar una variable con un valores <br>
-                            -= restar una variable con un valores <br>
-                            *= multiplicar una variable con un valores <br>
-                            /= dividir una variable con un valores <br>
-                            let 2 % 2; modulo una variable con un valores, significa que devuelve el residuo de una division <br>
-                            **= potenciar una variable con un valores <br>
-                            let variable = 10;
-                            variable += 5; // 15 <br>
-                            variable -= 5; // 10 <br>
-                            variable *= 5; // 50 <br>
-                            variable /= 5; // 10 <br>
-                        </p>
-                </section>
-
-                <!-- seccion para los condicionales -->
-                <section>
-                    <h3>Condicionales</h3>
-                    <p>los condicionales sirven para ejecutar codigo solo en caso de que se cumpla una condicion if, else if, else</p>
-                    <p>
-                        let edad = 10; <br>
-                        if (edad > 18) { // entre parentesis se pone la condicion, si la cumple retornara true y ejecutara el codigo que se ponga entre las llaves
-                            console.log("Eres mayor de edad"); <br>
-                        } <br>
-                        // en caso de no cumplir la condicion no se ejecutara y pasara de largo 
-                    </p>
-                    <p>el if else sirve en caso de que la primera condicion no se cumpla, creamos una nueva condicion</p>
-                    <p>
-                        let numero = "10"; <br>
-                        if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
-                            console.log("no es un numero"); <br>
-                        } else if(10 !== numero){ // true <br>
-                            console.log("es un numero"); <br>
-                        } <br>
-                        // en caso de no cumplir la condicion no se ejecutara y pasara de largo
-                    </p>
-                    <p>else se ejecutara en el caso de que ninguna condicion anteror se cumpla y no necesita asignarle una condicion</p>
-                    <p>
-                        let numero = "10"; <br>
-                        if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
-                            console.log("no es un numero"); <br>
-                        } else { // no se ejecutara <br>
-                            console.log("es un numero"); <br>
-                        } <br>
-                        // en caso de no cumplir la condicion no se ejecutara y pasara de largo
-                    </p>
-                </section>
-
-                <!-- seccion parra los bucles -->
-                <section>
-                    <h3>Bucles</h3>
-                    <p>sirven para repetir codigo y son muy importantes en JavaScript y tambien son varios tipos</p>
-                    <h4>While</h4>
-                    <p>ejecutara codigo en caso de que se cumpla una condicin y se detendra en caso de que no la compla</p>
-                    <p>
-                        while (true){ // <span>esto crea un bucle infinito ya que nunca acabara porque en la condicion le estamos diciendo que siempre es cierta </span> <br>
-                            console.log("hola mundo"); <br>
-                        }
-                        <span>tambien funciona si le pasamos 1, ya que representa valrores booleanos donde 0 es false y 1 es true, tambien solo pasar una cadena de texto vacia "", array vacio [] o un objeto vacio {} retornara false por eso es importante los operadores de comparacion</span>
-                    </p>
-                    <p>
-                        let hora = 1; <br>
-                        while (hora == 24) { // se detendra cuando la variable hora valga 24<br>
-                            console.log("hola mundo"); // pegara la variable hora en consola<br>
-                            hora++; // aumentara el valor de la variable en una unidad<br> 
-                        }
-                    </p>
-                    <h4>Do while</h4>
-                    <p>este a diferencia del while primero ejecutara el codigo y luego preguntara a la condicion y vera si se debe volver a ejecutar</p>
-                    <p>
-                        let hora = 0; <br>
-                        do { <br>
-                            console.log("hola mundo"); // hara lo que hay en el bloque de codigo <br>
-                            hora++; <br>
-                        } while (hora == 24); <br>
-                    </p>
-                    <p><span>los bloques de codigo se les dice al codigo encerrado en llaves {}</span></p>
-                    <p><span>importante no declarar la varable adentro del codigo o creara un bucle infinito</span></p>
-                    <p>
-                        do { <br>
-                            let hora = 0; // la hora vale 0<br>
-                            console.log("hola mundo"); // en consola se pone hola mundo<br>
-                            hora++; // aumentara el valor en uno<br>
-                        } while (hora == 24); //volvera a ejecutar el codigo <br>
-                        // volvera a declarar la variable y sera igual a 0 siempre porque aunque aumente en la primera linea del bucle lo igualamos a 0 simpre
-                    </p>
-                    <h4>For</h4>
-                    <p>un bucle mas utilizado</p>
-                    <p>
-                        //recibe tres parametro, una variable y tiene que ser un numero, puede ser ya declarada y le pasamos la variable <br>
-                        // ejemplo: let i = 0; //se suele poner i por increment porque la variable debe incrementar<br>
-                        // for (i; i < 5; i++) {console.log("hola mundo")}<br>
-                        <span>// un parametro es lo que debe recibir algo para evaluerlo, en caso de if () adentro de los parentesis le pasamos como parametro la condicion en for cada parametro se separa por punto y coma, numero inicial o donde comenzara, hasta cuando terminara, i++ para incrementar el valor</span> <br>
-
-                        let arr = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]; <br>;
-                        //  
-                        for (let i = 0; i < arr.length; i++) ; i < { //.length devuelve el tamaño del array, o cuantos elementos tiene es un metodo que se vera despues<br>
-                            console.log(arr[i]); // se le pasa la variable i porque en el primer ciclo del bucle el valor de i es 0<br>
-                            // en el segundo ciclo el valor aumenta 1 por lo que recorrera todo el array y mostrara el contenido en consola<br>
-                            <span>los bucles tambien se pueden anidar lo que significa que son bucles adentro de otros bucles</span>
-                        }
-                        <h3>Parte practica</h3>
-                        <p>creen un array de objetos y muestren sus valores en consola usando un bucle para recorrerlo</p>
-                        <p>utilizen condiciones if else para mostrar los objetos en consola solo los objetos en orden par, osea los objetos en la posicion 1, 3, 5 no deben mostrarse</p>
-                        <p><span>pista: utilizen este operador % , primer numero es el dividendo (% modulo) segundo numero divisor <br>
-                        5 % 2 dara como residuo 1 <br>
-                        4 % 2 dara como residuo 0 <br>
-                        </span></p>
-                    </p>
-                </section>
-
-                <!-- seccion para las funciones -->
-                <section>
-                    <h3>Funciones, funciones flecha y metodos</h3>
-                    <p>Definicion: es un bloque de comandos que se ejecutaran cuando se llame a esta misma, sirven para no repetir codigo y hacer codigo mas legible</p>
-                    <p>Ejemplo:</p>
-                    <p>
-                        // para decir que estamos creando una funcion se pone function al inicio <br>
-                        // despues de la parable function va el nombre de la funcion recomendado usar camelCase<br>
-                        // despues parentesis que contendran parametros que la funcion debe evaluar, lo veremos luego <br>
-                        // por ultimo las llaves donde estara todo el codigo <br>
-                        function sumarNumeros() { <br>
-                            let numero1 = 10, numero2 = 20; <br>
-                            let suma = numero1 + numero2; <br>
-                            console.log(suma); // imprime 30 <br>
-                        } <br>
-                        // esto no se ejecutara solo, debemos llamar a la funcion sumarNumeros <br>
-                        //se pone el nombre de la funcion, parentesis con parametros, vacio sin parametros y punto y coma recomendable <br>
-                        sumarNumeros(); // imprime 30 <br>
-                        // lo podemos llamar muchas veces y se ejecutara cuantas veces lo llamemos <br>
-                        sumarNumeros(); <br>
-                        sumarNumeros(); <br>
-                        sumarNumeros(); <br>
-                        // se ejecutara tres veces
-                    </p>
-                    <p>
-                        // las funciones tambien pueden retornar valores <br>
-                        function sumarNumero() { <br>
-                            let numero1 = 10, numero2 = 20; <br>
-                            let suma = numero1 + numero2; <br>
-                            return suma; // devuelve el valor de suma <br>
-                        } <br>
-                        console.log(sumarNumero()); // imprime 30 en consola<br>
-                    </p>
-                    <p>
-                        // aunque no le pongamos return a una funcion para recibir algo tienen un return por defecto <br>
-                        // es implicito para terminar con la funcion ya que siempre que se llama a return la funcion termina <br>
-                    </p>
-                    <h4>Funciones con parametros</h4>
-                    <p>
-                        // en este caso le adentro de los parametro estan numero1 y numero2 <br>
-                        // el nombre de los parametros hara referencia a los valores que le pasemos <br>
-                        function sumarNumeros(numero1, numero2) { <br>
-                            let suma = numero1 + numero2; <br>
-                            console.log(suma); // imprime el valor de suma <br>
-                        } <br>
-                        // sumarNumeros(); esto es un error porque la funcion esta esperando parametros <br>
-                        sumarNumeros(10, 20); // el 10 sera el parametro numero1 que creamos y el 20 sera numero2 <br>
-                        // esta funcion algo curioso que tiene es que no solo sumara numeros
-                        sumarNumeros(10, "texto"); // imprime "10texto" los concatenara <br>
-                    </p>
-                    <h4>Funciones flecha</h4>
-                    <p>es una forma diferente de crear una funcion, y se crearon con un objetivo de resolver un problema que no me recuerdo la verdad pero tambien es comun verlas y es importante identificarlas</p>
-                    <p>
-                        // las funciones flecha no empiezan con la palabra function empiezan por const<br>
-                        // seguido de const viene el nombre de la funcion con camelCase<br>
-                        // despues viene el signo igual<br>
-                        // luego viene los () o parametros que recibira la funcion<br>
-                        // despues viene una flecha creada con =><br>
-                        // y por ultimo las llaves con el codigo que se ejecutara <br>
-                    </p>
-                    <p><span>las funciones flechas pueden verse de diferente manera dependiendo el contexto</span></p>
-                    <p>
-                        // funciones flecha normales<br>
-                        const sumarNumeros = (numero1, numero2) => { <br>
-                            let suma = numero1 + numero2; <br>
-                            console.log(suma); // imprime el valor de suma <br>
-                        }
-                        sumarNumeros(1,2);<br>
-                    </p>
-                    <p>
-                        // las funciones flecha con un solo parametro pueden no llevar parentesis<br>
-                        // pero si no tiene parametros igual se ponen los () <br>
-                        const potencia = numero => {<br>
-                            return numero ** 2;<br>
-                        } <br>
-                        potencia(2);<br>
-                    </p>
-                    <p>
-                        // las funciones flecha que solo tienen una linea de codigo osea solo una instruccion se pueden poner sin llaves<br>
-                        const potencia = numero => numero ** 2;<br>
-                        potencia(2);<br>
-                    </p>
-                    <p>
-                        // las funciones pueden ser anonimas osea que no tendran nombre<br>
-                        // las funciones se pueden llamar una vez se crean<br>
-                        () => { // funcion flecha sin nombre <br>
-                            console.log("hola mundo"); // codigo<br>
-                        }(); // aqui se llama a la funcion, ya que no tiene nombre con los parentesis se llama<br>
-                        // se llama una vez se crean<br>
-                    </p>
-                    <h4>los metodos son funciones que pertenecen a un objeto</h4>
-                    <p>
-                        <span>nativo: se refiere a que viene ya integredo con JavaScript</span> <br>
-                        // las cadenas de texto, los arrays, y mas cosas tienen metodos nativos y son funciones que vienen con el lenguaje<br>
-                        // un metodo de cadena muy comun es toUpperCase()<br>
-                        // metodos de cadena son para textos<br>
-                        //metodo para poner en mayusculas una cadena de texto<br>
-                        "hola mundo".toUpperCase(); // imprime HOLA MUNDO<br>
-                        // se pone la cadena de texto seguido de punto para llamar un metodo, luego el nombre del metodo<br>
-                        // como vemos los metodos estan escritos en camelCase<br>
-
-                        <span>Metodos de cadenas comunes</span> <br>
-                        toUpperCase() // pone en mayusculas<br>
-                        toLowerCase() // pone en minusculas<br>
-                        includes() // adentro del parentesis se le pone un parametro que es el texto que tiene que buscar<br>
-                        "hola mundo".includes("hola"); // true, devuelve booleanos<br>
-                        trim() // elimina espacios al inicio y final<br>
-                        <span>Metodos de arrays</span> <br>
-                        push() // para agregar un elemento al final de un array<br>
-                        let array = [1,2,3]; array.push(4); // [1,2,3,4]<br>
-                        pop() // para eliminar el ultimo elemento de un array<br>
-                        let array = [1,2,3]; array.pop(); // [1,2]<br>
-                        shift() // para eliminar el primer elemento de un array<br>
-                        let array = [1,2,3]; array.shift(); // [2,3]<br>
-                        map() // para aplicar una funcion a cada elemento de un array <span>importante</span><br>
-                        let array = [1,2,3]; <br>
-                        array.map( numero =>{ // <= funcion flecha de un solo parametro<br>
-                            return numero ** 2; <br>
-                        }) // [1,4,9]<br>
-                        filter() // para filtrar elementos de un array<br>
-                        let array = [1,2,3,4,5]; <br>
-                        array.filter( numero =>{ <br>
-                            return numero % 2 === 0; // devuelve true o false, si no cumple con el valor se elimina del array<br>
-                        }); // [2,4] retorna un nuevo array filtrado<br>
-                    </p>
-                    <h3>Parte practica</h3>
-                    <p>
-                        // prompt() es una funcion que pide al usuario que ingrese un texto y devuelve el texto ingresado<br>
-                        // prompt() se ejecuta cuando se carga o recarga la pagina
-                        // en los parentesis se pone el mensaje que recibira el usuaro <br>
-                        // se guarda en una variable para recuperar el valor ingresado
-                    </p>
-                    <p>
-                        crea una funcion que pida con prompt() numeros para evaluar, debera crear una funcion que reciba como parametro dos numeros y devuelva el resultado, usar alert() para mostrar el resultado<br>
-                        los numeros evaluados deberan ser los que paso el usuario
-                    </p>
-                    <p>
-                        Ejercicio2: crearon una funcion flecha que se llame una ves se crea, como parametro recibira un array <br>
-                        usar .map para recorrer el array y devolver un nuevo array con los numeros multiplicados por 2 <br>
-                        el nuevo array se mostrara en consola
-                    </p>
-                    <p>
-                        // una forma de concatenar mejor que con + es usando ${} y `` estas son comillas especiales llamadas template strings<br>
-                        // en un teclado en español estan alapar de la letra p `` <br>
-                        // otra cosa es que para usar comillas en un texto se usan comillas diferentes a las que se estan usando <br>
-                        Ejemplo: <br>
-                        // let nombre = "juan";
-                        // let saludo = `hola "'${nombre}'"`; // tanto las comillas doble como simples escaparan como texto
-                        // resultado: hola "'juan'"
-                    </p>
-                    <p>
-                        Ejercicio3: pedir con promp() el nombre de una persona <br>
-                        crear una funcion flecha que concatenara el nombre junto con un saludo <br>
-                        verificar con condicionales if y typeof que el valor sea un string <br>
-                        crear un bucle que termine hasta que el usuario ingrese un valor valido <br>
-                        mostrar el resultado con alert()
-                    </p>
-                </section>
-
-                <!-- seccion para callbacks -->
-                <section>
-                    <h3>Callbacks</h3>
-                    <p>son funciones que se pasan como parametro a otra funcion</p>
-                    <p>es una funcion que se pasa como argumento a otra y se ejecutan cuando las llamamos adentro de nuestras funciones</p>
-                    <p>Ejemplo:</p>
-                    <p>
-                        function procesar(nombre, callback){ // primer parametro nombre, segundo es la funcion callback <br>
-                            console.log(`precesando usuario: ${nombre}`); <br>
-                            callback(); // se ejecuta despues de que la funcion principal haya terminado su proceso <br>
-                        } <br>
-                        function finalizado(){ // callback <br>
-                            console.log("proceso completado") <br>
-                        } <br>
-                        procesar("victor", finalizado); <br>
-                        // salida esperada: <br>
-                        // precesando usuario: victor <br>
-                        // proceso completado <br>
-                    </p>
-                    <p>
-                        // por algo llamado hoisting podemos llamar a una funcion antes de que se cree <br>
-                        // esto no funciona con todo como por ejemplo <br>
-                        console.log(`hola: ${nombre}`); // dara un error por que no se ha declarado el nombre <br>
-                        let nombre = "victor"; <br>
-                        <br>
-                        saludo(); // se llama a la funcion <br>
-                        function saludo(){ // aqui creamos esa funcion<br>
-                            let nombre = "victor"; <br>
-                            console.log(`hola: ${nombre}`); <br>
-                        }
-                    </p>
-                    <p>
-                        Ejemplo usando funciones flecha <br>
-                        const obtenerDatos = callback => { // parametro unico el callback <br>
-                            console.log("obteniendo datos..."); // imprime el mensaje <br>
-                            callback(); // se llama al callback <br>
-                        } <br>
-                        obtenerDatos(() => console.log("accion luego de recibir los datos.")); <br>
-                        // se llama a la funcion y donde pide la funcion enves de crearla afuera y luego llamarla dentro<br>
-                        // creamos una funcion flecha anonima adentro del parametro <br>
-                    </p>
-                </section>
-
-                <!-- seccion para modulos -->
-                <section>
-                    <h3>Modulos</h3>
-                    <p><span>en JavaScript podemos trabajar con diferentes archivos separados para en un archivo trabajar una cosa y en otro archivo manejamos la logica de otra cosa y hay dos formas de trabajar con archivos separados</span></p>
-                    <p>
-                        // existe una version antigua y una moderna y recomendada <br>
-                        // en la version antigua se usaba require() y exports <br>
-                        // en la version mas reciente se utiliza import y export <br>
-                    </p>
-                    <p>
-                        // version con require de commonJs <br>
-                        // normalmente se exportan funciones y tambien hay dos maneras de exportarlas, unas es cuando <br>
-                        // queremos exportar una sola cosa y otra cuando exportamos varias cosas <br>
-                        // cosas que podemos exportar son variables, funciones, objetos, clases, etc  pero lo mas comun es exportar funciones<br>
-                        function sumar(){ <br>
-                            console.log(1 + 2); <br>
-                        } <br>
-                        module.exports = sumar; // exportamos<br>
-                        // esto es para cuando hay solo una funcion a exportar, ahora que lo exportamos podemos importarla<br>
-                        // lo que nos permitira usarla en cualquier otro archivo de JavaScript <br>
-                        // ahora que lo exportamos lo vamos a querer usar asi que creamos un archivo aparte importando la funcion<br>
-                        // aqui s sera una referencia a la funcion sumar que exportamos puede ser cualquier nombre<br>
-                        const s = require("./codigo.js"); debemos poner la ruta del codigo y su nombre <br>
-                        s(); // imprime 3<br>
-                    </p>
-                    <p>
-                        // exportando dos funciones<br>
-                        const suma = () => console.log(1 + 2); <br>
-                        const resta = () => console.log(1 - 2); <br>
-                        module.exports = { suma, resta }; // exportamos<br>
-                        // otro archivo aparte <br>
-                        const { suma, resta } = require("./codigo.js"); // entre llaves ponemos los nombres<br>
-                        suma(); <br>
-                        // creo que en este caso si son los nombres exactos y no alias, para poner alias se pone<br>
-                        // const { sumar: add, resta: add } = require("./codigo.js"); add hace referencia a la funcion sumar que exportamos<br>
-                        add();<br>
-                        // una forma mas es: <br>
-                        const math = require("./codigo.js"); // math sera el alias con el que llamaremos a las funciones<br>
-                        math.suma(); // suma, en forma de metodos<br>
-                        math.resta(); // resta<br>
-                    </p>
-                    <p><span>Node.js usa la version anterior por defecto, para usar la otra deberemos hacer algo mas que veremos luego</span></p>
-                    <p>version moderna y recomendada</p>
-                    <p>
-                        // cuando queremos exportar solo una funcion usamos export default <br>
-                        function sumar(){<br>
-                            console.log(1 + 2);<br>
-                        }<br>
-                        export default sumar; // exportamos<br>
-                        // archivo diferente
-                        // utilizamos la palabra import, luego el alias, luego from y por ultimo la ruta donde esta <br>
-                        import sumar from "./codigo.js"; <br>
-                        sumar();<br>
-                        // version para exportar mas de uno, ponemos export antes del nombre de la funcion <br>
-                        // no importa si es funcion flecha o no en ninguno de los dos casos pero es mi forma preferida de hacerlo<br>
-                        export sumar() => console.log(1 + 2); <br>
-                        export resta() => console.log(1 - 2); <br>
-                        // archivo aparte
-                        // nombres reales de la funcion y no alias <br>
-                        import { sumar, resta } from "./codigo.js"; <br>
-                        sumar();<br>
-                        // version con alias
-                        const { sumar: add, resta: sub } = require("./codigo.js"); <br>
-                        add();<br>
-                        sub();<br>
-                        version con alias mas recomendada usando metodos para llamar funciones<br>
-                        // "*" hace referencia a todo, importa todo, as es para darle un alias<br>
-                        // importa todo con el alias seguido del nombre del alias<br>
-                        import * as math from "./codigo.js"; <br>
-                        math.sumar();
-                    </p>
-                    <p><span>prueben ambos</span></p>
-                </section>
-
-                <!-- seccion para eventos -->
-                <section>
-                    <h2>Eventos</h2>
-                    <p style="color: #ef6b73;">en Javascript podemos manejar eventos pero no lo veremos aqui ya que los eventos que podemos manejar en una pagina web son cuando se da click a un boton, cuando se envia un formulario, cuando se hace scroll, en Node.js los eventos suelen ser cuando se hace una peticion no estamos viendo para paginas web asi que chau</p>
-                </section>
-
-                <!-- seccion para la parte de Node.js -->
-                <section>
-                    <h2>Node.js</h2>
-                    <p>Node.js es un entorno de ejecucion de JavaScript, en el navegador existen ciertas restricciones, en Node.js el entorno de ejecucion ya no es una pagina web si no un entorno local, con el tiene aceso a mucha informacion sobre tu computadora</p>
-                    <p><a href="https://nodejs.org/en/download" target="_blank" style="color:#ef6b73;">Instalacion Node.js</a></p>
-                    <h2>Express.js</h2>
-                    <p>Una vez que sabes usar Javascript utilizas Node.js y Express.js es muy sencillo porque son lo mismo, es JavaScript y lo unico que veremos extra del tema es <span>Asincronia</span></p>
-                    <h4>Asincronia</h4>
-                    <p>Cuando queremos leer un archivo o hacer una peticion a un servidor usamos asincronia</p>
-                    <p>Javascript utiliza un modelo de concurrencia basado en un bucle de eventos(Event Loop) y un sistema de colas,Javascript es un lenguaje de un solo hilo, lo que significa que solo puede ejecutar una tarea a la vez, sin embargo puede manejar multiples tareas de manera asincrona, hay muchas formas de tener asincronia, lo que ayuda a que no se quede esperando a que se ejecute una tarea, pero nosotros solo veremos <span>Async/Await</span> esto es importante porque puede pasar que no devuelva informacion porque el servidor se tardo en responder y el codigo ya se ejecuto, tiene que esperar a la respuesta de la base de datos de hecho los <span>callbacks</span> tambien funcionan como metodos asincronos y lo veremos tambien luego ya que Async/Await es para una peticion a una base de datos y callback es para peticion de archivos</p>
-                    <h3>npm</h3>
-                    <p>es un gestor de paquetes, permite instalar, actualizar y desinstalar paquetes, maneja dependencias del proyecto, resuelve conflictos entre versiones, gestiona proyectos, crea y mantiene el archivo package.json define scripts para automatizar tareas, gestiona la configuracion del proyecto, npm init: inicializa un nuevo proyecto, npm install: instala dependencias, nom run: ejecuta scripts definidos en package.json, npm update: actualiza paquetes, npm autit: verifica vulnerabilidades</p>
-                    <h4>como usar npm</h4>
-                    <p>si estan en vscode sera mas sencillo, tienen que presionar las teclas Ctrl + ` la tecla control seguido de template string que esta alapar de la p esto abre la terminal de visual studio code, para cerrarlo pueden usar el mismo comando o arriba a la derecha hay una equis <span>importante: deberan verificar en la terminal que estan en la carpeta correcta ya que si no podrian instalar las dependencias en otro lugar, una cosa que pueden hacer es arrastrar la carpeta donde van a hacer su app con express, crean la carpeta llamada express la arrastran hasta vscode para que en la terminal esten en el lugar correcto y en esa misma carpeta crear el archivo Javascript, app.js, si lo ponen en una carpeta mas adelante puede que ocurran errores</span></p>
-                    <p>ya que estan en el lugar correcto abren la terminal de vscode y ponen el siguiente comando: npm init <span>este comando creara un archivo llamado package,json, que es un archivo para administrar las dependencias que se usaran como express, importante no tocar nada de ahi y si le instala alguna otra cosa tampoco tocarlo ya que les puede dar error</span></p>
-                    <p style="color:#ef6b73;">para instalar express en su carpeta primero pondran el comando npm init si no lo han hecho ya y luego el comando npm install express  para usar express en ese proyecto otras dependencias que pueden usar, body-parser: npm install body-parser importante y necesario, cors: npm installl cors, soluciona unos problemas especificos importante, dotenv: npm install dotenv ,para trabajar con bases de datos</p>
-                    <p>
-                        <span>empezaremos con algo muy sencillo, crearan un archivo llamado app.js, en Node no tienen que hacer un index.html, asi que haran un console.log que imprima cualquier cosa, lo que haran sera escribir en la terminal: node app.js ,eso imprimira en la terminal lo que hayan puesto en el console.log();</span>
-                    </p>
-                    <p style="color:#ffd580;">los archivos .json son una forma de guardar informacion que pueden ser como un objeto en JavaScript o un array de objetos, pero en un archivo.js no lo puede leer como un objeto o array, lo lee como si fuera texto, hay que "parsearlos" que les explicare luego como hacer para que no tengan problemas, el siguiente archivo es de peliculas para que se den una idea de como se guarda la informacion, que en nuestro caso puede ser la informacion del usuario, que son el nombre del usuario, la edad, y su correo o informacion de las partidas con la partida uno que es un objeto con las claves de las cuentas y sus valores en dinero</p>
-                    <p style="color:#ffd580;">descarguen este archivo <a href="./archivo.json" style="color:#5ccfe6;" download="archivo.json">archivo.json</a></p>
-                    <p style="color:#ffd580;">Estas ya son las rectas finales, en su app.js eliminaran su codigo que crearon porque empezaremos con la API comenzando por importar las dependencias que descargamos</p>
-                    <p style="color:#ffd580;">
-                        //usaremos la version antigua para importar ya que es la que tiene por defecto<br>
-                        // si no han descargado express, cors, path o dotenv les dara error el codigo, solo fs creo que es nativo <br>
-                        const express = require('express');// para usar express<br>
-                        const cors = require('cors'); // para un solucionar un error muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
-                        const fs = require('fs'); // para leer el archivo<br>
-                        const path = require('path'); // para las rutas<br>
-                        require('dotenv').config(); // para cargar variables de entorno<br>
-                    </p>
-                    <p style="color:#ffd580;">
-                        const app = express(); // en app se guardara lo que devuelva express() que es como el corazon de la API, con la variable app <br>
-                        //que puede tener el nombre que quieran ahi usaremos los metodos para poder crear la API<br>
-                    </p>
-                    <p style="color:#ffd580;">
-                        // le asignaremos un puerto<br>
-                        // le ponemos el puerto 3000 pero puede ser el numero que quieran<br>
-                        // process.env.PORT es importante ya que lo que hacemos aqui es una comparacion logica<br>
-                        // si process.env.PORT es undefined tomara el puerto 3000 que en local siempre tomara el numero que le demos<br>
-                        // pero cuando se despliegue la API no lo hara en el puerto 3000, lo desplegara en cualquier puerto que tenga disponible el servidor que se guardara precisamente en process.env.PORT<br>
-                        const PORT = process.env.PORT ?? 3000;<br>
-                    </p>
-                    <p style="color:#ffd580;">
-                        // luego pondremos los middlewares que significa:<br>
-                        //que no importa si es una peticion GET(para que el cliente reciba informacion) o POST(para que el cliente mande informacion), es algo que se ejecutara en todas las peticiones<br>
-                        // app.use() primero es el nombre de la varieble al que le asignamos express();<br>
-                        // .use es un metodo que sirve como este middleware<br>
-                        // express.json() convertira todo o a objeto json(texto) o a algo que podemos manejar en JavaScript<br>
-                        app.use(express.json());<br>
-                        // app.use CORS, es un problema muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
-                        app.use(cors());<br>
-                    </p>
-                    <p style="color:#ffd580;">
-                        // despues de configurarlo todo hay que usar los metodos app.get() y app.post que son funciones que reciben varios parametros pero no se los explicare yo, preguntenle a Chat GPT o a su IA de confianza ya que lo que espero, lo que yo espero es que puedan conectar a una base de datos, y puedan hacer esto solos, son funciones que reciben parametros, asi que preguntenles que parametros usa, uno de esos parametros es uan funcion o callback y lo que guardara es toda la informacion de las cuentas, habra una tabla llamada plantilla que con las cuentas y la cantidad de dinero que manejaran, asi cuando yo llame a la API se pueda guardar la informacion del libro diario de ese mes
-                        <span style="color:#ef6b73;">les recomiendo usar turso ya que es gratuito y no pide nisiquiera tarjeta de credito, tiene un plan gratuito generoso</span>
-                        <a href="https://turso.tech/pricing" target="_blank" style="color:#5ccfe6;">ir a la pagina de turso</a>
-                    </p>
-                    <p>
-                        //lo ultimo que lleva el archivo app.js es escuchar al puerto<br>
-                        // Inicia el servidor<br>
-                        app.listen(PORT, () => {<br>
-                            console.log(`servidor corriendo en el puerto ${PORT}`);<br>
-                        });<br>
-                        // esto iniciara el puerto, 
-                    </p>
-                    <p>
-                        si han hecho todo correctamente solo les deberia salir el console log de servidor corriendo en el puerto 3000 o donde lo hayan puest0, y tienen que escribir en su navegador, tienen que buscar la en la URL http://localhost:3000 o enves de 3000 el puerto que hayan puesto si les sale un mensaje de: Cannot GET / <br>
-                        significa que han hecho todo bien y solo hay que configurarlo para recibir informacion del cliente osea yo, si les salio mal les dira que no encontro la pagina
-                    </p>
-                    <p>
-                        Por ultimo para probar que su API funcione correctamente instalen la extencion en vscode de REST Client, creen un archivo llamado api.http importante la extencion .http y preguntenle a una IA, porque tengo que seguir con otras cosas, suerte
-                    </p>
-                    <p>codigo ejemplo de una API: <a href="./app.js" style="color:#5ccfe6;" download="app.js">app.js</a></p>
-                </section>
+        <!-- seccion para configuraciones y recomendaciones antes de empezar a programar -->
+        <section class="configuraciones">
+            <h1>Plan de Estudios: JavaScript, Node.js y Express.js para Crear una API</h1>
+            <h2>Herramientas recomendadas:</h2>
+            <h3>Visual Studio Code</h3>
+            <p>
+                Visual Studio Code es el IDE preferido para escribir codigo, con muchas extensiones que ayudan como extensiones que resaltan errores en el codigo y otras que pueden ayudar a ser mas productivo al completar codigo por ti, aunque hayan mas IDEs o lugares para escribir codigo para el curso asumire que lo tienen instalado asi que sera mas optimo que lo tengan
+                <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>
+            </p>
+            <h4>Configuracion y extensiones recomendadas</h4>
+            <p>Ala izquierda veran opciones que son herramientas utiles, estos iconos en la barra lateral izquierda seria bueno que los conozcan pero en este curso solo veremos una de ellas, que es el de las extensiones, su icono son cuatro cuadritos que deberan dar click.</p>
+            <div class="imagen-container">
+                <img src="./imagenes/extensiones-n1.png" class="imagen-extencion">
             </div>
-        </div>
+            <p>cuando lo presionen veran que su barra lateral cambiara y en esa barra lateral arriba encontraran una de busqueda, donde tendran que colocar los nombres de las extensiones he instalarlas, les dare el nombre de algunas extensiones que les seran muy utiles para programar </p>
+            <div class="imagen-container">
+                <img src="./imagenes/extensiones-n2.png" class="imagen-extencion">
+            </div>
+            <p>
+                <span class="subtitle">Halcyon theme: </span>
+                es para añadir un tema oscuro que no daña los ojos, hace que el codigo se diferencie mejor, otra extension para tema de colores es One Dark Pro, lo pueden perzonalizar a su gusto
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/extensiones-n3.png" class="imagen-extencion">
+            </div>
+            <p>
+                <span class="subtitle">Supermaven: </span>
+                inteligencia artificial para completar codigo, le dar a la tecla Tab para aceptar el autocompletado que te de
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/extensiones-n4.png" class="imagen-extencion">
+            </div>
+            <p>
+                <span class="subtitle">ESLint:</span> 
+                una extension que ayuda para ayudar con posibles errores en el codigo
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/extensiones-n5.png" class="imagen-extencion">
+            </div>
+            <p>
+                <span class="subtitle">Error lens:</span> 
+                te dira la linea en donde hay un error y detalles del error, resaltara esa linea donde haya un error con rojo y te dira detalles de por que hay un error
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/configuraciones-n1.jpg" class="imagen-extencion">
+            </div>
+            <p>
+                Esta es otra configuracion: en su teclado presionen las teclas Ctrl + Shift + P, Esto les abrira una barra de busqueda,<br>
+                busquen: <span class="command">Preferences: Open Settings (JSON)</span> presionen en esa opcion y les abrira un archivo, descarguen el archivo que les pasare, copien el contenido y peguenlo en el lugar donde iran sus configuraciones reales <a href="./ejemplos/config.json" download="config.json">config.json</a>
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/configuraciones-n2.jpg" class="imagen-extencion">
+            </div>
+            <p>
+                para activar el tema de color que instalaron, animacion para scroll, auto guardar, auto guardar despues de 5 segundos, desactivar minimapa y hacer que el texto se acomode a su pantalla
+            </p>
+            <p>
+                por ultimo la carpeta donde estaran sus archivos arrastrenlo hasta la aplicacion de vscode hasta que les indique la aplicacion que se abrira correctamente
+            </p>
+        </section>
+
+        <!-- seccion para introduccion al lenguaje  -->
+        <section class="introduccion">
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript es un lenguaje de programación interpretado, de código abierto, dinámico y orientado a objetos. Es un lenguaje de programación de propósito general, que puede ser usado en cualquier contexto para crear aplicaciones web, móviles y de escritorio.
+            </p>
+            <h3>Características importantes</h3>
+            <ul>
+                <li>Interpretado</li>
+                <li>Orientado a objetos</li>
+                <li>Tiene tipado dinamico</li>
+                <li>De propósito general</li>
+                <li>Utiliza camelCase</li>
+            </ul>
+            <h3>Lenguaje interpretado</h3>
+            <p>
+                con el ejemplo de C++ es un lenguaje compilado porque hay que compilar todo el codigo, crea todo un archivo aparte para ejecutarlo, en el caso de JavaScript es interpretado porque no creara un archivo nuevo, el codigo se suele ejecutar directamente en el navegador, que interpretara linea por linea cada linea del codigo, lee una linea, la interpreta y ejecuta
+            </p>
+            <h3>Lenguaje orientado a objetos</h3>
+            <p>
+                es un paradigma de programacion muy util que lo veremos mas adelante cuando entremos a Node.js
+            </p>
+            <h3>Tipado dinamico</h3>
+            <p>
+                en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br> 
+                <span class="code">
+                    var a = 1;<br>
+                    a = "hola";<br>
+                    a = true;
+                </span>
+            </p>
+            <h3>Propósito general</h3>
+            <p>
+                Este lenguaje es usado comunmente en la web pero también se usa en otros contextos, no solo para desarrollar aplicaciones web si no tambien aplicaciones desarrollo mobile, aplicaciones de consola entre etros.
+            </p>
+            <h3>Utiliza camelCase</h3>
+            <p>
+                para escribir variables o funciones usamos camelCase que es una forma de escribir donde si hay varias palabras la primera palabra se escribe en minusculas ejemplo: variable. y luego las demas palabras empiezan por mayusculas, ejemplo: sumarNumero, funcionParaSumarVariables. funciones integradas estan escritas asi por eso es importante
+            </p>
+            <h3>Conceptos básicos</h3>
+            <ul>
+                <li>Variables</li>
+                <li>Tipos de datos</li>
+                <li>Arrays</li>
+                <li>Objetos</li>
+                <li>Operadores de comparacion</li>
+                <li>Condicionales</li>
+                <li>Bucles</li>
+                <li>Funciones</li>
+                <li>Módulos</li>
+                <li>Eventos</li>
+            </ul>
+        </section>
+
+        <!-- seccion para el tema variables -->
+        <section class="variables">
+            <h2>Variables</h2>
+            <p>
+                Las variables son espacios en memoria donde se almacenan los datos las variables se declaran antes de usarse, por ejemplo:<br>
+                <span class="code">
+                    var a = 1;<br>
+                    var b = 2;<br>
+                </span>
+                otra forma de declararlas es:<br>
+                <span class="code">
+                    var a = 2, b = "hola", c = true;<br>
+                </span>
+                separandolas por comas, de esta forma se declaran todas las variables en una sola linea, pero puede ser mas interesante hacerlo en lineas separadas para mejorar la legibilidad del codigo.<br>
+                <br>
+                para poder usar una variable primero hay que declararla, para declarar una nueva variable se usan las palabras var, let y const, que no se recomienda usar var, al declarar una variable con var su alcance sera global, por lo que podra existir y usarse en todos los ambitos del programa, pero es mejor practica que las variables sean let o const que tienen un alcance local, que usualmente tambien mas comun es let ya que const es para variables constantes, en otros lenguajes se dice que no son variables constantes, ya que o son variables por que pueden cambiar, o constantes porque son solo de lectura son inmutables por lo que no pueden cambiar de valor, pero en JavaScript si, evita que una variable se reasigne a otro valor, pero no garantiza la inmutabilidad del contenido, a diefrencia de otros lenguajes donde esto es mas estricto, si creas una variable como por ejemplo:<br>
+                <span class="code">
+                    a = 10;<br>
+                </span>
+                esta valiable por defecto usara var por lo que es recomendable siempre usar let o const<br>
+                Ejemplo:<br>
+                <span class="code">
+                    let a = 10;<br>
+                    const PI = 3.14159;<br>
+                    let c;<br>
+                </span>
+                como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan esctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
+                ejemplo simple:<br>
+                <span class="code">
+                    let c = 1;<br>
+                    let a = 10;<br>
+                    let b = a<br>
+                    ++c<br>
+                </span>
+                el interprete puede llegar a verlo como<br>
+                <span class="code">
+                    let c = 1;<br>
+                    let a = 10;<br>
+                    let b = a++c<br>
+                </span>
+                lo que seria un error de sintaxis.
+            </p>
+            <h3>Parte practica</h3>
+            <p>
+                para empezar a progamar con JavaScript lo mas comun es usar la web para ejecutar el codigo, por lo que deberan crear dos archivos con extensiones diferentes, en una carpeta creen un archivo index.html y un archivo app.js, el archivo con extension ".html" es para estructurar paginas web, y el arcihvo con extension ".js" es la logica que contendra esa pagina y es donde nosotros trabajaremos, en el archivo index.html deberan escribir lo siguiente:<br>
+            </p>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            <p>
+                la etiqueta script es para incluir archivos o codigo Javascript en un archivo aparte creas un archivo con el nombre que quieran pero con la extension .js y en el archivo index.html adentro de la etiqueta
+            </p>
+            <pre>
+&lt;body&gt;&lt;/body&gt;
+            </pre>
+            <p>
+                adentro de esta etiqueta body debe ir al final de todo la etiqueta script y en src="" adentro de las comillar pones el nombre del archivo y trabajar escribiendo codigo desde ese archivo.js que es lo que recomiendo
+            </p>
+            <pre>
+&lt;body&gt;
+    &lt;script src="codigo.js&gt;&lt;/script&gt;
+&lt;/body&gt;
+            </pre>
+            <p>
+                otra forma es escribiendo desde la etiqueta script el codigo sin poner src=""
+            </p>
+            <pre>
+&lt;body&gt;
+    &lt;script&gt;
+        let variable = "texto";
+        let numero = 1;
+        let booleano = true;
+    &lt;/script&gt;
+&lt;/body&gt;
+            </pre>
+            <p>
+                en el archivo.js esciban una variable y muestrenlo con alert(), como por ejemplo:<br>
+                <span class="code">
+                    let a = 10;<br>
+                    alert(a);<br>
+                </span>
+                dirijanse a donde crearon su archivo .html de su proyecto, deberan darle click derecho al archivo .html y deberan escoger un navegador para ejecutar el codigo, como por ejemplo darle click derecho y elegir google, si siguieron bien los pasos anteriores deberian ver una alerta con el valor de la variable que hayan puesto.<br>
+                <br>
+                <span>
+                    deberan tener en cuenta el sitio donde colocaron los archivos para el src="", en el caso que solo hayan puesto el nombre de su archivo como por ejemplo:<br>
+                    <span class="code">
+                        src="sript.js"<br>
+                    </span>
+                    buscara en la misma carpeta un archivo con ese nombre, tambien sucedera con ./ al principio del nombre, le estas indicando explicitamente que tu archivo esta en la misma carpeta que tu archivo .html, por ejemplo:<br>
+                    <span class="code">
+                        src="./script.js"<br>
+                    </span>
+                    tambien otra opcion es que tengan la logica en una carpeta aparte adentro de la misma carpeta, lo cual puede ser una opcion muy buena en este caso ya que en el curso se haran varios ejercicios y en lugar de borrar lo que ya han hecho y escribir otro ejercicio estaria bien que crearan diferentes archivos con estension .js y solo tendrian que cambiar la ruta del src="" en el html, lo que les ayudara a tener guardada la logica y poder revisarla en un futuro cuando la necesiten para repasar, un ejemplo es que creen una carpeta llamada logica, en la carpeta logica creen un archivo llamado script.js y luego en su html en la ruta coloquen:<br>
+                    <span class="code">
+                        src="./carpeta/script.js"<br>
+                    </span>
+                    luego otro caso es que tengan su archivo index.html en una carpeta y su logica este afuera de esa carpeta, en ese caso tendran que usar ../ donde se le indica que nuestra logica se encuentra una carpeta afuera de donde esta nuestro html, si estuviera dos carpetas afuera usariamos ../../ y asi susecivamente cuanto mas afuera este nuestra logica, por ejemplo:<br>
+                    <span class="code">
+                        src="../script.js"<br>
+                    </span>
+                    y el ultimo ejemplo es que tengan el html en una carpeta y el codigo JavaScript en otra carpeta adentro de una carpeta que los contenga, que puede ser comun cuando trabajamos en un proyecto mas grande, como por ejemplo:<br>
+                    <span class="code">
+                        src="../logica/script.js"<br>
+                    </span>
+                    que se puede entender como, busca una carpeta afuera, busca la carpeta logica, busca el archivo script.js y si lo encuentra usara esa logica.
+                </span>
+            </p>
+            <p>
+                <span class="important">
+                    eviten poner nombres con espacios, utilizen camelCase para evitar estos espacios en los nombres de las carpetas.<br>
+                </span>
+                por ultimo, con el editor de codigo abierto, hay dos opciones para poder editar esos archivos para escribir el codigo, el primero es el mas facil, solo arrastran el folder con su proyecto adentro del editor de codigo hasta que el editor les indique que se abrira correctamente, el segundo es que en la barra superior a la izquierda, o la barra que se encuentra arriba del todo a su izquierda, encontraran varias palabras, presionen File que les abrira un menu desplegable, en ese menu encuentren la palabra "Open Folder..." para la carpeta de su proyecto u "Open File..." para abrir un archivo es concreto.
+            </p>
+        </section>
+
+        <!-- seccion para los tipos de datos -->
+        <section class="tipos-de-datos">
+            <h2>Tipos de datos</h2>
+            <p>
+                los tipos que puede almacenar una variable
+            </p>
+            <ul>
+                <li>String</li>
+                <li>Number</li>
+                <li>Boolean</li>
+                <li>Array</li>
+                <li>Object</li>
+                <li>Null</li>
+                <li>Undefined</li>
+                <li>Any</li>
+            </ul>
+            <h4>String</h4>
+            <p>
+                un tipo comun en JavaScript es el tipo string, para inicializar una variable para que contenga un string solo hay que colocar el texto adentro de comillas, ya sean dobles " ", simples ' ' o template strings ` `, estas cadenas de texto tienen ciertas interacciones interesantes con los operadores que los veremos luego, uno interesante es el operador + que es para sumar, pero con las cadenas de texto este los concatena o dicho de otra manera los une, por lo que si tenemos "texto1" + "texto2" nos dara como resultado "texto1texto2", esto pasara aunque los textos sean numeros, ya que podemos tener "22" y no lo vera como un numero si no como un string, al hacer la suma "22" + "10" nos devolvera un "2210", un ejemplo:<br>
+                <span class="code">
+                    let cadena = "hola ";<br>
+                    let texto = "mundo";<br>
+                    let holaMundo = cadena + texto;<br>
+                    alert(holaMundo);<br>
+                </span>
+                y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScrpit, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador - que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
+                <span class="code">
+                    let numero1 = "1";<br>
+                    let numero2 = "1";<br>
+                    let numero3 = numero1 + numero2;<br>
+                    alert(numero3);<br>
+                </span>
+                este nos devolvera un 0, porque JavaScript tambien es dinamico, lo que hace que va a intenta convertir los tipos de datos para que tu programa funcione, en este caso el operador - no se puede usar con cadenas de texto, se usan con numeros por lo que JavaScript intentara convertir el texto a tipo numerico y de ahi viene la interaccion tan curiosa que en otros lenguajes de programacion serian solo un error.
+            </p>
+            <h3>Number</h3>
+            <p>
+                para guardar tipos de datos numericos que pueden ser decimales o enteros, un ejmpelo de decimal seria 30.10, y entero 100, estos tienen interacciones con operadores aritmeticos, como lo son + para la suma, - para la resta de numeros, * para la multiplicacion, / para la division y % que es para modulo o dicho de otra forma es el residuo de la division, son muy comunes y no se deben confundir con numeros que sean enrealidad strings, como por ejemplo:<br>
+                <span class="code">
+                    let numero1 = 1;<br>
+                    let numero2 = 1.5;<br>
+                    let numero3 = nomero1 + numero2;<br>
+                    let numeroCadena = "1";<br>
+                    numero1 = "4";<br>
+                </span>
+                que como vemos en este caso numero uno cambio de ser tipo numerico a ser de tipo texto y asi se puede cambiar cuantas veces se quiera o necesite en la logica.
+            </p>
+            <h3>Boolean</h3>
+            <p>
+                para almacenar datos booleanos que son solo dos valores, verdadero o falso, true or false, que tambien se pueden representar con 1 o 0, estos valores son muy utiles y muy utilizados en programacion en general, su uso lo veremos mas adelante, ejemplo:<br>
+                <span class="code">
+                    let bool = true;<br>
+                    let bool2 = false;<br>
+                </span>
+            </p>
+            <h3>Array</h3>
+            <p>
+                son colecciones de datos, que se puede entender mejor como una lista de datos, por lo que en lugar de tener muchas variables de un mismo tipo, o que tengan relacion, una opcion muy buena es que esten adentro de un array, veremos mas a profundidad estos arrays pronto en el curso.
+            </p>
+            <h3>Object</h3>
+            <p>
+                los objetos tambien son colecciones de datos, pero estos tienen una diferencia muy importante con respecto a los arrays que profundizaremos mas luego en el curso.
+            </p>
+            <h3>Null</h3>
+            <p>
+                este es un tipo de dato que lo definimos nosotros, en el caso de que nuestra variable querramos que este vacia al inicio, ejemplo:<br>
+                <span class="code">
+                    let vacio = null;<br>
+                </span>
+                y lo podran ver al usar alert, que les mostrara que el tipo de dato es null, o exxplicitamente vacio.
+            </p>
+            <h3>Undefined</h3>
+            <p>
+                este tipo de dato como su nombre en ingles lo indica, es un tipo de dato sin definir, cuando no se le agrega null para que este vacio, si no que no se le ha dicho que contendra.<br>
+                <span class="code">
+                    let sinDato;<br>
+                    alert(sinDato);<br>
+                </span>
+                al hacer esta alerta podremos ver que lo que nos mostrara sera undefined.
+            </p>
+            <h3>Any</h3>
+            <p>
+                any es un tipo que viene por defecto, y es el tipo de dato que tienen todas las variables que no se han inicializado, si se inicializa con un numero sera del tipo number, pero si no se inicializa sera del tipo any, lo que quiere decir que puede contener cualquier cosa, cualquier tipo de dato lo podra contener, pero por el momento no esta definido.
+            </p>
+            <h3>Parte practica</h3>
+            <p>
+                les recomiendo seguir y hacer los ejercicios, incluso el hacer sus propios ejercicios cambiando algunas cosas, ya que la mejor forma de aprender a programar es simplemente programando. En esta ocacion utilizaremos lo que es la consola, que es una herramienta demasiado utilizada para hacer pruebas o testeo.<br>
+                <br>
+                para este ejercicio crearan un archivo con extension .js y crearan variables y las inicializaran, las variables de ben contener todos los tipos de datos anteriormente mencionados en el curso, deberan mostrar tanto el dato, como el tipo de dato de la variable utilizando la consola.<br>
+                <br>
+                para utilizar la consola tendran que hacer un click derecho sobre una pagina web, que en su caso sera sobre la pagina de su proyecto, al hacer click derecho les apareceran diferentes opciones, presionen la opcion de Inspeccionar que estara abajo del todo entre las opciones, esto les mostrara las herramientas de desarrollo que tienen los browsers, como google que tiene estas herramientas para ayudar a programadores con el desarrollo, a la derecha encontraran arriba una cinta de opciones, que contiene palabras como Elements o Console, deberan de presionar en Console para acceder a la consola, en caso de que no les aparezca, en esa cinta de opciones se encuentra unas flechitas dobles que deberan presionar y se desplegaran mas opciones y podran buscar la opcion Console.
+            </p>
+            <div class="imagen-container">
+                <img src="./imagenes/consola.jpg" class="imagen-extencion">
+            </div>
+            <p>
+                bien, ya estan en la consola de comandos, ahora en su programa, en su archivo con extension .js tendran que mostrar los datos solicitados, ejemplo:<br>
+                <span class="code">
+                    let num = 1;<br>
+                    console.log(num);<br>
+                    console.log(typeof num);<br>
+                </span>
+                luego de haber escrito este ejemplo tendran que ir a su pagina web, recargar la pagina y revisar en la consola, les tendran que aparecer los datos, tanto lo que almacenaba la variable como el tipo de dato, console.log() lo que hara sera que mostrara en la consola todo lo que le hayas puesto, tanto texto con comillas, numeros y variables, y la palabra typeof antes de la variable adentro del console.log() nos mostrara el tipo de dato de lo que venga despues de decir el typeof, algunos ejemplos de console.log():<br>
+                <span class="code">
+                    console.log("texto");<br>
+                    console.log(12 + 12);<br>
+                    console.log(true);<br>
+                </span>
+            </p>
+        </section>
+
+        <!-- seccion para los arrays -->
+        <section class="arrays">
+            <h2>Arrays</h2>
+            <p>
+                array como ya mencionamos son colecciones de datos o listas de datos, ejemplo de un array:<br>
+                <span class="code">
+                    let lista = [];<br>
+                </span>
+                que en este caso es un array vacio, no contiene nigun dato, otros lenguajes de programacion los array solo pueden contener un tipo de dato, como si son numeros, no puede almacenar otro tipo de dato que no sea numero, pero en JavaScript los datos pueden ser mixtos, como por ejemplo:<br>
+                <span class="code">
+                    let coleccion = [true, "texto", 12];<br>
+                </span>
+                lo mas comun y recomendado es que los datos todos tengan relacion entre si, en lugar de nosotros escribir algo como:<br>
+                <span class="code">
+                    let lunes = "lunes";<br>
+                    let martes = "martes";<br>
+                    let miercoles = "miercoles";<br>
+                    let jueves = "jueves";<br>
+                    let viernes = "viernes";<br>
+                    let sabado = "sabado";<br>
+                    let domingo = "domingo";<br>
+                    console.log(lunes,martes,miercoles,jueves,sabado,domingo);<br>
+                </span>
+                que son muchas variables que contienen los dias de la semana, y asi pueden ser otras muchas variables mas que hagan el codigo largo y el programar mas tardado, en lugar de eso puedes hacer algo como:<br>
+                <span class="code">
+                    let diasDeLaSemana = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"]<br>
+                    console.log(diasDeLaSemana);<br>
+                </span>
+                copien ambos ejemplos y veran que ambos muestran que ambos muestran los dias de la semana pero con una diferencia, que el primero mostrara el valor de todos las variables, en el otro mostrara entre parentesis cuantos datos contienen a lista de datos, mostrara la lista de datos, y tambien habra una flechita a la que deberan darle click, les mostrara numeros de un lado y valores del otro, que es la posicion de cada valor, "lunes" esta en la primera posicion, pero los arrays comienzan con la posicion 0, por lo que veran algo como<br>
+                <span class="code">
+                    0: "lunes"<br>
+                    1: "martes"<br>
+                    2: "miercoles"<br>
+                    3: "jueves"<br>
+                    4: "viernes"<br>
+                    5: "sabado"<br>
+                    6: "domingo"<br>
+                </span>
+                como veran son enrealidad listas clave valor, donde a cada valor le corresponde una clave numerica, que correspondera a su posicion empezando desde cero, llendo en direccion de izquierda a derecha, y para acceder a un valor en concreto hay que hacerlo mediante su posicion, por lo que si queremos mostrar solamente el dia lunes seria algo asi:
+                <span class="code">
+                    console.log(diasDeLaSemana[0]);<br>
+                </span>
+                hay que colocar el nombre de la lista segido de corchetes [] y por ultimo colocarle la posicion que se quiera mostrar, y esto se puede usar tambien de otras maneras, y les dare un apr de ejemplos:<br>
+                <span class="code">
+                    let numero;<br>
+                    let numeros = [1,2,3,4];<br>
+                    numero = numeros[0];<br>
+                </span>
+                ahora la variable numero contendra el valor que tiene la posicion 0 de la lista numeros, por lo que numero ahora vale 1.
+                <span class="code">
+                    let numero = 10;<br>
+                    let numeros = [1,2,3,4];<br>
+                    numeros[0] = numero;<br>
+                </span>
+                en este caso en la lista numeros en la posicion 0 el valor se cambiara por el valor de la variable numero, la lista se veria algo asi [10,2,3,4]<br>
+                <span class="code">
+                    let arr = [1,2,3,4];<br>
+                    let numeros = [arr,5,6,7];<br>
+                </span>
+                en este este caso que vemos que los arrays tambien pueden contener otros arrays la lista se veria algo asi [[1,2,3,4],5,6,7]<br>
+                <span class="code">
+                    let arr = [1,2,3,4];<br>
+                    arr.push(5);<br>
+                </span>
+                .push es un metodo que tienen todos los arrays, secribes el nombre del array, llamas a .push seguido de parentesis y adentro de los parametros hay que darle un valor, este valor lo guardara en la lista al final, por lo que la lista quedaria algo asi [1,2,3,4,5] asi puedes hacer crecer la lista y agregar nuevos valores, no se preocupen si no entienden un termino que luego lo veremos.
+            </p>
+        </section>
+
+        <!-- seccion para los objetos -->
+        <section>
+            <h2>Objetos</h2>
+            <p>
+                los objetos tambien son una coleccion de datos clave valor, pero a diferencia de los arrays las claves las ponemos nosotros, un ejemplo de un objeto:<br>
+                <span class="code">
+                    let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
+                </span>
+                el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave calor se separa por comas, para acceder a sus valores se puede hacer algo asi:
+                <span class="code">
+                    let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
+                    console.log(persona.nombre);<br>
+                    console.log(persona);<br>
+                </span>
+                donde ya no accedemos al valor por su posicion si no por su clave, los arrays y objetos pueden hacer combinaciones interesantes ya que, los objetos pueden contener a su vez, otros objetos, los arrays pueden contener arrays, los arrays pueden contener objetos, y los objetos arrays, por lo lo que algo frecuentemente usado es tener arrays de objetos, estas listas tambien pueden guardar variables, tambien se suelen usar saltos de linea para hacer que todo sea mas legible, por lo que mostrare unos ejemplos:<br>
+                <span class="code">
+                    let listaDeEstudiantes = [<br>
+                        { nombre: "julia", promedio: 75, cursos: ["matematicas","calculo"]},<br>
+                        { nombre: "jose", promedio: 68, cursos: ["matematicas","programacion","estadistica"]},<br>
+                    ];<br>
+                </span>
+                una array que contiene objetos, que tambien esos objetos contienen arrays y aun asu vez esos arrays adentro de los objetos podrian contener arrays u objetos, pero en este caso tiene logica que esten de esa forma, para acceder al valor de un curso de uno de los alumnos podemos hacer algo como:<br>
+                <span class="code">
+                    console.log(listaDeEstudiantes[0].cursos[0]);<br>
+                    listaDeEstudiantes[0].cursos[0] = "ingles";<br>
+                </span>
+                que primero buscara la posicion 0, luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codicgo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, saber que hace el codigo se los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
+                <span class="code">
+                    // este es un comentario de una sola linea, para comentar algo especifico del programa<br>
+                    /* este es un comentario multilinea y se emple cuando el comentario es muy grande */<br>
+                    /*<br>
+                        el /* indica cuando el comentario empieza<br>
+                        */ indica el final de un comentario<br>
+                    */<br>
+                </span>
+                todo lo que escribamos adentro de comentarios no se ejecutara y sera ignorado durante la ejecucion, son muy utiles mientras desarrollamos y recomiendo comentar todo los que les parezca nuevo asi cuando vuelvan a leer sus repasos les sera mas facil recordar todo lo que han hecho.
+            </p>
+
+            <h3>Parte practica</h3>
+            <p>
+                tendran que crear otro archivo .js donde deberan hacer el siguiente ejercicio: crearan sus propios arreglos, tambien sus propios objetos, tendran que crear un objeto que contenga al menos dos arrays, esos arrays contendran a su vez almenos dos variables ya inicializadas con datos, y mostrarlos todos en la consola, y el ultimo el objeto con arrays que contienen variables deberan mostrar el valor de las cuatro variables que estan ahi tambien en la consola, y por ultimo si les molesta que su pagina se vea blanco fuerte pueden agregar la siguiente etiqueta y asi dañar menos su vista:
+            </p>
+            <pre>
+&lt;style&gt;
+    body {
+        background-color: #12122f;
+    }
+&lt;/style&gt;
+            </pre>
+            <p>
+                copien y peguen esta etiqueta adentro de su archivo .html adentro de la etiqueta body ya sea adelante o atras de su etiqueta script y asi el fondo de la pagina tendra un color azul marino.
+            </p>
+        </section>
+
+        <!-- seccion para operadores -->
+        <section>                    
+            <h2>Operadores</h2>
+            <p>
+                los operadores dicho de manera un poco tecnica es un simbolo o palabra que le indica al programa que le dice que hacer con ciertos operandos. veremos los diferentes tipos de operadores y cuales son sus interaciones
+            </p>
+            <h3>Operadores aritmeticos</h3>
+            <p>
+                operadores para realizar operaciones matematicas con numericos
+                
+            </p>
+            <p>sirven para comparar dos datos o mas y devuelven valores booleanos</p>
+            <p>
+                let variable = 1 < 2; <br>
+                console.log(variable); // imprime true porque 1 es menor que 2 <br>
+                let variable2 = 1 > 2; // false <br>
+                let variable3 = 1 <= 1; // menor o igual que, en este caso es true <br>
+                let variable4 = 1 >= ; // mayor o igual que, truee <br>
+                let variable5 = 1 == 1; // comparara si son iguales los valores, true <br>
+                let variable6 = 1 != 1; // comparara si son distintos los valores, false <br>
+                let variable7 = 1 === "1"; // comparara si son iguales los valores y el tipo de dato, false en este caso por comparar un caracter con un numero <br>
+                let variable8 = 1 !== "1"; // comparara si son distintos los valores y el tipo de dato, true en este caso<br>
+                <h3>Extra: operadores logicos y otros</h3>
+                <p>los operadores logicos son operadores que devuelven valores booleanos</p>
+                <p>
+                    && sirve para comparar que ambos devuelvan true en caso contrario sera false <br>
+                    || almenos uno debe retornar true para devolver true <br>
+                    ! negara el valor que se le pase <br>
+                    let variable = true && true // true <br>
+                    let variable2 = true || false // true <br>
+                    let variable3 = !true // false <br>
+                </p>
+                <p>
+                    += sumar una variable con un valores <br>
+                    -= restar una variable con un valores <br>
+                    *= multiplicar una variable con un valores <br>
+                    /= dividir una variable con un valores <br>
+                    let 2 % 2; modulo una variable con un valores, significa que devuelve el residuo de una division <br>
+                    **= potenciar una variable con un valores <br>
+                    let variable = 10;
+                    variable += 5; // 15 <br>
+                    variable -= 5; // 10 <br>
+                    variable *= 5; // 50 <br>
+                    variable /= 5; // 10 <br>
+                </p>
+        </section>
+
+        <!-- seccion para los condicionales -->
+        <section>
+            <h3>Condicionales</h3>
+            <p>los condicionales sirven para ejecutar codigo solo en caso de que se cumpla una condicion if, else if, else</p>
+            <p>
+                let edad = 10; <br>
+                if (edad > 18) { // entre parentesis se pone la condicion, si la cumple retornara true y ejecutara el codigo que se ponga entre las llaves
+                    console.log("Eres mayor de edad"); <br>
+                } <br>
+                // en caso de no cumplir la condicion no se ejecutara y pasara de largo 
+            </p>
+            <p>el if else sirve en caso de que la primera condicion no se cumpla, creamos una nueva condicion</p>
+            <p>
+                let numero = "10"; <br>
+                if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
+                    console.log("no es un numero"); <br>
+                } else if(10 !== numero){ // true <br>
+                    console.log("es un numero"); <br>
+                } <br>
+                // en caso de no cumplir la condicion no se ejecutara y pasara de largo
+            </p>
+            <p>else se ejecutara en el caso de que ninguna condicion anteror se cumpla y no necesita asignarle una condicion</p>
+            <p>
+                let numero = "10"; <br>
+                if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
+                    console.log("no es un numero"); <br>
+                } else { // no se ejecutara <br>
+                    console.log("es un numero"); <br>
+                } <br>
+                // en caso de no cumplir la condicion no se ejecutara y pasara de largo
+            </p>
+        </section>
+
+        <!-- seccion parra los bucles -->
+        <section>
+            <h3>Bucles</h3>
+            <p>sirven para repetir codigo y son muy importantes en JavaScript y tambien son varios tipos</p>
+            <h4>While</h4>
+            <p>ejecutara codigo en caso de que se cumpla una condicin y se detendra en caso de que no la compla</p>
+            <p>
+                while (true){ // <span>esto crea un bucle infinito ya que nunca acabara porque en la condicion le estamos diciendo que siempre es cierta </span> <br>
+                    console.log("hola mundo"); <br>
+                }
+                <span>tambien funciona si le pasamos 1, ya que representa valrores booleanos donde 0 es false y 1 es true, tambien solo pasar una cadena de texto vacia "", array vacio [] o un objeto vacio {} retornara false por eso es importante los operadores de comparacion</span>
+            </p>
+            <p>
+                let hora = 1; <br>
+                while (hora == 24) { // se detendra cuando la variable hora valga 24<br>
+                    console.log("hola mundo"); // pegara la variable hora en consola<br>
+                    hora++; // aumentara el valor de la variable en una unidad<br> 
+                }
+            </p>
+            <h4>Do while</h4>
+            <p>este a diferencia del while primero ejecutara el codigo y luego preguntara a la condicion y vera si se debe volver a ejecutar</p>
+            <p>
+                let hora = 0; <br>
+                do { <br>
+                    console.log("hola mundo"); // hara lo que hay en el bloque de codigo <br>
+                    hora++; <br>
+                } while (hora == 24); <br>
+            </p>
+            <p><span>los bloques de codigo se les dice al codigo encerrado en llaves {}</span></p>
+            <p><span>importante no declarar la varable adentro del codigo o creara un bucle infinito</span></p>
+            <p>
+                do { <br>
+                    let hora = 0; // la hora vale 0<br>
+                    console.log("hola mundo"); // en consola se pone hola mundo<br>
+                    hora++; // aumentara el valor en uno<br>
+                } while (hora == 24); //volvera a ejecutar el codigo <br>
+                // volvera a declarar la variable y sera igual a 0 siempre porque aunque aumente en la primera linea del bucle lo igualamos a 0 simpre
+            </p>
+            <h4>For</h4>
+            <p>un bucle mas utilizado</p>
+            <p>
+                //recibe tres parametro, una variable y tiene que ser un numero, puede ser ya declarada y le pasamos la variable <br>
+                // ejemplo: let i = 0; //se suele poner i por increment porque la variable debe incrementar<br>
+                // for (i; i < 5; i++) {console.log("hola mundo")}<br>
+                <span>// un parametro es lo que debe recibir algo para evaluerlo, en caso de if () adentro de los parentesis le pasamos como parametro la condicion en for cada parametro se separa por punto y coma, numero inicial o donde comenzara, hasta cuando terminara, i++ para incrementar el valor</span> <br>
+                let arr = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]; <br>;
+                //  
+                for (let i = 0; i < arr.length; i++) ; i < { //.length devuelve el tamaño del array, o cuantos elementos tiene es un metodo que se vera despues<br>
+                    console.log(arr[i]); // se le pasa la variable i porque en el primer ciclo del bucle el valor de i es 0<br>
+                    // en el segundo ciclo el valor aumenta 1 por lo que recorrera todo el array y mostrara el contenido en consola<br>
+                    <span>los bucles tambien se pueden anidar lo que significa que son bucles adentro de otros bucles</span>
+                }
+                <h3>Parte practica</h3>
+                <p>creen un array de objetos y muestren sus valores en consola usando un bucle para recorrerlo</p>
+                <p>utilizen condiciones if else para mostrar los objetos en consola solo los objetos en orden par, osea los objetos en la posicion 1, 3, 5 no deben mostrarse</p>
+                <p><span>pista: utilizen este operador % , primer numero es el dividendo (% modulo) segundo numero divisor <br>
+                5 % 2 dara como residuo 1 <br>
+                4 % 2 dara como residuo 0 <br>
+                </span></p>
+            </p>
+        </section>
+
+        <!-- seccion para las funciones -->
+        <section>
+            <h3>Funciones, funciones flecha y metodos</h3>
+            <p>Definicion: es un bloque de comandos que se ejecutaran cuando se llame a esta misma, sirven para no repetir codigo y hacer codigo mas legible</p>
+            <p>Ejemplo:</p>
+            <p>
+                // para decir que estamos creando una funcion se pone function al inicio <br>
+                // despues de la parable function va el nombre de la funcion recomendado usar camelCase<br>
+                // despues parentesis que contendran parametros que la funcion debe evaluar, lo veremos luego <br>
+                // por ultimo las llaves donde estara todo el codigo <br>
+                function sumarNumeros() { <br>
+                    let numero1 = 10, numero2 = 20; <br>
+                    let suma = numero1 + numero2; <br>
+                    console.log(suma); // imprime 30 <br>
+                } <br>
+                // esto no se ejecutara solo, debemos llamar a la funcion sumarNumeros <br>
+                //se pone el nombre de la funcion, parentesis con parametros, vacio sin parametros y punto y coma recomendable <br>
+                sumarNumeros(); // imprime 30 <br>
+                // lo podemos llamar muchas veces y se ejecutara cuantas veces lo llamemos <br>
+                sumarNumeros(); <br>
+                sumarNumeros(); <br>
+                sumarNumeros(); <br>
+                // se ejecutara tres veces
+            </p>
+            <p>
+                // las funciones tambien pueden retornar valores <br>
+                function sumarNumero() { <br>
+                    let numero1 = 10, numero2 = 20; <br>
+                    let suma = numero1 + numero2; <br>
+                    return suma; // devuelve el valor de suma <br>
+                } <br>
+                console.log(sumarNumero()); // imprime 30 en consola<br>
+            </p>
+            <p>
+                // aunque no le pongamos return a una funcion para recibir algo tienen un return por defecto <br>
+                // es implicito para terminar con la funcion ya que siempre que se llama a return la funcion termina <br>
+            </p>
+            <h4>Funciones con parametros</h4>
+            <p>
+                // en este caso le adentro de los parametro estan numero1 y numero2 <br>
+                // el nombre de los parametros hara referencia a los valores que le pasemos <br>
+                function sumarNumeros(numero1, numero2) { <br>
+                    let suma = numero1 + numero2; <br>
+                    console.log(suma); // imprime el valor de suma <br>
+                } <br>
+                // sumarNumeros(); esto es un error porque la funcion esta esperando parametros <br>
+                sumarNumeros(10, 20); // el 10 sera el parametro numero1 que creamos y el 20 sera numero2 <br>
+                // esta funcion algo curioso que tiene es que no solo sumara numeros
+                sumarNumeros(10, "texto"); // imprime "10texto" los concatenara <br>
+            </p>
+            <h4>Funciones flecha</h4>
+            <p>es una forma diferente de crear una funcion, y se crearon con un objetivo de resolver un problema que no me recuerdo la verdad pero tambien es comun verlas y es importante identificarlas</p>
+            <p>
+                // las funciones flecha no empiezan con la palabra function empiezan por const<br>
+                // seguido de const viene el nombre de la funcion con camelCase<br>
+                // despues viene el signo igual<br>
+                // luego viene los () o parametros que recibira la funcion<br>
+                // despues viene una flecha creada con =><br>
+                // y por ultimo las llaves con el codigo que se ejecutara <br>
+            </p>
+            <p><span>las funciones flechas pueden verse de diferente manera dependiendo el contexto</span></p>
+            <p>
+                // funciones flecha normales<br>
+                const sumarNumeros = (numero1, numero2) => { <br>
+                    let suma = numero1 + numero2; <br>
+                    console.log(suma); // imprime el valor de suma <br>
+                }
+                sumarNumeros(1,2);<br>
+            </p>
+            <p>
+                // las funciones flecha con un solo parametro pueden no llevar parentesis<br>
+                // pero si no tiene parametros igual se ponen los () <br>
+                const potencia = numero => {<br>
+                    return numero ** 2;<br>
+                } <br>
+                potencia(2);<br>
+            </p>
+            <p>
+                // las funciones flecha que solo tienen una linea de codigo osea solo una instruccion se pueden poner sin llaves<br>
+                const potencia = numero => numero ** 2;<br>
+                potencia(2);<br>
+            </p>
+            <p>
+                // las funciones pueden ser anonimas osea que no tendran nombre<br>
+                // las funciones se pueden llamar una vez se crean<br>
+                () => { // funcion flecha sin nombre <br>
+                    console.log("hola mundo"); // codigo<br>
+                }(); // aqui se llama a la funcion, ya que no tiene nombre con los parentesis se llama<br>
+                // se llama una vez se crean<br>
+            </p>
+            <h4>los metodos son funciones que pertenecen a un objeto</h4>
+            <p>
+                <span>nativo: se refiere a que viene ya integredo con JavaScript</span> <br>
+                // las cadenas de texto, los arrays, y mas cosas tienen metodos nativos y son funciones que vienen con el lenguaje<br>
+                // un metodo de cadena muy comun es toUpperCase()<br>
+                // metodos de cadena son para textos<br>
+                //metodo para poner en mayusculas una cadena de texto<br>
+                "hola mundo".toUpperCase(); // imprime HOLA MUNDO<br>
+                // se pone la cadena de texto seguido de punto para llamar un metodo, luego el nombre del metodo<br>
+                // como vemos los metodos estan escritos en camelCase<br>
+                <span>Metodos de cadenas comunes</span> <br>
+                toUpperCase() // pone en mayusculas<br>
+                toLowerCase() // pone en minusculas<br>
+                includes() // adentro del parentesis se le pone un parametro que es el texto que tiene que buscar<br>
+                "hola mundo".includes("hola"); // true, devuelve booleanos<br>
+                trim() // elimina espacios al inicio y final<br>
+                <span>Metodos de arrays</span> <br>
+                push() // para agregar un elemento al final de un array<br>
+                let array = [1,2,3]; array.push(4); // [1,2,3,4]<br>
+                pop() // para eliminar el ultimo elemento de un array<br>
+                let array = [1,2,3]; array.pop(); // [1,2]<br>
+                shift() // para eliminar el primer elemento de un array<br>
+                let array = [1,2,3]; array.shift(); // [2,3]<br>
+                map() // para aplicar una funcion a cada elemento de un array <span>importante</span><br>
+                let array = [1,2,3]; <br>
+                array.map( numero =>{ // <= funcion flecha de un solo parametro<br>
+                    return numero ** 2; <br>
+                }) // [1,4,9]<br>
+                filter() // para filtrar elementos de un array<br>
+                let array = [1,2,3,4,5]; <br>
+                array.filter( numero =>{ <br>
+                    return numero % 2 === 0; // devuelve true o false, si no cumple con el valor se elimina del array<br>
+                }); // [2,4] retorna un nuevo array filtrado<br>
+            </p>
+            <h3>Parte practica</h3>
+            <p>
+                // prompt() es una funcion que pide al usuario que ingrese un texto y devuelve el texto ingresado<br>
+                // prompt() se ejecuta cuando se carga o recarga la pagina
+                // en los parentesis se pone el mensaje que recibira el usuaro <br>
+                // se guarda en una variable para recuperar el valor ingresado
+            </p>
+            <p>
+                crea una funcion que pida con prompt() numeros para evaluar, debera crear una funcion que reciba como parametro dos numeros y devuelva el resultado, usar alert() para mostrar el resultado<br>
+                los numeros evaluados deberan ser los que paso el usuario
+            </p>
+            <p>
+                Ejercicio2: crearon una funcion flecha que se llame una ves se crea, como parametro recibira un array <br>
+                usar .map para recorrer el array y devolver un nuevo array con los numeros multiplicados por 2 <br>
+                el nuevo array se mostrara en consola
+            </p>
+            <p>
+                // una forma de concatenar mejor que con + es usando ${} y `` estas son comillas especiales llamadas template strings<br>
+                // en un teclado en español estan alapar de la letra p `` <br>
+                // otra cosa es que para usar comillas en un texto se usan comillas diferentes a las que se estan usando <br>
+                Ejemplo: <br>
+                // let nombre = "juan";
+                // let saludo = `hola "'${nombre}'"`; // tanto las comillas doble como simples escaparan como texto
+                // resultado: hola "'juan'"
+            </p>
+            <p>
+                Ejercicio3: pedir con promp() el nombre de una persona <br>
+                crear una funcion flecha que concatenara el nombre junto con un saludo <br>
+                verificar con condicionales if y typeof que el valor sea un string <br>
+                crear un bucle que termine hasta que el usuario ingrese un valor valido <br>
+                mostrar el resultado con alert()
+            </p>
+        </section>
+
+        <!-- seccion para callbacks -->
+        <section>
+            <h3>Callbacks</h3>
+            <p>son funciones que se pasan como parametro a otra funcion</p>
+            <p>es una funcion que se pasa como argumento a otra y se ejecutan cuando las llamamos adentro de nuestras funciones</p>
+            <p>Ejemplo:</p>
+            <p>
+                function procesar(nombre, callback){ // primer parametro nombre, segundo es la funcion callback <br>
+                    console.log(`precesando usuario: ${nombre}`); <br>
+                    callback(); // se ejecuta despues de que la funcion principal haya terminado su proceso <br>
+                } <br>
+                function finalizado(){ // callback <br>
+                    console.log("proceso completado") <br>
+                } <br>
+                procesar("victor", finalizado); <br>
+                // salida esperada: <br>
+                // precesando usuario: victor <br>
+                // proceso completado <br>
+            </p>
+            <p>
+                // por algo llamado hoisting podemos llamar a una funcion antes de que se cree <br>
+                // esto no funciona con todo como por ejemplo <br>
+                console.log(`hola: ${nombre}`); // dara un error por que no se ha declarado el nombre <br>
+                let nombre = "victor"; <br>
+                <br>
+                saludo(); // se llama a la funcion <br>
+                function saludo(){ // aqui creamos esa funcion<br>
+                    let nombre = "victor"; <br>
+                    console.log(`hola: ${nombre}`); <br>
+                }
+            </p>
+            <p>
+                Ejemplo usando funciones flecha <br>
+                const obtenerDatos = callback => { // parametro unico el callback <br>
+                    console.log("obteniendo datos..."); // imprime el mensaje <br>
+                    callback(); // se llama al callback <br>
+                } <br>
+                obtenerDatos(() => console.log("accion luego de recibir los datos.")); <br>
+                // se llama a la funcion y donde pide la funcion enves de crearla afuera y luego llamarla dentro<br>
+                // creamos una funcion flecha anonima adentro del parametro <br>
+            </p>
+        </section>
+
+        <!-- seccion para modulos -->
+        <section>
+            <h3>Modulos</h3>
+            <p><span>en JavaScript podemos trabajar con diferentes archivos separados para en un archivo trabajar una cosa y en otro archivo manejamos la logica de otra cosa y hay dos formas de trabajar con archivos separados</span></p>
+            <p>
+                // existe una version antigua y una moderna y recomendada <br>
+                // en la version antigua se usaba require() y exports <br>
+                // en la version mas reciente se utiliza import y export <br>
+            </p>
+            <p>
+                // version con require de commonJs <br>
+                // normalmente se exportan funciones y tambien hay dos maneras de exportarlas, unas es cuando <br>
+                // queremos exportar una sola cosa y otra cuando exportamos varias cosas <br>
+                // cosas que podemos exportar son variables, funciones, objetos, clases, etc  pero lo mas comun es exportar funciones<br>
+                function sumar(){ <br>
+                    console.log(1 + 2); <br>
+                } <br>
+                module.exports = sumar; // exportamos<br>
+                // esto es para cuando hay solo una funcion a exportar, ahora que lo exportamos podemos importarla<br>
+                // lo que nos permitira usarla en cualquier otro archivo de JavaScript <br>
+                // ahora que lo exportamos lo vamos a querer usar asi que creamos un archivo aparte importando la funcion<br>
+                // aqui s sera una referencia a la funcion sumar que exportamos puede ser cualquier nombre<br>
+                const s = require("./codigo.js"); debemos poner la ruta del codigo y su nombre <br>
+                s(); // imprime 3<br>
+            </p>
+            <p>
+                // exportando dos funciones<br>
+                const suma = () => console.log(1 + 2); <br>
+                const resta = () => console.log(1 - 2); <br>
+                module.exports = { suma, resta }; // exportamos<br>
+                // otro archivo aparte <br>
+                const { suma, resta } = require("./codigo.js"); // entre llaves ponemos los nombres<br>
+                suma(); <br>
+                // creo que en este caso si son los nombres exactos y no alias, para poner alias se pone<br>
+                // const { sumar: add, resta: add } = require("./codigo.js"); add hace referencia a la funcion sumar que exportamos<br>
+                add();<br>
+                // una forma mas es: <br>
+                const math = require("./codigo.js"); // math sera el alias con el que llamaremos a las funciones<br>
+                math.suma(); // suma, en forma de metodos<br>
+                math.resta(); // resta<br>
+            </p>
+            <p><span>Node.js usa la version anterior por defecto, para usar la otra deberemos hacer algo mas que veremos luego</span></p>
+            <p>version moderna y recomendada</p>
+            <p>
+                // cuando queremos exportar solo una funcion usamos export default <br>
+                function sumar(){<br>
+                    console.log(1 + 2);<br>
+                }<br>
+                export default sumar; // exportamos<br>
+                // archivo diferente
+                // utilizamos la palabra import, luego el alias, luego from y por ultimo la ruta donde esta <br>
+                import sumar from "./codigo.js"; <br>
+                sumar();<br>
+                // version para exportar mas de uno, ponemos export antes del nombre de la funcion <br>
+                // no importa si es funcion flecha o no en ninguno de los dos casos pero es mi forma preferida de hacerlo<br>
+                export sumar() => console.log(1 + 2); <br>
+                export resta() => console.log(1 - 2); <br>
+                // archivo aparte
+                // nombres reales de la funcion y no alias <br>
+                import { sumar, resta } from "./codigo.js"; <br>
+                sumar();<br>
+                // version con alias
+                const { sumar: add, resta: sub } = require("./codigo.js"); <br>
+                add();<br>
+                sub();<br>
+                version con alias mas recomendada usando metodos para llamar funciones<br>
+                // "*" hace referencia a todo, importa todo, as es para darle un alias<br>
+                // importa todo con el alias seguido del nombre del alias<br>
+                import * as math from "./codigo.js"; <br>
+                math.sumar();
+            </p>
+            <p><span>prueben ambos</span></p>
+        </section>
+
+        <!-- seccion para eventos -->
+        <section>
+            <h2>Eventos</h2>
+            <p style="color: #ef6b73;">en Javascript podemos manejar eventos pero no lo veremos aqui ya que los eventos que podemos manejar en una pagina web son cuando se da click a un boton, cuando se envia un formulario, cuando se hace scroll, en Node.js los eventos suelen ser cuando se hace una peticion no estamos viendo para paginas web asi que chau</p>
+        </section>
+
+        <!-- seccion para la parte de Node.js -->
+        <section>
+            <h2>Node.js</h2>
+            <p>Node.js es un entorno de ejecucion de JavaScript, en el navegador existen ciertas restricciones, en Node.js el entorno de ejecucion ya no es una pagina web si no un entorno local, con el tiene aceso a mucha informacion sobre tu computadora</p>
+            <p><a href="https://nodejs.org/en/download" target="_blank" style="color:#ef6b73;">Instalacion Node.js</a></p>
+            <h2>Express.js</h2>
+            <p>Una vez que sabes usar Javascript utilizas Node.js y Express.js es muy sencillo porque son lo mismo, es JavaScript y lo unico que veremos extra del tema es <span>Asincronia</span></p>
+            <h4>Asincronia</h4>
+            <p>Cuando queremos leer un archivo o hacer una peticion a un servidor usamos asincronia</p>
+            <p>Javascript utiliza un modelo de concurrencia basado en un bucle de eventos(Event Loop) y un sistema de colas,Javascript es un lenguaje de un solo hilo, lo que significa que solo puede ejecutar una tarea a la vez, sin embargo puede manejar multiples tareas de manera asincrona, hay muchas formas de tener asincronia, lo que ayuda a que no se quede esperando a que se ejecute una tarea, pero nosotros solo veremos <span>Async/Await</span> esto es importante porque puede pasar que no devuelva informacion porque el servidor se tardo en responder y el codigo ya se ejecuto, tiene que esperar a la respuesta de la base de datos de hecho los <span>callbacks</span> tambien funcionan como metodos asincronos y lo veremos tambien luego ya que Async/Await es para una peticion a una base de datos y callback es para peticion de archivos</p>
+            <h3>npm</h3>
+            <p>es un gestor de paquetes, permite instalar, actualizar y desinstalar paquetes, maneja dependencias del proyecto, resuelve conflictos entre versiones, gestiona proyectos, crea y mantiene el archivo package.json define scripts para automatizar tareas, gestiona la configuracion del proyecto, npm init: inicializa un nuevo proyecto, npm install: instala dependencias, nom run: ejecuta scripts definidos en package.json, npm update: actualiza paquetes, npm autit: verifica vulnerabilidades</p>
+            <h4>como usar npm</h4>
+            <p>si estan en vscode sera mas sencillo, tienen que presionar las teclas Ctrl + ` la tecla control seguido de template string que esta alapar de la p esto abre la terminal de visual studio code, para cerrarlo pueden usar el mismo comando o arriba a la derecha hay una equis <span>importante: deberan verificar en la terminal que estan en la carpeta correcta ya que si no podrian instalar las dependencias en otro lugar, una cosa que pueden hacer es arrastrar la carpeta donde van a hacer su app con express, crean la carpeta llamada express la arrastran hasta vscode para que en la terminal esten en el lugar correcto y en esa misma carpeta crear el archivo Javascript, app.js, si lo ponen en una carpeta mas adelante puede que ocurran errores</span></p>
+            <p>ya que estan en el lugar correcto abren la terminal de vscode y ponen el siguiente comando: npm init <span>este comando creara un archivo llamado package,json, que es un archivo para administrar las dependencias que se usaran como express, importante no tocar nada de ahi y si le instala alguna otra cosa tampoco tocarlo ya que les puede dar error</span></p>
+            <p style="color:#ef6b73;">para instalar express en su carpeta primero pondran el comando npm init si no lo han hecho ya y luego el comando npm install express  para usar express en ese proyecto otras dependencias que pueden usar, body-parser: npm install body-parser importante y necesario, cors: npm installl cors, soluciona unos problemas especificos importante, dotenv: npm install dotenv ,para trabajar con bases de datos</p>
+            <p>
+                <span>empezaremos con algo muy sencillo, crearan un archivo llamado app.js, en Node no tienen que hacer un index.html, asi que haran un console.log que imprima cualquier cosa, lo que haran sera escribir en la terminal: node app.js ,eso imprimira en la terminal lo que hayan puesto en el console.log();</span>
+            </p>
+            <p style="color:#ffd580;">los archivos .json son una forma de guardar informacion que pueden ser como un objeto en JavaScript o un array de objetos, pero en un archivo.js no lo puede leer como un objeto o array, lo lee como si fuera texto, hay que "parsearlos" que les explicare luego como hacer para que no tengan problemas, el siguiente archivo es de peliculas para que se den una idea de como se guarda la informacion, que en nuestro caso puede ser la informacion del usuario, que son el nombre del usuario, la edad, y su correo o informacion de las partidas con la partida uno que es un objeto con las claves de las cuentas y sus valores en dinero</p>
+            <p style="color:#ffd580;">descarguen este archivo <a href="./archivo.json" style="color:#5ccfe6;" download="archivo.json">archivo.json</a></p>
+            <p style="color:#ffd580;">Estas ya son las rectas finales, en su app.js eliminaran su codigo que crearon porque empezaremos con la API comenzando por importar las dependencias que descargamos</p>
+            <p style="color:#ffd580;">
+                //usaremos la version antigua para importar ya que es la que tiene por defecto<br>
+                // si no han descargado express, cors, path o dotenv les dara error el codigo, solo fs creo que es nativo <br>
+                const express = require('express');// para usar express<br>
+                const cors = require('cors'); // para un solucionar un error muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
+                const fs = require('fs'); // para leer el archivo<br>
+                const path = require('path'); // para las rutas<br>
+                require('dotenv').config(); // para cargar variables de entorno<br>
+            </p>
+            <p style="color:#ffd580;">
+                const app = express(); // en app se guardara lo que devuelva express() que es como el corazon de la API, con la variable app <br>
+                //que puede tener el nombre que quieran ahi usaremos los metodos para poder crear la API<br>
+            </p>
+            <p style="color:#ffd580;">
+                // le asignaremos un puerto<br>
+                // le ponemos el puerto 3000 pero puede ser el numero que quieran<br>
+                // process.env.PORT es importante ya que lo que hacemos aqui es una comparacion logica<br>
+                // si process.env.PORT es undefined tomara el puerto 3000 que en local siempre tomara el numero que le demos<br>
+                // pero cuando se despliegue la API no lo hara en el puerto 3000, lo desplegara en cualquier puerto que tenga disponible el servidor que se guardara precisamente en process.env.PORT<br>
+                const PORT = process.env.PORT ?? 3000;<br>
+            </p>
+            <p style="color:#ffd580;">
+                // luego pondremos los middlewares que significa:<br>
+                //que no importa si es una peticion GET(para que el cliente reciba informacion) o POST(para que el cliente mande informacion), es algo que se ejecutara en todas las peticiones<br>
+                // app.use() primero es el nombre de la varieble al que le asignamos express();<br>
+                // .use es un metodo que sirve como este middleware<br>
+                // express.json() convertira todo o a objeto json(texto) o a algo que podemos manejar en JavaScript<br>
+                app.use(express.json());<br>
+                // app.use CORS, es un problema muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
+                app.use(cors());<br>
+            </p>
+            <p style="color:#ffd580;">
+                // despues de configurarlo todo hay que usar los metodos app.get() y app.post que son funciones que reciben varios parametros pero no se los explicare yo, preguntenle a Chat GPT o a su IA de confianza ya que lo que espero, lo que yo espero es que puedan conectar a una base de datos, y puedan hacer esto solos, son funciones que reciben parametros, asi que preguntenles que parametros usa, uno de esos parametros es uan funcion o callback y lo que guardara es toda la informacion de las cuentas, habra una tabla llamada plantilla que con las cuentas y la cantidad de dinero que manejaran, asi cuando yo llame a la API se pueda guardar la informacion del libro diario de ese mes
+                <span style="color:#ef6b73;">les recomiendo usar turso ya que es gratuito y no pide nisiquiera tarjeta de credito, tiene un plan gratuito generoso</span>
+                <a href="https://turso.tech/pricing" target="_blank" style="color:#5ccfe6;">ir a la pagina de turso</a>
+            </p>
+            <p>
+                //lo ultimo que lleva el archivo app.js es escuchar al puerto<br>
+                // Inicia el servidor<br>
+                app.listen(PORT, () => {<br>
+                    console.log(`servidor corriendo en el puerto ${PORT}`);<br>
+                });<br>
+                // esto iniciara el puerto, 
+            </p>
+            <p>
+                si han hecho todo correctamente solo les deberia salir el console log de servidor corriendo en el puerto 3000 o donde lo hayan puest0, y tienen que escribir en su navegador, tienen que buscar la en la URL http://localhost:3000 o enves de 3000 el puerto que hayan puesto si les sale un mensaje de: Cannot GET / <br>
+                significa que han hecho todo bien y solo hay que configurarlo para recibir informacion del cliente osea yo, si les salio mal les dira que no encontro la pagina
+            </p>
+            <p>
+                Por ultimo para probar que su API funcione correctamente instalen la extencion en vscode de REST Client, creen un archivo llamado api.http importante la extencion .http y preguntenle a una IA, porque tengo que seguir con otras cosas, suerte
+            </p>
+            <p>codigo ejemplo de una API: <a href="./app.js" style="color:#5ccfe6;" download="app.js">app.js</a></p>
+        </section>
     </body>
 </html>
