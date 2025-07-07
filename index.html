@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Victor Joel">
-    <title>aprendizaje</title>
+    <title>Curso API</title>
     <link rel="stylesheet" href="styles.css">
 </head>
     <body>
@@ -526,7 +526,6 @@
                     <br>
                     *= multiplicacion<br>
                     let num %= 2; // num vale 0<br>
-                    //<br>
                 </code>
             </p>
             <h3>Operadores condicionales</h3>
@@ -593,9 +592,9 @@ let a = 5;
 {
     let a = 20;
     let b = 10;
-    console.log(a,b); // imprime 10
+    console.log(a,b); // imprime 20 y 10
     {
-        console.log(a); // imprime // 10
+        console.log(a); // imprime // 20
     }
 }
 console.log(a); // imprime 5
@@ -603,7 +602,7 @@ console.log(a); // imprime 5
             <p>
                 <code class="code">
                     /*<br>
-                        aqui podemos notar varias cosas, primero que declaramos dos variables a, y esto es gracias a let, ya que su alcance es local, por lo que hay dos variables a pero viven en bloques de codigo diferentes, y por eso es buena practica usar let, por si queremos declarar una variable con el mismo nombre pero que vive en un bloque de codigo diferente, otra cosa es que el bloque que esta adentro de otro bloque puede usar la variable a, esto es por que un bloque puede usar variables de su bloque padre o dicho de otra forma, el bloque que los contiene, por lo que si quitaramos la variable a que se declaro adentro de las llaves, lo que usarian estos bloques seria la variable a que esta afuera, osea la que vale 5, pero afuera de las llaves la variable b no se puede usar, solo adentro de su bloque o bloques que esten adentro de el. y por ultimo la identacion que no es mas que dar una tabulacion o dejar espacios, cuando creamos un bloque de codigo todo lo que se escriba adentro, todas las lineas deben tener espacios al principio, solo debes darle a la tecla tab, ya que aunque el programa funcione sera mas costoso saber lo que hace tu programa, porque incluso tu mismo debes taber lo que hace<br>
+                        aqui podemos notar varias cosas, primero que declaramos dos variables a, y esto es gracias a let, ya que su alcance es local, por lo que hay dos variables "a" pero viven en bloques de codigo diferentes, y por eso es buena practica usar let, por si queremos declarar una variable con el mismo nombre pero que vive en un bloque de codigo diferente, otra cosa es que el bloque que esta adentro de otro bloque puede usar la variable "a", esto es por que un bloque puede usar variables de su bloque padre o dicho de otra forma, el bloque que los contiene, por lo que si quitaramos la variable "a" que se declaro adentro de las llaves, lo que usarian estos bloques seria la variable "a" que esta afuera, osea la que vale 5, pero afuera de las llaves la variable b no se puede usar, solo adentro de su bloque o bloques que esten adentro de el. y por ultimo la identacion que no es mas que dar una tabulacion o dejar espacios, cuando creamos un bloque de codigo todo lo que se escriba adentro, todas las lineas deben tener espacios al principio, solo debes darle a la tecla tab, ya que aunque el programa funcione sera mas costoso saber lo que hace tu programa, porque incluso tu mismo debes saber lo que hace<br>
                     */<br>
                 </code>
                 toda la explicacion surge a partir de que nosotros no vamos a usar las llaves para crear bloques de codigo solo por que si, gracias a las condiciones podemos hacer que estos bloques de codigo se ejecuten si cumplen con ciertos parametros, hay tres tipos de condiciones, y les mostrare un operador que no les mostre antes. ejemplo:
@@ -633,15 +632,15 @@ if ( edad &gt= 18 ) {
     // la variable edad no es igual o mayor a 18, este bloque no se ejecuta
 } else if ( edad &gt 0 && edad &lt 18 ) {
     console.log("aun no eres mayor de edad, estas chiquito");
-    // este bloque si se ejecutara porque la edad es mayor a 0 y tambien cumple que sea menor a 8
+    // este bloque si se ejecutara porque la edad es mayor a 0 y tambien cumple que sea menor a 18
     // para hacerlo un poco mas entendible la condicion puedes hacer ((edad &gt 0) && (edad &lt 18))
 } else {
     console.log("la edad que ingreso no es valida");
     // ya que los numeros tambien pueden ser negativos
 }
 /* 
-este codigo no toma en cuenta que pasaria si le pasan una edad muy grande como 1000, pero es algo que ustedes mismos podrian implementar, como ven hacemos combiaciones entre operadores logicos && y de comparacion ya que ambos devuelven valores booleanos, hay que evitar que los condicionales se anides, con esto me refiero que una condicional este adentro de otra condicional, pero hay una practica muy util que de solo verificar que la condicion se cumpla y negarla, tal vez suene un poco confuso pero lo veremos con un ejemplo de muchas condiciones.
-Ejemplo: vendran invitados a casa y uno especial, los invitados son mayores de edad, si son hombres hay que darles un saludo cordial si no pasar al invitado amablemente, y el invitado especial es un hombre que tendra un atuendo deportivo y hay que darle un regalo.
+este codigo no toma en cuenta que pasaria si le pasan una edad muy grande como 1000, pero es algo que ustedes mismos podrian implementar, como ven hacemos combinaciones entre operadores logicos && y de comparacion ya que ambos devuelven valores booleanos, hay que evitar que los condicionales se anides, con esto me refiero que una condicional este adentro de otra condicional, pero hay una practica muy util que de solo verificar que la condicion se cumpla y negarla, tal vez suene un poco confuso pero lo veremos con un ejemplo de muchas condiciones.
+Ejemplo: vendran invitados a casa y uno especial, los invitados son mayores de edad, si son hombres hay que darles un saludo cordial, en otro caso desearle un feliz dia, y el invitado especial es un hombre que tendra un atuendo deportivo y hay que darle un regalo.
 */
 let invitado = { sexo: "masculino", edad: 18, atuendo: "deportivo" };
 // mala practica 
@@ -656,7 +655,7 @@ if ( invitado.edad &gt= 18 ) {
             // no se le da nadota
         }
     }else {
-        console.log("pase porfavor");
+        console.log("tenga un lindo dia");
     }
 } else {
     console.log("no puedes pasar, estas muy chiquito");
@@ -671,7 +670,7 @@ if ( !(invitado.edad &gt= 18) ) {
 }
 
 if ( !(invitado.sexo == "masculino") ) {
-    console.log("pase porfavor");
+    console.log("tenga un lindo dia");
 } else {
     console.log("un saludo cordial");
 }
@@ -692,7 +691,7 @@ le pasamos los datos a evaluar y luego lo negamos, si el invitado no es mayor de
 //ejemplos:
 let persona = { nombre: "juan"};
 /*
-importante decir que solo ejecutan una linea de codigo, en JavaScript pueden ejecutar mas pero lo interesante del operador ternario es que solo ejecuten uno y asi hacer legible el codigo, en caso de necesitar ejecutar mas codigo se puede emplear un if normal
+importante decir que solo ejecutan una linea de codigo, en JavaScript pueden llegar a ejecutar mas pero lo interesante del operador ternario es que solo ejecuten uno y asi hacer legible el codigo, en caso de necesitar ejecutar mas codigo se puede emplear un if normal
 */
 persona.nombre == "juan" ? console.log("hola") : console.log("adios");
 
@@ -703,67 +702,110 @@ tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" e
 */
             </pre>
             <p>
+
+            <h3>Parte practica</h3>
+            <p>
+                en un nuevo archivo llamado condicionales.js y en el debaran realizar varios ejercicios usando condicionales<br>
+                ejercicio 1: crear un condicional if que verifique si un array esta vacio, si esta vacio debera mostrar en consola que esta vacio<br>
+                ejercicio 2: creen un array de objetos, los objetos contendran el nombre de una fruta, el precio y la cantidad que hay guardada, almenos tres frutas, tendran una variable dinero, deberan simular que compran las frutas, restando su variable con el precio de la fruta, o si no hay frutas disponibles no las podran comprar<br>
+                ejercicio 3: copiaran y pegaran el ejercicio que yo escribi de la invitacion a la fiesta, crearan un objeto con sus datos y veran cual es el resultado que tendrian<br>
+            </p>
         </section>
 
         <!-- seccion parra los bucles -->
         <section>
             <h3>Bucles</h3>
-            <p>sirven para repetir codigo y son muy importantes en JavaScript y tambien son varios tipos</p>
-            <h4>While</h4>
-            <p>ejecutara codigo en caso de que se cumpla una condicin y se detendra en caso de que no la compla</p>
             <p>
-                while (true){ // <span>esto crea un bucle infinito ya que nunca acabara porque en la condicion le estamos diciendo que siempre es cierta </span> <br>
-                    console.log("hola mundo"); <br>
-                }
-                <span>tambien funciona si le pasamos 1, ya que representa valrores booleanos donde 0 es false y 1 es true, tambien solo pasar una cadena de texto vacia "", array vacio [] o un objeto vacio {} retornara false por eso es importante los operadores de comparacion</span>
+                los blucles los usamos junto con los bloques de codigo, un bucle es algo que repite lo mismo una y otra vez, por lo que podemos intuir que va a repetir el codigo una y otra vez, tenemos tres bucles diferentes que los estaremos viendo, el bucle while, do while, y for, hay un gran riesgo con los bucles, estos bucles pueden llegar a ser infinitos, que  nunca terminen, esto puede generar que tu aplicacion se rompa por completo, veremos como manejar esto con todos los bucles
             </p>
+            <h3>While</h3>
             <p>
-                let hora = 1; <br>
-                while (hora == 24) { // se detendra cuando la variable hora valga 24<br>
-                    console.log("hola mundo"); // pegara la variable hora en consola<br>
-                    hora++; // aumentara el valor de la variable en una unidad<br> 
-                }
+                El bucle while es como un if ya que tendra unos parentesis que evaluaran valores booleanos, si la condicion se cumple entonces el programa termina, para usar un bucle while se llama a la palabra reservada "while" luego unos parentesis y por ultimo llaves
             </p>
+            <pre>
+/*
+cada vez que el bucle haya ejecutado una vez todo el bloque de codigo se dice que ha terminado una iteracion, puede hacer tantas iteraciones como querramos u la logica lo requiera, antes de entrar al siguiente ejemplo veremos el operador "++" es para incrementar un valor numerico en una unidad y les mostrare un ejemplo rapido:
+i = 0;
+i++
+console.log(i); // imprime 1
+en este caso mostrara en consola 1, tiene una interaccion diferente en caso de la posicion en la que agregues el operador con respecto al numero que se quiera incrementar
+console.log(i++); // imprime 1
+console.log(++i); // imprime 3
+el primero no imprimio 2 pero aun asi incremento el valor de la variable i en 1, cuando se hace i++ primero toma el valor de la variable i que es 1 y luego se incrementa, en el otro caso primero se incrementa y luego se toma el valor de la variable, ya que el codigo se ejecuta de izquierda a derecha, la letra i es por "incremental", ya que la variable se usara para que se incremente su valor.
+*/
+
+i = 0;
+while ( i &lt 100 ) {
+    console.log(i);
+    i++;
+}
+
+/*
+primero declaramos una variable i afuera y esto es importante, luego se coloca la sintaxis basica de un bucle while "while () {}"", y adentro del bloque de codigo se imprime el numero y luego se incrementa el numero, imprimira 100 veces la variable y, osea del 0 al 99, un error que yo cometi fue el declarar la variable i adentro del bucle lo que genero un bucle infinito por que en cada iteracion la variable i se reseteaba por lo que siempre era 0, si le pasas adentro de los parentesis true o 1, los tomara como verdaderos siempre por lo que generara un bucle infinito, pero esto si se puede hacer de manera intencional gracias a que existe la palabra reservada "break" para detener el bucle por completo, el hacer lo del numero incremental no se usa con el while ya que es mejor hacerlo con el bucle for que veremos un momento, el bucle while se va a querer utilizar cuando no se sabe cuantas veces se necesita iterer sober el codigo.
+*/
+
+while ( true ) {
+    numero = parseInt(prompt("ingrese un numero"));
+    if ( numero &lt 100 ) {
+        break;
+    }
+}
+/*
+no pasa nada si no entienden todo el codigo, solo tienen que saber que primero por defecto es un bucle infinito que no va a acabar, le pedimos al usuario que ingrese un numero, luego se verificara que ese numero sea menor a 100, si cumple que el numero es menor a 100 entonces se llama a break para que el bucle finalize.
+*/
+
+            </pre>
             <h4>Do while</h4>
-            <p>este a diferencia del while primero ejecutara el codigo y luego preguntara a la condicion y vera si se debe volver a ejecutar</p>
             <p>
-                let hora = 0; <br>
-                do { <br>
-                    console.log("hola mundo"); // hara lo que hay en el bloque de codigo <br>
-                    hora++; <br>
-                } while (hora == 24); <br>
+                este es casi lo mismo que el bucle while, pero con la diferencia es que el primero verifica una condicion, si la condicion se cumple se ejecuta el codigo y empieza el bucle, en el do while primero ejecutara el codigo y luego verificara que la condicion se cumpla para volver a ajecutar el programa, se llama a la palapra reservada "do" luego las llaves donde tendran su logica, al final de las llaves la palabra "while" y por ultimo parentesis do {} while (), que si lo traducimos podemos darnos una buena idea de lo que hace, do: hacer, while: mientras, haz { /*codigo*/}  mientras ( /*condicion*/ )
             </p>
-            <p><span>los bloques de codigo se les dice al codigo encerrado en llaves {}</span></p>
-            <p><span>importante no declarar la varable adentro del codigo o creara un bucle infinito</span></p>
-            <p>
-                do { <br>
-                    let hora = 0; // la hora vale 0<br>
-                    console.log("hola mundo"); // en consola se pone hola mundo<br>
-                    hora++; // aumentara el valor en uno<br>
-                } while (hora == 24); //volvera a ejecutar el codigo <br>
-                // volvera a declarar la variable y sera igual a 0 siempre porque aunque aumente en la primera linea del bucle lo igualamos a 0 simpre
-            </p>
+            <pre>
+do {
+    numero = parseInt(prompt("ingrese un numero"));
+} while ( numero &lt 100 );
+/*
+una solucion mejor al problema anterior, ideal cuando el codigo se tenga que ejecutar almenos una vez ya que este bucle hara eso, lo ejecutara una vez como minimo.
+*/
+            </pre>
             <h4>For</h4>
-            <p>un bucle mas utilizado</p>
             <p>
-                //recibe tres parametro, una variable y tiene que ser un numero, puede ser ya declarada y le pasamos la variable <br>
-                // ejemplo: let i = 0; //se suele poner i por increment porque la variable debe incrementar<br>
-                // for (i; i < 5; i++) {console.log("hola mundo")}<br>
-                <span>// un parametro es lo que debe recibir algo para evaluerlo, en caso de if () adentro de los parentesis le pasamos como parametro la condicion en for cada parametro se separa por punto y coma, numero inicial o donde comenzara, hasta cuando terminara, i++ para incrementar el valor</span> <br>
-                let arr = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]; <br>;
-                //  
-                for (let i = 0; i < arr.length; i++) ; i < { //.length devuelve el tamaño del array, o cuantos elementos tiene es un metodo que se vera despues<br>
-                    console.log(arr[i]); // se le pasa la variable i porque en el primer ciclo del bucle el valor de i es 0<br>
-                    // en el segundo ciclo el valor aumenta 1 por lo que recorrera todo el array y mostrara el contenido en consola<br>
-                    <span>los bucles tambien se pueden anidar lo que significa que son bucles adentro de otros bucles</span>
-                }
-                <h3>Parte practica</h3>
-                <p>creen un array de objetos y muestren sus valores en consola usando un bucle para recorrerlo</p>
-                <p>utilizen condiciones if else para mostrar los objetos en consola solo los objetos en orden par, osea los objetos en la posicion 1, 3, 5 no deben mostrarse</p>
-                <p><span>pista: utilizen este operador % , primer numero es el dividendo (% modulo) segundo numero divisor <br>
-                5 % 2 dara como residuo 1 <br>
-                4 % 2 dara como residuo 0 <br>
-                </span></p>
+                el bucle mas comun de ver en programas, y se utilizara cuando conozcamos las veces que se quiera iterar, se llama a la palabra for, luego de parentesis y las llaves del codigo, pero estos parentesis reciben tres parametros, un parametro es informacion que se le pasara a algun procedimiento, y dicho de otra forma, un parametro es un dato de entrada, si no le pasas estos tres parametros seguramente recibas un error en el codigo o se rompa tu programa, el primer parametro es una variable numerica, que puede ser declarada adentro del parentesis o declarada afuera pero debe ser inicializada con un valor, el segundo parametro es la condicion, o cuantas veces se espera que el programa itere, por ultimo el incremento hacia la variable, estos tres deben estar separados por ";" esto se explica mejor con codigo:
+            </p>
+            <pre>
+for (let i = 0; i &lt 10; i++) {
+    console.log(i);
+}
+/*
+(
+    let i = 0; /*variable que se incrementara: indica en que numero empieza el programa*/
+    i &lt 10; /*condicion: que indica cuando termina de iterar el bucle, mientras i sea menor a 10*/
+    i++ /*incremento: para que no de un bucle infinito por que i siga siendo 0, indicara cuanto se incrementara el numero ya que se peude hacer un i += 2 pero lo mas comun es ver que se use el i++*/
+)
+aqui declaramos la variable adentro, asi se veria declarada afuera
+
+let i = 0;
+for (i; i &lt 10; i++) {
+    console.log(i);
+}
+es comun que el bucle empiece con el numero 0, ya que los arrays comienzan con la posicion 0 y son muy utilizados para recorrer cada elemento del array, tambien el incremental es comun que se utilize y solo se vea i++ ya que primero toma el valor de la variable en ese momento y luego lo incrementa, por lo que el bucle empieza desde 0, veremos un ejemplo recorriendo un array pero antes veremos .length que es una propiedad de los arrays en JavaScript, esta propiedad nos dice cuantos elementos tiene un array, solo colocando el nombre del array y llamando a su propiedad, el . viene por que la mayoria de las cosas en JavaScript son objetos, o se "encapsulan" en un objeto, por lo que es como llamar a la propiedad de un objeto.
+
+Dato curioso: gracias a que esta forma que tiene JavaScript de trabajar es que los datos pueden ser dinamicos, se puede imaginar como que cada vez que creas una variable JavaScript lo encapsula en un objeto, cuando le cambias el valor por otro incluso si es de diferente tipo solo tiene que quitar el contenido y remplazarlo por el nuevo en el objeto.
+*/
+
+// ejemplo:
+let comidas = ["pera","galleta","pizza","hamburguesa"];
+let i = 0;
+for (i; i &lt comidas.length; i++) {
+    let comida = comidas[i];
+    // en el array comidas en la posicion lo que valga i en esa iteracion, va a traerme el nombre y lo guardara
+    console.log(comida);
+}
+            </pre>
+            <h3>Parte practica</h3>
+            <p>
+                en un nuevo archivo deberan realizar los siguientes ejercicios:<br>
+                ejercicio 1: realizaran un bucle while, do while y for, y con cada bucle deberan mostrar en consola los numeros del 1 al 200.<br>
+                ejercicio 2: crearan un bucle while que rellene un array con numeros de 2 en 2 hasta llegar a 200, con un bucle for mostrarlos en consola.<br>
             </p>
         </section>
 
