@@ -43,11 +43,10 @@ li {
 
 
 pre {
-    max-width: 440px;
     margin: 0;
     overflow-x: auto;
     white-space: pre-wrap;  
-    word-wrap: break-word;  
+    word-wrap: break-word;
 }
 
 section {

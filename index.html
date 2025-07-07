@@ -149,7 +149,7 @@
                     const PI = 3.14159;<br>
                     let c;<br>
                 </code>
-                como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan esctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
+                como se ve en el ejemplo para declararlas se usa primero el alcance de la variable seguido de un espacio, se coloca el nombre de la variable pero hay algunas restricciones para el nombre de las variables que pueden ser palabras reservadas o signos por lo que una recomendacion es que las variables tengan nombres descriptivos, que el mismo nombre de la variable te diga para que seran utilizadaas, y por ultimo se le puede asignar un valor o no que al asignar un valor se dice que se estan inicializando, puede estar vacio para en un futuro inicializarse, lo inicializamos colocando un signo igual "=" despues del nombre de la variable y colocandole el valor que se desee agregar, una recomendacion es agregar punto y coma al final ";", representan el final de una sentencia de codigo, en JavaScript no es tan esctricto el uso y puede llegar a funcionar el codigo sin los punto y coma pero es buena practica usarlos debido a que pueden surgir errores ya que el interprete intenta adivinar donde pueden haber ";" y tu codigo puede hacer cosas inesperadas.<br>
                 ejemplo simple:<br>
                 <code class="code">
                     let c = 1;<br>
@@ -243,7 +243,7 @@
                 <span class="important">
                     eviten poner nombres con espacios, utilizen camelCase para evitar estos espacios en los nombres de las carpetas.<br>
                 </span>
-                por ultimo, con el editor de codigo abierto, hay dos opciones para poder editar esos archivos para escribir el codigo, el primero es el mas facil, solo arrastran el folder con su proyecto adentro del editor de codigo hasta que el editor les indique que se abrira correctamente, el segundo es que en la barra superior a la izquierda, o la barra que se encuentra arriba del todo a su izquierda, encontraran varias palabras, presionen File que les abrira un menu desplegable, en ese menu encuentren la palabra "Open Folder..." para la carpeta de su proyecto u "Open File..." para abrir un archivo es concreto.
+                por ultimo, con el editor de codigo abierto, hay dos opciones para poder editar esos archivos para escribir el codigo, el primero es el mas facil, solo arrastran el folder con su proyecto adentro del editor de codigo hasta que el editor les indique que se abrira correctamente, el segundo es que en la barra superior a la izquierda del editor de codigo, o la barra que se encuentra arriba del todo a su izquierda, encontraran varias palabras, presionen File que les abrira un menu desplegable, en ese menu encuentren la palabra "Open Folder..." para la carpeta de su proyecto u "Open File..." para abrir un archivo en concreto.
             </p>
         </section>
 
@@ -272,7 +272,7 @@
                     let holaMundo = cadena + texto;<br>
                     alert(holaMundo);<br>
                 </code>
-                y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScrpit, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador - que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
+                y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScript, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador "-"" que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
                 <code class="code">
                     let numero1 = "1";<br>
                     let numero2 = "1";<br>
@@ -291,7 +291,7 @@
                     let numeroCadena = "1";<br>
                     numero1 = "4";<br>
                 </code>
-                que como vemos en este caso numero uno cambio de ser tipo numerico a ser de tipo texto y asi se puede cambiar cuantas veces se quiera o necesite en la logica.
+                que como vemos en este caso la variable numero1 cambio de ser tipo numerico a ser de tipo texto y asi se puede cambiar cuantas veces se quiera o necesite en la logica.
             </p>
             <h3>Boolean</h3>
             <p>
@@ -307,7 +307,7 @@
             </p>
             <h3>Object</h3>
             <p>
-                los objetos tambien son colecciones de datos, pero estos tienen una diferencia muy importante con respecto a los arrays que profundizaremos mas luego en el curso.
+                los objetos tambien son colecciones de datos, pero estos tienen una diferencia muy importante con respecto a los arrays que profundizaremos luego en el curso.
             </p>
             <h3>Null</h3>
             <p>
@@ -315,7 +315,7 @@
                 <code class="code">
                     let vacio = null;<br>
                 </code>
-                y lo podran ver al usar alert, que les mostrara que el tipo de dato es null, o exxplicitamente vacio.
+                y lo podran ver al usar alert, que les mostrara que el tipo de dato es null, o explicitamente vacio.
             </p>
             <h3>Undefined</h3>
             <p>
@@ -336,7 +336,7 @@
                 <br>
                 para este ejercicio crearan un archivo con extension .js y crearan variables y las inicializaran, las variables deben contener todos los tipos de datos anteriormente mencionados en el curso, deberan mostrar tanto el dato, como el tipo de dato de la variable utilizando la consola, solo el tipo any creo que no se puede mostrar en consola, pongan su cursor encima de una variable sin inicializar y les mostrara que es de tipo any.<br>
                 <br>
-                para utilizar la consola tendran que hacer un click derecho sobre una pagina web, que en su caso sera sobre la pagina de su proyecto, al hacer click derecho les apareceran diferentes opciones, presionen la opcion de Inspeccionar que estara abajo del todo entre las opciones, esto les mostrara las herramientas de desarrollo que tienen los browsers, como google que tiene estas herramientas para ayudar a programadores con el desarrollo, a la derecha encontraran arriba una cinta de opciones, que contiene palabras como Elements o Console, deberan de presionar en Console para acceder a la consola, en caso de que no les aparezca, en esa cinta de opciones se encuentra unas flechitas dobles que deberan presionar y se desplegaran mas opciones y podran buscar la opcion Console.
+                para utilizar la consola tendran que hacer un click derecho sobre una pagina web, que en su caso sera sobre la pagina de su proyecto, al hacer click derecho les apareceran diferentes opciones, presionen la opcion de Inspeccionar que estara abajo del todo entre las opciones, esto les mostrara las herramientas de desarrollo que tienen los browsers, como google que tiene estas herramientas para ayudar a programadores con el desarrollo, a la derecha encontraran arriba una cinta de opciones, que contiene palabras como Elements o Console, deberan de presionar en Console para acceder a la consola, en caso de que no les aparezca, en esa cinta de opciones se encuentra unas flechitas dobles que deberan presionar y se desplegaran mas opciones y podran buscar la opcion Console, las opciones pueden llegar a esconderse si la barra lateral es muy pequeña asi que solo intenten estirarla a su izquierda y no deberian tener problemas.
             </p>
             <div class="imagen-container">
                 <img src="./imagenes/consola.jpg" class="imagen-extencion">
@@ -395,17 +395,17 @@
                     5: "sabado"<br>
                     6: "domingo"<br>
                 </code>
-                como veran son enrealidad listas clave valor, donde a cada valor le corresponde una clave numerica, que correspondera a su posicion empezando desde cero, llendo en direccion de izquierda a derecha, y para acceder a un valor en concreto hay que hacerlo mediante su posicion, por lo que si queremos mostrar solamente el dia lunes seria algo asi:
+                como veran son enrealidad listas clave valor, donde a cada valor le corresponde una clave numerica, que correspondera a su posicion empezando desde cero, que iran en direccion de izquierda a derecha, y para acceder a un valor en concreto hay que hacerlo mediante su posicion, por lo que si queremos mostrar solamente el dia lunes seria algo asi:<br>
                 <code class="code">
                     console.log(diasDeLaSemana[0]);<br>
                 </code>
-                hay que colocar el nombre de la lista segido de corchetes [] y por ultimo colocarle la posicion que se quiera mostrar, y esto se puede usar tambien de otras maneras, y les dare un apr de ejemplos:<br>
+                hay que colocar el nombre de la lista segido de corchetes [] y por ultimo colocarle la posicion que se quiera mostrar, y esto se puede usar tambien de otras maneras, y les dare un par de ejemplos:<br>
                 <code class="code">
                     let numero;<br>
                     let numeros = [1,2,3,4];<br>
                     numero = numeros[0];<br>
                 </code>
-                ahora la variable numero contendra el valor que tiene la posicion 0 de la lista numeros, por lo que numero ahora vale 1.
+                ahora la variable numero contendra el valor que tiene la posicion 0 de la lista numeros, por lo que numero ahora vale 1.<br>
                 <code class="code">
                     let numero = 10;<br>
                     let numeros = [1,2,3,4];<br>
@@ -421,7 +421,7 @@
                     let arr = [1,2,3,4];<br>
                     arr.push(5);<br>
                 </code>
-                .push es un metodo que tienen todos los arrays, secribes el nombre del array, llamas a .push seguido de parentesis y adentro de los parametros hay que darle un valor, este valor lo guardara en la lista al final, por lo que la lista quedaria algo asi [1,2,3,4,5] asi puedes hacer crecer la lista y agregar nuevos valores, no se preocupen si no entienden un termino que luego lo veremos.
+                .push es un metodo que tienen todos los arrays, ecribes el nombre del array, llamas a .push seguido de parentesis y adentro de los parentesis hay que darle un valor, este valor lo guardara en la lista al final, por lo que la lista quedaria algo asi [1,2,3,4,5] asi puedes hacer crecer la lista y agregar nuevos valores, no se preocupen si no entienden un termino que luego lo veremos.
             </p>
         </section>
 
@@ -433,7 +433,7 @@
                 <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
                 </code>
-                el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave calor se separa por comas, para acceder a sus valores se puede hacer algo asi:
+                el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave valor se separa por comas, para acceder a sus valores se puede hacer algo asi:
                 <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
                     console.log(persona.nombre);<br>
@@ -451,7 +451,7 @@
                     console.log(listaDeEstudiantes[0].cursos[0]);<br>
                     listaDeEstudiantes[0].cursos[0] = "ingles";<br>
                 </code>
-                que primero buscara la posicion 0, luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codicgo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, saber que hace el codigo se los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
+                que primero buscara la posicion 0, luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codigo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, para saber que hace el codigo de los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
                 <code class="code">
                     // este es un comentario de una sola linea, para comentar algo especifico del programa<br>
                     /* este es un comentario multilinea y se emple cuando el comentario es muy grande */<br>
@@ -483,80 +483,226 @@
         <section>                    
             <h2>Operadores</h2>
             <p>
-                los operadores dicho de manera un poco tecnica es un simbolo o palabra que le indica al programa que le dice que hacer con ciertos operandos. veremos los diferentes tipos de operadores y cuales son sus interaciones
+                los operadores dicho de manera un poco tecnica es un simbolo o palabra que le indica al programa que hacer con ciertos operandos. veremos los diferentes tipos de operadores y cuales son sus interaciones
             </p>
             <h3>Operadores aritmeticos</h3>
             <p>
-                operadores para realizar operaciones matematicas con numericos
-                
+                operadores para realizar operaciones matematicas con numericos<br>
+                <code class="code">
+                    // operador de suma;<br>
+                    let suma = 1 + 2; // resultado: 3<br>
+                    // operador de resta;<br>
+                    let resta = 4 - 3; // resultado: 1<br>
+                    // operador de multiplicacion<br>
+                    let multiplicacion = 2 * 2; // resultado: 4<br>
+                    // operador de la division<br>
+                    let multiplicacion = 1 / 2; // resultado: 0.5<br>
+                    // operador de modulo o residuo de la division<br>
+                    let modulo = 1 % 2; // resultado: 0<br>
+                </code>
             </p>
-            <p>sirven para comparar dos datos o mas y devuelven valores booleanos</p>
+            <h3>Operadores de asignacion</h3>
             <p>
-                let variable = 1 < 2; <br>
-                console.log(variable); // imprime true porque 1 es menor que 2 <br>
-                let variable2 = 1 > 2; // false <br>
-                let variable3 = 1 <= 1; // menor o igual que, en este caso es true <br>
-                let variable4 = 1 >= ; // mayor o igual que, truee <br>
-                let variable5 = 1 == 1; // comparara si son iguales los valores, true <br>
-                let variable6 = 1 != 1; // comparara si son distintos los valores, false <br>
-                let variable7 = 1 === "1"; // comparara si son iguales los valores y el tipo de dato, false en este caso por comparar un caracter con un numero <br>
-                let variable8 = 1 !== "1"; // comparara si son distintos los valores y el tipo de dato, true en este caso<br>
-                <h3>Extra: operadores logicos y otros</h3>
-                <p>los operadores logicos son operadores que devuelven valores booleanos</p>
-                <p>
-                    && sirve para comparar que ambos devuelvan true en caso contrario sera false <br>
-                    || almenos uno debe retornar true para devolver true <br>
-                    ! negara el valor que se le pase <br>
-                    let variable = true && true // true <br>
-                    let variable2 = true || false // true <br>
-                    let variable3 = !true // false <br>
-                </p>
-                <p>
-                    += sumar una variable con un valores <br>
-                    -= restar una variable con un valores <br>
-                    *= multiplicar una variable con un valores <br>
-                    /= dividir una variable con un valores <br>
-                    let 2 % 2; modulo una variable con un valores, significa que devuelve el residuo de una division <br>
-                    **= potenciar una variable con un valores <br>
-                    let variable = 10;
-                    variable += 5; // 15 <br>
-                    variable -= 5; // 10 <br>
-                    variable *= 5; // 50 <br>
-                    variable /= 5; // 10 <br>
-                </p>
+                sirven para asignar un valor y pueden combinar operaciones aritmeticas con asignacion<br>
+                <code class="code">
+                    // = para asignar<br>
+                    let num = 5;<br>
+                    // += para suma y asignacion<br>
+                    num += 5;<br>
+                    /*<br>
+                        el resultado sera 10<br>
+                        es una version mas corta de:<br>
+                        num = num + 5;<br>
+                    */<br>
+                    <br>
+                    // -= para resta y asignacion<br>
+                    num -= 2; // ahora num vale 8<br>
+                    <br>
+                    // *= multiplicacion<br>
+                    num *= 2; // num vale 16<br>
+                    <br>
+                    // /= division<br>
+                    let num /= 2; // num vale 8<br>
+                    <br>
+                    *= multiplicacion<br>
+                    let num %= 2; // num vale 0<br>
+                    //<br>
+                </code>
+            </p>
+            <h3>Operadores condicionales</h3>
+            <p>
+                con estos operadores puedes indicar que condiciones necesitas que se cumplan, dependiendo de si la condicion se cumple o no retornara valores booleanos, true en caso de que la condicion se cumpla, false en caso de que no se cumpla la condicion &lt;body&gt;<br>
+                <code class="code">
+                    /*<br>
+                        &gt mayor que<br>
+                        &lt menor que<br>
+                        &gt= mayor o igual que<br>
+                        &lt= menor o igual que<br>
+                        == igual que<br>
+                        != diferente que<br>
+                        === estrictamente igual que<br>
+                        !== estrictamente diferente que<br>
+                    */<br>
+                    let variable = 1 &lt 2;<br>
+                    console.log(variable); // imprime true porque 1 es menor que 2<br>
+                    let variable2 = 1 &gt 2; // false<br>
+                    let variable3 = 1 &lt= 1; // true<br>
+                    let variable4 = 1 &gt= 2; // false 1 no es mayor o igual que 2<br>
+                    let variable5 = 1 == 1; // 1 es iugual que 1 asi que es true<br>
+                    let variable6 = 1 != 1; // 1 no es diferente de 1 asi que es false<br>
+                    let variable7 = 1 === "1"; // este es false, compara tanto si el valor es igual como si el tipo de dato tambien lo es<br>
+                    let variable8 = 1 !== "1"; // true<br>
+                    <br>
+                </code>
+            </p>
+            <h3>Operadores logicos</h3>
+            <p>
+                que sirven para comparar valores booleanos<br>
+                <code class="code">
+                    /*<br>
+                        && ambos tienen que ser verdaderos para que sea verdadera<br>
+                        || uno de los dos debe ser verdadero para que sea verdadero<br>
+                        ! si es verdadero lo niega y convierte en falso, si es falso lo vuelve verdadero<br>
+                    */<br>
+                    let var1 = true && false; // retornara un false<br>
+                    let var2 = true || false; // retornara un true<br>
+                    let var3 = !true; // retornara un false<br>
+                    let var4 = !(false);<br>
+                    /*<br>
+                        esta es otra forma de negar, donde le decimos que lo que este adentro de los parentesis es una expreion y lo que devuelva se tiene que negar por lo que se puede hacer un !(true && false) estos operadores son muy utiles y veremos el porque cuando lleguemos a la parte de los if else, y otra curiosidad es que otras cosas tambien devuelven booleanos por que JavaScript intenta convertir tipos de datos a otros para que tu programa funcione, si es tipo numerico un 0 es un false, en texto una cadena vacia "" es un false por lo que hacer un:<br>
+                    */<br>
+                    alert(!("")); // retornara un true
+                    // otras cosas que dan false serian arrays o cadenas vacias [] {}
+                </code>
+            </p>
         </section>
 
         <!-- seccion para los condicionales -->
         <section>
             <h3>Condicionales</h3>
-            <p>los condicionales sirven para ejecutar codigo solo en caso de que se cumpla una condicion if, else if, else</p>
             <p>
-                let edad = 10; <br>
-                if (edad > 18) { // entre parentesis se pone la condicion, si la cumple retornara true y ejecutara el codigo que se ponga entre las llaves
-                    console.log("Eres mayor de edad"); <br>
-                } <br>
-                // en caso de no cumplir la condicion no se ejecutara y pasara de largo 
+                antes de hablar de los condicionales les explicare sobre las llaves {} ya que no solo se usan para los objetos, son utilizados para representar bloques de codigo, o ambitos, por lo que se los mostrare con un ejemplo:<br>
+                <code class="code">
+                    /*<br>
+                        en nuestro programa no vemos llaves pero en si es un bloque de codigo, todo lo que escribamos en el archivo son sentencias, condiciones e instrucciones que indican lo que hara el programa, tambien por legibilidad del codigo se recomienda tabular o identar el codigo que veremos en un momento como funciona esto.<br>
+                    */<br>
+                </code>
             </p>
-            <p>el if else sirve en caso de que la primera condicion no se cumpla, creamos una nueva condicion</p>
+            <pre class="code">
+let a = 5;
+{
+    let a = 20;
+    let b = 10;
+    console.log(a,b); // imprime 10
+    {
+        console.log(a); // imprime // 10
+    }
+}
+console.log(a); // imprime 5
+            </pre>
             <p>
-                let numero = "10"; <br>
-                if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
-                    console.log("no es un numero"); <br>
-                } else if(10 !== numero){ // true <br>
-                    console.log("es un numero"); <br>
-                } <br>
-                // en caso de no cumplir la condicion no se ejecutara y pasara de largo
+                <code class="code">
+                    /*<br>
+                        aqui podemos notar varias cosas, primero que declaramos dos variables a, y esto es gracias a let, ya que su alcance es local, por lo que hay dos variables a pero viven en bloques de codigo diferentes, y por eso es buena practica usar let, por si queremos declarar una variable con el mismo nombre pero que vive en un bloque de codigo diferente, otra cosa es que el bloque que esta adentro de otro bloque puede usar la variable a, esto es por que un bloque puede usar variables de su bloque padre o dicho de otra forma, el bloque que los contiene, por lo que si quitaramos la variable a que se declaro adentro de las llaves, lo que usarian estos bloques seria la variable a que esta afuera, osea la que vale 5, pero afuera de las llaves la variable b no se puede usar, solo adentro de su bloque o bloques que esten adentro de el. y por ultimo la identacion que no es mas que dar una tabulacion o dejar espacios, cuando creamos un bloque de codigo todo lo que se escriba adentro, todas las lineas deben tener espacios al principio, solo debes darle a la tecla tab, ya que aunque el programa funcione sera mas costoso saber lo que hace tu programa, porque incluso tu mismo debes taber lo que hace<br>
+                    */<br>
+                </code>
+                toda la explicacion surge a partir de que nosotros no vamos a usar las llaves para crear bloques de codigo solo por que si, gracias a las condiciones podemos hacer que estos bloques de codigo se ejecuten si cumplen con ciertos parametros, hay tres tipos de condiciones, y les mostrare un operador que no les mostre antes. ejemplo:
             </p>
-            <p>else se ejecutara en el caso de que ninguna condicion anteror se cumpla y no necesita asignarle una condicion</p>
+            <pre class="code">
+/*
+if: el bloque se ejecutara si la condicion es verdadera
+else if: si el bloque if no se ejecuto, buscara un if else y vera si este cumple para ejecutar la logica dentro
+else: este se ejecutara en caso de que no se haya ejecutado if, y tampoco se haya ejecutado los if else
+
+para crear una condicion if hay que usar su palabra reservada "if" luego hay que colocar unos parentesis, adentro de estos parentesis estara la condicion que debe cumplirse, por ultimo un bloque de codigo {} donde ira la logica que quieras que se ejecute, y tambien se puede no poner los bloques de codigo en caso de que solo requieras de una linea de codigo, ejemplo:
+if () {}
+
+else if: este es cuando el if no ha cumplido la condicion, puedes tener tantos if else como quieras y siempre iran despues de un if, y son opcionales, puedes o no ponerlos, hay que colocar la palabra reservada "else" dejar un espacio luego la palabra reservade "if" parentesis, luego llaves
+if () {}
+else if () {}
+
+por ultimo else que se ejecutara siempre que no se haya cumplido la condicion if, y/o no haya cumplido con los else if, ira siempre despues de una condicion, o el final de todas las condiciones, primero hay que usar una condicion if para usar el else, se coloca la palabra reservada else y el bloque de codigo, y tambien es opcional el ponerlo
+if () {}
+else {}
+
+veamos ejemplos de esto en codigo real antes voy a mencionar que estos condicionales evaluan valores booleanos
+*/
+edad = 17
+if ( edad &gt= 18 ) {
+    console.log("ya eres mayor de edad");
+    // la variable edad no es igual o mayor a 18, este bloque no se ejecuta
+} else if ( edad &gt 0 && edad &lt 18 ) {
+    console.log("aun no eres mayor de edad, estas chiquito");
+    // este bloque si se ejecutara porque la edad es mayor a 0 y tambien cumple que sea menor a 8
+    // para hacerlo un poco mas entendible la condicion puedes hacer ((edad &gt 0) && (edad &lt 18))
+} else {
+    console.log("la edad que ingreso no es valida");
+    // ya que los numeros tambien pueden ser negativos
+}
+/* 
+este codigo no toma en cuenta que pasaria si le pasan una edad muy grande como 1000, pero es algo que ustedes mismos podrian implementar, como ven hacemos combiaciones entre operadores logicos && y de comparacion ya que ambos devuelven valores booleanos, hay que evitar que los condicionales se anides, con esto me refiero que una condicional este adentro de otra condicional, pero hay una practica muy util que de solo verificar que la condicion se cumpla y negarla, tal vez suene un poco confuso pero lo veremos con un ejemplo de muchas condiciones.
+Ejemplo: vendran invitados a casa y uno especial, los invitados son mayores de edad, si son hombres hay que darles un saludo cordial si no pasar al invitado amablemente, y el invitado especial es un hombre que tendra un atuendo deportivo y hay que darle un regalo.
+*/
+let invitado = { sexo: "masculino", edad: 18, atuendo: "deportivo" };
+// mala practica 
+if ( invitado.edad &gt= 18 ) {
+    console.log("bienvenido a la fiesta, puedes pasar");
+    if ( invitado.sexo == "masculino" ) {
+        console.log("un saludo cordial");
+        if ( invitado.atuendo == "deportivo" ) {
+            console.log("tome un regalo");
+        } else {
+            console.log("un gusto en verle");
+            // no se le da nadota
+        }
+    }else {
+        console.log("pase porfavor");
+    }
+} else {
+    console.log("no puedes pasar, estas muy chiquito");
+}
+// if anidados, muy dificil de leer
+
+// buena pracica
+if ( !(invitado.edad &gt= 18) ) {
+    console.log("no puedes pasar por que estas chiquito");
+} else {
+    console.log("bienvenido a la fiesta, puedes pasar");
+}
+
+if ( !(invitado.sexo == "masculino") ) {
+    console.log("pase porfavor");
+} else {
+    console.log("un saludo cordial");
+}
+
+if ( !(invitado.atuendo == "deportivo") ) {
+    console.log("un gusto en verle");
+} else {
+    console.log("tome un regalo");
+}
+
+
+/*
+le pasamos los datos a evaluar y luego lo negamos, si el invitado no es mayor de edad devolvera un false, pero los condicionales if solo ejecutaran el codigo en caso de ser verdaderos, por lo que lo negamos asi dara true y se ejecutara el codigo que no lo dejara pasar
+*/
+
+// por ultimo veremos el operador ternario que es un condicional de una sola linea, asi no tenemos que usar un if else con los parentesis y llaves en una condicion pequeña
+
+//ejemplos:
+let persona = { nombre: "juan"};
+/*
+importante decir que solo ejecutan una linea de codigo, en JavaScript pueden ejecutar mas pero lo interesante del operador ternario es que solo ejecuten uno y asi hacer legible el codigo, en caso de necesitar ejecutar mas codigo se puede emplear un if normal
+*/
+persona.nombre == "juan" ? console.log("hola") : console.log("adios");
+
+let juan = persona.nombre == "juan" ? "juan" : "no es juan";
+console.log(juan);
+/*
+tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" es un if, se ejecutara si es verdadera, ":" es un else que se ejecutara si es falsa, por el signo de asignacion = espera un valor, que si solo es la condicion retornara un  booleano, pero con el operador ternario podemos hacer que devuelva mas valores
+*/
+            </pre>
             <p>
-                let numero = "10"; <br>
-                if (10 === numero) { // como es una cadena devolvera true ya que lo comparamos estrictamente <br>
-                    console.log("no es un numero"); <br>
-                } else { // no se ejecutara <br>
-                    console.log("es un numero"); <br>
-                } <br>
-                // en caso de no cumplir la condicion no se ejecutara y pasara de largo
-            </p>
         </section>
 
         <!-- seccion parra los bucles -->
