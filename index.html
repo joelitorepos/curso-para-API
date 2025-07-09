@@ -806,208 +806,378 @@ for (i; i &lt comidas.length; i++) {
                 en un nuevo archivo deberan realizar los siguientes ejercicios:<br>
                 ejercicio 1: realizaran un bucle while, do while y for, y con cada bucle deberan mostrar en consola los numeros del 1 al 200.<br>
                 ejercicio 2: crearan un bucle while que rellene un array con numeros de 2 en 2 hasta llegar a 200, con un bucle for mostrarlos en consola.<br>
+                <br>
+                antes de pasar a la siguiente definicion queria mencionar un operador para el control de flujo, "break" detiene el bucle, y otro operador para controlar el flujo del bucle es "continue", cuando sea llamado, el codigo que venga despues adentro del bucle ya no se ejecutara, y pasara a la siguiente iteracion del bucle, se emplea cuando que queremos que ciertas iteraciones sean ignoradas, un ejemplo rapido:
             </p>
+            <pre>
+let i = 0;
+for (i; i &lt 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    console.log(i); // imprimira del 0 al 9 ignorando el numero 5
+}
+            </pre>
         </section>
 
         <!-- seccion para las funciones -->
         <section>
-            <h3>Funciones, funciones flecha y metodos</h3>
-            <p>Definicion: es un bloque de comandos que se ejecutaran cuando se llame a esta misma, sirven para no repetir codigo y hacer codigo mas legible</p>
-            <p>Ejemplo:</p>
+            <h2>Funciones, funciones flecha y metodos</h2>
             <p>
-                // para decir que estamos creando una funcion se pone function al inicio <br>
-                // despues de la parable function va el nombre de la funcion recomendado usar camelCase<br>
-                // despues parentesis que contendran parametros que la funcion debe evaluar, lo veremos luego <br>
-                // por ultimo las llaves donde estara todo el codigo <br>
-                function sumarNumeros() { <br>
-                    let numero1 = 10, numero2 = 20; <br>
-                    let suma = numero1 + numero2; <br>
-                    console.log(suma); // imprime 30 <br>
-                } <br>
-                // esto no se ejecutara solo, debemos llamar a la funcion sumarNumeros <br>
-                //se pone el nombre de la funcion, parentesis con parametros, vacio sin parametros y punto y coma recomendable <br>
-                sumarNumeros(); // imprime 30 <br>
-                // lo podemos llamar muchas veces y se ejecutara cuantas veces lo llamemos <br>
-                sumarNumeros(); <br>
-                sumarNumeros(); <br>
-                sumarNumeros(); <br>
-                // se ejecutara tres veces
+                son casi iguales cada una ya que parten de la misma idea, el poder llamar a bloques de codigo pero con diferencias entre cada una.
             </p>
+            <h3>Funciones</h3>
             <p>
-                // las funciones tambien pueden retornar valores <br>
-                function sumarNumero() { <br>
-                    let numero1 = 10, numero2 = 20; <br>
-                    let suma = numero1 + numero2; <br>
-                    return suma; // devuelve el valor de suma <br>
-                } <br>
-                console.log(sumarNumero()); // imprime 30 en consola<br>
+                la manera mas clasica es usar las funciones comunes que vienen de usar la palabra reservada function dejar un espacio y colocar el nombre de tu funcion que puede ser el nombre que quieras pero al igual que las variables tienen excepciones, luego irian unos parentesis que puede llevar parametros que veremos como son sin parametros y luego con parametros, por ultimo las llaves donde ira nuestro codigo.
             </p>
-            <p>
-                // aunque no le pongamos return a una funcion para recibir algo tienen un return por defecto <br>
-                // es implicito para terminar con la funcion ya que siempre que se llama a return la funcion termina <br>
-            </p>
-            <h4>Funciones con parametros</h4>
-            <p>
-                // en este caso le adentro de los parametro estan numero1 y numero2 <br>
-                // el nombre de los parametros hara referencia a los valores que le pasemos <br>
-                function sumarNumeros(numero1, numero2) { <br>
-                    let suma = numero1 + numero2; <br>
-                    console.log(suma); // imprime el valor de suma <br>
-                } <br>
-                // sumarNumeros(); esto es un error porque la funcion esta esperando parametros <br>
-                sumarNumeros(10, 20); // el 10 sera el parametro numero1 que creamos y el 20 sera numero2 <br>
-                // esta funcion algo curioso que tiene es que no solo sumara numeros
-                sumarNumeros(10, "texto"); // imprime "10texto" los concatenara <br>
-            </p>
+            <pre>
+function holaMundo() {
+    console.log("hola mundo");
+}
+/*
+y ya, creamos una funcion en JavaScript pero esta no se ejecutara solo asi, hay que llamarla para que se ejecute, hay que colocar el nombre de la funcion seguido de parentesis
+*/
+
+holaMundo();
+
+/*
+eso deberia bastar para que se ejecute el codigo e imprima nuestro hola mundo, y ya que tienes tu funcion la puedes ejecutar tantas veces como quieras llamandola una y otra vez, una recomendacion es que la funcion debe ser descriptiva para que sepas lo que hace la funcion solo con ver el nombre, y que debe cumplir un proposito, si es una funcion de aritmetica puedes en lugar de llamar a una que sume, reste, multiplique, y te haga mil operaciones mas todo junto, se crea una que sume y otra que reste, veamos un ejemplo mas de funciones sin parametro
+*/
+
+a = 10;
+b = 15,
+function sumar() {
+    return a + b;
+}
+
+/*
+una nueva palabra "return" que lo que indica que la funcion va a retornar un valor, puede ser el valor que sea, desde numeros, texto, arrays hasta otra funcion lo cual es un poco extraño, esta funcion nos retornara el valor de a + b que es 25 pero tenemos que guardarla en algun lado por lo que podemos hacerlo con una variable.
+*/
+
+suma = sumar();
+console.log(suma);
+
+/*
+la palabra return que devuelve algo, tambien funciona como el break, pero este es para las funciones, cuando se llama a return incluso si no devuelve nada la funcion va a terminar, y todas las funciones aunque no devuelvan nada tienen implicitamente un return al final de la funcion, por lo que podremos hacer que la funcion se detenga en el caso de cumplirse una condicion. Los parametros como he dicho antes son valores de entrada y pueden haber tanto valores obligatorios como opcionales.
+*/
+
+function sumar(a, b) {
+    console.log(a + b);
+}
+
+/*
+ahora ya no tiene valores a los que sumar en la funcion como antes, antes solo con ver la funcion podiamos conocer el valor que imprimiria en consola, eso es porque ahora esos valores lo tenemos que colocar nosotros cuando llamemos a la funcion, como tiene dos parametros, cuando llamemos a la funcion le tendremos que pasar dos valores
+*/
+
+sumar(10,10); // imprime 20
+sumar(30,40); // imprime 70
+
+/*
+asi nuestras funciones pueden cambiar dependiendo de los valores que le pasemos, que tambien pueden devolver cosas si queremos, poniendo el return haciendo que nos devuelva la suma "return a + b;" veremos por ultimo los parametros opcionales, que al igual que lo anterior sera algo facil de entender
+*/
+
+function resta(a, b = 0) {
+    console.log(a - b);
+}
+resta(10,5);
+
+resta(10);
+
+function resta(a,b){
+    console.log("la restade los numeros es:");
+    console.log(a - b);
+}
+
+resta(10,4);
+
+/*
+probe el codigo y tiene una interaccion interesante debido a algo relacionado a las funciones en JavaScript, antes explicare los parametros opcionales que es que un parametro puede tener un valor por defecto, lo que lo convierte en un valor opcional, estos parametros deben ser los ultimos parametros que se puedan poner, ya que si el primero es opcional y el segundo obligatorio, de igual forma estaras obligado a pasarle los dos parametros lo que perderia el sentido de tener parametros opcionales, y como vemos gracias a que un parametro es opcional podemos colocarle tanto un valor cuando llamamos a la funcion como poder pasarle dos valores, pero surgen cosas extrañas, ya que hay dos funciones "resta" lo que en otros lenguajes esto seria un error.
+
+function resta(a,b){
+    console.log("la resta de los numeros es:");
+    console.log(a - b);
+}
+
+resta(10,2); // imprime 8
+
+function resta(a,b) {
+    console.log(a - b);
+}
+resta(10,3); // imprime 7
+
+no imprime "la resta de los numeros es:" que esta usando la segunda funcion en ambos casos, ya que la segunda funcion esta sobreescribiendo al primero, pero si seguimos la logica de un programa que es de izquierda a derecha y luego de arriba hacia abajo primero deberia crear la primera funcion y luego ejecutarla, crear la segunda funcion y luego ejecutar esa funcion, pero en JavaScript esta el hoisting que es que se puede llamar a una funcion aunque se cree despues, por lo que la segunda funcion sobreescribe a la primera y tambien afecta a la llamada que esta anterior a su creacion. 
+
+tambien esta la sobrecarga de funciones que es que se puede tener varias funciones con el mismo nombre si las funciones tienen diferentes cantidades de parametros y esto si es utilizado en los lenguajes de programacion de manera normal, pero en el caso de JavaScript no existe la sobrecarga de funciones, se emula con parametros por defecto o spread operator que es este "...", JavaScript utilizara la ultima funcion que exista con ese nombre.
+
+function resta(a,b){
+    console.log("la resta de los numeros es:");
+    console.log(a - b);
+}
+
+resta(10,2); // imprime 0 por que solo toma el primer valor y usara la segunda funcion
+
+function resta(a) {
+    console.log(a - 10);
+}
+
+resta(10); // imprime 0
+
+y la ultima particularidad que mencionare es que en caso de que en caso de haber dos funciones, la primera con un valor obligatorio y otro opcional, y la otra funcion tenga dos valores obligatorios, cuando se le pasen dos valores al llamarla, ejecutara lo que haya en la funcion con valores obligatorios. esto sucederia en otros lenguajes de programacion pero como es JavaScript solo usara la ultima funcion creada con el nombre que llamemos.
+
+function resta(a, b = 0) {
+    console.log(a - b);
+}
+
+resta(10,5); // imprime 5
+
+resta(10); // imprime NaN
+
+function resta(a,b){
+    console.log(a - b);
+}
+
+resta(10,4); // imprime 6
+
+NaN significa "not a number" debido a que utiliza la ultima funcion que necesita dos parametros, por lo que estaria sumando 10 + undefined
+
+por lo que en todos los casos se ejecuta la segunda funcion por estos motivos tan curiosos y extraños del lenguaje.
+*/
+            </pre>
             <h4>Funciones flecha</h4>
-            <p>es una forma diferente de crear una funcion, y se crearon con un objetivo de resolver un problema que no me recuerdo la verdad pero tambien es comun verlas y es importante identificarlas</p>
             <p>
-                // las funciones flecha no empiezan con la palabra function empiezan por const<br>
-                // seguido de const viene el nombre de la funcion con camelCase<br>
-                // despues viene el signo igual<br>
-                // luego viene los () o parametros que recibira la funcion<br>
-                // despues viene una flecha creada con =><br>
-                // y por ultimo las llaves con el codigo que se ejecutara <br>
+                es una forma diferente de crear una funcion, y la diferencia con las funciones normales aparte de su sintaxis es cuando se utiliza la palabra "this" que es una palabra reservada que veremos cuando lleguemos a la parte de metodos.
             </p>
-            <p><span>las funciones flechas pueden verse de diferente manera dependiendo el contexto</span></p>
+            <pre>
+const holaMundo = () => {
+    console.log("hola mundo");
+}
+
+holaMundo();
+
+/*
+utilizamos la palabra reservada const, le colocamos el nombre de la funcion, usamos el signo igual, los parentesis de los parametros, => el signo igual seguido de mayor que, y por ultimo el bloque de codigo, funcionan igual que las funciones normales, pero es otra manera de crear funciones, estas funciones flecha pueden verse de diferente forma dependienso del contexto.
+*/
+
+// las funciones flecha cuando tienen un solo parametro pueden no llevar parentesis, son opcionales
+const saludo = nombre => {
+    console.log("un saludo " + nombre);
+}
+saludo("ortensio");
+
+// las funciones flecha
+las funciones que tienen cero, o mas de un parametro deben llevar perentesis
+const suma = (a,b) => {
+    console.log(a + b);
+}
+
+// las funciones flecha si solo ejecutaran una linea de codigo pueden no tener llaves, son opcionales
+const despedida = nombre => console.log("adios " + nombre);
+despedida("mario");
+
+/*
+las funciones flecha de una sola linea que retornan un valor no llevaran return, el return sera implicito y no se debe de colocar en este caso
+*/
+const multiplicacion = (a,b) => a * b;
+cont resultado = multiplicacion();
+console.log(resultado);
+
+/*
+funciones flecha anonimas y que se llaman una vez se crean, una funcion flecha puede no tener nombre y aun puede llamarse, un ejemplo de estos dos conceptos
+*/
+( () => { console.log("hola"); } )();
+( () => { console.log("mundo"); } )();
+/*
+la funcion se coloca entre parentesis para indicar explicitamente que es una expresion, y otro parentesis para ejecutarlo, no tienen un nombre por lo que no va a crearse una funcion con un nombre, por lo que en este caso si pegara en consola hola y luego mundo, se ejecuta una vez se crea y luego no puede volver a usarse
+*/
+            </pre>
+            <h3>Metodos</h3>
             <p>
-                // funciones flecha normales<br>
-                const sumarNumeros = (numero1, numero2) => { <br>
-                    let suma = numero1 + numero2; <br>
-                    console.log(suma); // imprime el valor de suma <br>
-                }
-                sumarNumeros(1,2);<br>
+                Los metodos son funciones que pertenecen a un objeto, pero cuando hablamos de metodos no nos referimos a los objetos que ya conocemos, se suele referir a objetos provenientes de clases, este es un tema correspondiente a programacion orientada a objetos pero para que los entiendan mejor, crearemos nuestros propios metodos estaticos, para utilizar un metodo que viene de una clase necesitariamos crear la clase, que es un molde que tiene propiedades y metodos, y luego crear un objeto, este nuevo objeto tendra las propiedades y metodos de la clase, y podemos crear tantos objetos como querramos apartir de la clase, pero con metodos estaticos no necesitamos crear un objeto a partir de la clase lo que nos permite usar directamente estos metodos, todo esto se entendera mejor cuando lo apliquemos a codigo.
             </p>
+            <pre>
+/*
+primero debemos crear una clase, llamando a la palabra reservada class, luego el nombre de la clase que por convencion suele empezar por mayuscula, y luego unas llaves
+
+class Objeto {}
+
+un objeto puede tener propiedades, puede almacenar datos pertenecientes a la clase, para que podamos acceder a un atributo fuera de la clase debe ser estatica, imaginemos que queremos una clase persona, los atributos de una persona pueden ser el nombre, su edad, entre otros.
+
+class Persona {
+    static nombre = "camilo";
+    static edad = 28;
+}
+
+se llama a la palabra reservada static, luego el nombre de la propiedad, el signo igual y por ultimo lo que va a contener la propiedad, que puede ser lo que contendria una variable normal hasta colecciones de datos, ya que son estaticos podemos llamar directamente a estas propiedades, ya que todas son propiedades de la clase, se asume que son locales por lo que no hay que colocar var o let para definir su alcance.ñ
+
+console.log( Persona.nombre );
+
+solo se llama al nombre de la clase seguido de un punto seguido de su propiedad y eso deberia devolverte el valor que tiene, con los metodos se entiende que un objeto puede tener acciones, con el ejemplo de una persona este puede hablar o interactuar con otras cosas, antes del siguiente ejemplo veremos como concatenar texto, ya que si bien podemos usar el operador "+" una forma mas comun y mejor para concatenar cadenas con variables es usar template strings.
+
+las templates strings `` estan alapar de la letra "p" a su derecha en el teclado, son basicamente comillas, para concatenar cadenas con variables se deben usar las template strings, otras comillas no funcionan, luego para colocar el valor de la variable dentro de la cadena de texto se debe usar ${} adentro de esta ira la variable a juntar con el texto, un ejemplo es `cadena de texto ${cadena} mas texto` en lugar de hacer algo como ("cadena de texto " + cadena + " mas texto")
+
+class Persona {
+    static nombre = "camile";
+    static edad = 28;
+
+    static saludo() {
+        console.log(`hola mi nombre es ${this.nombre}, tengo ${this.edad} años de edad`);
+    }
+}
+
+Persona.saludo();
+
+se utiliza "static" luego la funcion que puede ser normal como "saludo() {}", o flecha como "saludo = () => {}" y con eso seria suficiente para que tengas un metodo aunque no haga nada, en el ejemplo anterior vemos como funciona el "this" que sirve para apuntar al un objeto, que no profundizare muy a fondo en "this", como pueden ver se hace la llamada al metodo se hace primero escribiendo el nombre de la clase seguido de punto, se coloca el nombre del metodo y parentesis para indicar que es una funcion, Persona.saludo(); en este caso "this" adentro del metodo saludo apunta al objeto Persona y un punto para acceder a algo de la clase que en este caso es el atributo nombre y tambien para la edad, como si hicieramos la llamada Persona.nombre adentro de nuestro metodo en la misma clase, y Persona.edad en el metodo adentro de la clase, asi con "this" podemos tanto acceder a atributos adentro de la clase como tambien ejecutar metodos de la clase adentro de otro metodo en una misma clase, y para eto son los metodos, cuando hay funciones que nececiten acceder a los mismos atributos, sean funciones que tienen mucho que ver en comun unas con otras, funciones que se llamen entre ellas, y es una forma mas limpia de organizar el codigo, un ejemplo de metodos estaticos:
+*/
+
+// una forma muy limpia de crear una calculadora usando la consola
+class Operar {
+    static suma = (a,b) => console.log(a + b);
+
+    static resta = (a,b) => console.log(a - b);
+
+    static multiplicacion = (a,b) => console.log(a * b);
+
+    static division = (a,b) => console.log(a / b);
+
+    static potencia = (a,b) => console.log(a ** b);
+}
+
+Operar.suma(2,4);
+Operar.resta(2,4);
+Operar.multiplicacion(2,4);
+Operar.division(2,4);
+Operar.potencia(2,4);
+
+// los metodos pueden tanto acceder como modificar los atributos
+class Empleado {
+    id = 0;
+    nombre = "";
+    edad = 0;
+
+    // por convencion se utiliza set al principio del nombre de los metodos que modifican propiedades
+    static setId = id => this.id = id;
+    static setNombre = nombre => this.nombre = nombre;
+    static setEdad = edad => this.edad = edad;
+
+    // tambien por convencion cuando un metodo muestra informacion de las propiedades de la clase empezara por get
+    static getInfo = () => console.log(`id: ${this.id}, nombre: ${this.nombre}, edad: ${this.edad}`);
+}
+
+// el poner get y set solo ayuda a entender mejor lo que hace el metodo
+Empleado.setId(2902);
+Empleado.setNombre("jorge");
+Empleado.setEdad(29);
+Empleado.getInfo();
+
+/*
+Empleado.id() Error.
+ya no se puede acceder directamente a los atributos de la clase ya que no son estaticos, y esa es una buena manera de "encapsular" los datos, haciendo que nosotros tengamos un mayor control de como se manejan los datos, teniendo asi propiedades privadas, para tener propiedades privadas se usa # al principio del nombre de la propiedad "#edad" esto fue integrado en JavaScript y ofrece mayor seguridad al encapsularlos mejor.
+*/ 
+            </pre>
+            <h3>Metodos y funciones nativas</h3>
             <p>
-                // las funciones flecha con un solo parametro pueden no llevar parentesis<br>
-                // pero si no tiene parametros igual se ponen los () <br>
-                const potencia = numero => {<br>
-                    return numero ** 2;<br>
-                } <br>
-                potencia(2);<br>
+                hay funciones y metodos que vienen integrados con el lenguaje de JavaScript,  hay muchos de ellos, hay metodos que se pueden usar con cadenas de texto, con arrays y aunque hay muchas no todas son tan buenas o la mejor opcion, como el metodo .concat() para hacer concatenacion de cadenas pero si sabes usar esta forma de concatenar cadenas `${}` sera mejor que el metodo concat(), asi que veremos las mas utiles.
             </p>
+            <pre>
+/*
+Funciones:
+
+prompt(): es una funcion que generara una alerta en la pagina web, esta le pedira al usuario que ingrese algo, y devuelve una cadena de texto, adentro de los parentesis puede recibir un parametro que sera una cadena de texto, sera solamente para enviarle un mensaje al usuario para que sepa mejor que es lo que deberia colocar "prompt("ingrese su nombre");" ya que devuelve algo hay que guardarlo en un lugar como una variable, este casi no se usa pero lo tendran que utilizar en futuros ejercicios, ejemplo:
+
+nombre = prompt("ingrese su nombre");
+
+toString(), parseInt() y parseFloat: los tres son funciones para convertir de un tipo de dato a otro, el toString convertira un tipo de dato en una cadena de texto, parseInt ya sea una cadena de texto "123" o un Float que es numerico pero con punto decimal 12.12, los convertira en numeros de tipo entero 123, 12, y parseFloat() para convertir a un numero con punto decimal, solo hay que colocar el dato en los parentesis y devolvera el valor convertido.
+
+ya que prompt lo que devuelve es una cadena de texto podemos usar estos convertidores
+let edad = parseInt(prompt("ingrese su edad"));
+let edad = parseFloat(prompt("ingrese su salario, ejemplo '3000.00'));
+toString(edad)
+*/
+
+
+// Metodos
+// para poner en mayuscular
+
+let nombre = "texto".toUpperCase(); // "TEXTO"
+console.log(nombre)
+
+// para poner en minusculas
+
+console.log(nombre.toLocaleLowerCase()); // "texto"
+
+// este metodo es tento para texto como para arrays, buscara el texto que le pongas entre parentesis y devolvera booleano dependiendo de si lo incluye o no, 
+
+let consola = "texto";
+console.log(consola.includes("texto")); // true
+
+let arr = ["1","2","3"];
+console.log(arr.includes("1")); // true
+
+// Metodos de Arrays
+// .push(): ya lo habiamos visto y es para añadir un elemento al final de la listas
+let lista = [1,2,3];
+lista.push(4); // [1,2,,3,4]
+
+// .pop(): para eliminar un elemento al final de una lista
+lista.pop(); // [1,2,3]
+
+// .shift(): para eliminar el primer elemento de la lista
+lista.shift(); // [2,3]
+
+// .map(): itera sobre un array existente y devolvera un nuevo array transformandolo segun una funcion
+const productos = {
+    { nombre: "Camisa", precio: 20 },
+    { nombre: "Pantalón", precio: 30 }
+}
+
+const nombresProductos = productos.map(p => p.nombre); // ["Camisa", "Pantalón"]
+
+let resultado = lista.map( n => n * 2 ); // [4,6]
+/*
+recibe como parametro una funcion que en este caso usamos una funcion flecha, .map() iterara en la lista como en un bucle, "n =>" y "p =>" esto es una funcion flecha que recibe un solo parametro que puede tener el nombre que sea como "numero =>" para que sea mas claro, este parametro representa al un elemento individual de la lista, por lo que "n => n * 2" significaria, recorre la lista, cada numero en la lista de numeros multiplicalo por dos, y cuando termines devuelveme la lista de numeros multiplicada por 2
+*/
+
+/* 
+.filter(): sirve para filtrar un array, al igual que en el anterior recorrera todo el array, y tambien hay que pasarle como parametro una funcion, pero en este caso la funcion es para verificar una condicion, y te devolvera una nueva lista con los elementos que cumplan con la condicion
+*/
+const frutas = ["manzana", "pera", "uva", "mango"];
+
+const conA = frutas.filter(fruta => fruta.includes("a"));
+
+console.log(conA); // ["manzana", "pera", "uva", "mango"]
+            </pre>
             <p>
-                // las funciones flecha que solo tienen una linea de codigo osea solo una instruccion se pueden poner sin llaves<br>
-                const potencia = numero => numero ** 2;<br>
-                potencia(2);<br>
-            </p>
-            <p>
-                // las funciones pueden ser anonimas osea que no tendran nombre<br>
-                // las funciones se pueden llamar una vez se crean<br>
-                () => { // funcion flecha sin nombre <br>
-                    console.log("hola mundo"); // codigo<br>
-                }(); // aqui se llama a la funcion, ya que no tiene nombre con los parentesis se llama<br>
-                // se llama una vez se crean<br>
-            </p>
-            <h4>los metodos son funciones que pertenecen a un objeto</h4>
-            <p>
-                <span>nativo: se refiere a que viene ya integredo con JavaScript</span> <br>
-                // las cadenas de texto, los arrays, y mas cosas tienen metodos nativos y son funciones que vienen con el lenguaje<br>
-                // un metodo de cadena muy comun es toUpperCase()<br>
-                // metodos de cadena son para textos<br>
-                //metodo para poner en mayusculas una cadena de texto<br>
-                "hola mundo".toUpperCase(); // imprime HOLA MUNDO<br>
-                // se pone la cadena de texto seguido de punto para llamar un metodo, luego el nombre del metodo<br>
-                // como vemos los metodos estan escritos en camelCase<br>
-                <span>Metodos de cadenas comunes</span> <br>
-                toUpperCase() // pone en mayusculas<br>
-                toLowerCase() // pone en minusculas<br>
-                includes() // adentro del parentesis se le pone un parametro que es el texto que tiene que buscar<br>
-                "hola mundo".includes("hola"); // true, devuelve booleanos<br>
-                trim() // elimina espacios al inicio y final<br>
-                <span>Metodos de arrays</span> <br>
-                push() // para agregar un elemento al final de un array<br>
-                let array = [1,2,3]; array.push(4); // [1,2,3,4]<br>
-                pop() // para eliminar el ultimo elemento de un array<br>
-                let array = [1,2,3]; array.pop(); // [1,2]<br>
-                shift() // para eliminar el primer elemento de un array<br>
-                let array = [1,2,3]; array.shift(); // [2,3]<br>
-                map() // para aplicar una funcion a cada elemento de un array <span>importante</span><br>
-                let array = [1,2,3]; <br>
-                array.map( numero =>{ // <= funcion flecha de un solo parametro<br>
-                    return numero ** 2; <br>
-                }) // [1,4,9]<br>
-                filter() // para filtrar elementos de un array<br>
-                let array = [1,2,3,4,5]; <br>
-                array.filter( numero =>{ <br>
-                    return numero % 2 === 0; // devuelve true o false, si no cumple con el valor se elimina del array<br>
-                }); // [2,4] retorna un nuevo array filtrado<br>
+                si tuviera que hablar de todos los metodos y funciones que existen seria demasiado extenso, pero considero que estos son los mas utiles.
             </p>
             <h3>Parte practica</h3>
             <p>
-                // prompt() es una funcion que pide al usuario que ingrese un texto y devuelve el texto ingresado<br>
-                // prompt() se ejecuta cuando se carga o recarga la pagina
-                // en los parentesis se pone el mensaje que recibira el usuaro <br>
-                // se guarda en una variable para recuperar el valor ingresado
-            </p>
-            <p>
-                crea una funcion que pida con prompt() numeros para evaluar, debera crear una funcion que reciba como parametro dos numeros y devuelva el resultado, usar alert() para mostrar el resultado<br>
-                los numeros evaluados deberan ser los que paso el usuario
-            </p>
-            <p>
-                Ejercicio2: crearon una funcion flecha que se llame una ves se crea, como parametro recibira un array <br>
-                usar .map para recorrer el array y devolver un nuevo array con los numeros multiplicados por 2 <br>
-                el nuevo array se mostrara en consola
-            </p>
-            <p>
-                // una forma de concatenar mejor que con + es usando ${} y `` estas son comillas especiales llamadas template strings<br>
-                // en un teclado en español estan alapar de la letra p `` <br>
-                // otra cosa es que para usar comillas en un texto se usan comillas diferentes a las que se estan usando <br>
-                Ejemplo: <br>
-                // let nombre = "juan";
-                // let saludo = `hola "'${nombre}'"`; // tanto las comillas doble como simples escaparan como texto
-                // resultado: hola "'juan'"
-            </p>
-            <p>
-                Ejercicio3: pedir con promp() el nombre de una persona <br>
-                crear una funcion flecha que concatenara el nombre junto con un saludo <br>
-                verificar con condicionales if y typeof que el valor sea un string <br>
-                crear un bucle que termine hasta que el usuario ingrese un valor valido <br>
-                mostrar el resultado con alert()
+                ejercicio 1: pedir con prompt al usuario que ingrese 20 numeros, deberan convertirlos a numeros y guardarlos en una lista<br>
+                ejercicio 2: deberan crear un array de objetos, cada objeto es un producto diferente con un nombre y un precio, deberan filtrar ese array por uno que contenga productos con precio menor a 40, al menos 10 objetos<br>
+                ejercicio 3: crearan su propia clase que contendra tres atributos privados, contendra tres metodos para modificar cada atributo y un metodo que devuelva la informacion, la clase se llamara Stock, y servira para gestionar mercancias guardadas, por ultimo llamaran a los metodos.
             </p>
         </section>
 
         <!-- seccion para callbacks -->
         <section>
             <h3>Callbacks</h3>
-            <p>son funciones que se pasan como parametro a otra funcion</p>
-            <p>es una funcion que se pasa como argumento a otra y se ejecutan cuando las llamamos adentro de nuestras funciones</p>
-            <p>Ejemplo:</p>
             <p>
-                function procesar(nombre, callback){ // primer parametro nombre, segundo es la funcion callback <br>
-                    console.log(`precesando usuario: ${nombre}`); <br>
-                    callback(); // se ejecuta despues de que la funcion principal haya terminado su proceso <br>
-                } <br>
-                function finalizado(){ // callback <br>
-                    console.log("proceso completado") <br>
-                } <br>
-                procesar("victor", finalizado); <br>
-                // salida esperada: <br>
-                // precesando usuario: victor <br>
-                // proceso completado <br>
+                los callbacks como vimos anteriormente son funciones que se pasan como parametro a otras funciones, y ya hemos visto su utilidad en accion con filter y map que reciben una funcion como parametro, ejemplo de un callback:
             </p>
-            <p>
-                // por algo llamado hoisting podemos llamar a una funcion antes de que se cree <br>
-                // esto no funciona con todo como por ejemplo <br>
-                console.log(`hola: ${nombre}`); // dara un error por que no se ha declarado el nombre <br>
-                let nombre = "victor"; <br>
-                <br>
-                saludo(); // se llama a la funcion <br>
-                function saludo(){ // aqui creamos esa funcion<br>
-                    let nombre = "victor"; <br>
-                    console.log(`hola: ${nombre}`); <br>
-                }
-            </p>
-            <p>
-                Ejemplo usando funciones flecha <br>
-                const obtenerDatos = callback => { // parametro unico el callback <br>
-                    console.log("obteniendo datos..."); // imprime el mensaje <br>
-                    callback(); // se llama al callback <br>
-                } <br>
-                obtenerDatos(() => console.log("accion luego de recibir los datos.")); <br>
-                // se llama a la funcion y donde pide la funcion enves de crearla afuera y luego llamarla dentro<br>
-                // creamos una funcion flecha anonima adentro del parametro <br>
-            </p>
+            <pre>
+// la funcion que ejecutara el callback
+function saludo(callback) {
+    console.log("hola");
+    callback();
+}
+
+// el callback que creamos
+function miCallback () {
+    console.log("mi nombre es carmelio");
+}
+
+saludo(miCallback); // le pasamos la funcion adentro de los parametros
+// y asi podemos ejecutar funciones adentro de otras funciones
+            </pre>
         </section>
 
         <!-- seccion para modulos -->
