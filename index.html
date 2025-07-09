@@ -93,12 +93,13 @@
             </p>
             <h3>Tipado dinamico</h3>
             <p>
-                en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br> 
-                <code class="code">
-                    var a = 1;<br>
-                    a = "hola";<br>
-                    a = true;
-                </code>
+                en C++ el tipado es fuerte porque las variables se declaran como un tipo como numero y no puede cambiar el tipo de la variable, en JavaScript el tipado es dinamico porque las variables pueden cambiar de tipo, por ejemplo: <br>
+                <pre>
+var a = 1;
+a = "hola";
+a = true;
+                </pre>
+
             </p>
             <h3>Propósito general</h3>
             <p>
@@ -127,7 +128,7 @@
         <section class="variables">
             <h2>Variables</h2>
             <p>
-                Las variables son espacios en memoria donde se almacenan los datos las variables se declaran antes de usarse, por ejemplo:<br>
+                Las variables son espacios en memoria donde se almacenan los datos, las variables se declaran antes de usarse, por ejemplo:<br>
                 <code class="code">
                     var a = 1;<br>
                     var b = 2;<br>
@@ -271,7 +272,7 @@
                     let holaMundo = cadena + texto;<br>
                     alert(holaMundo);<br>
                 </code>
-                y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScript, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador "-"" que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
+                y ahora solo es cuestion de probar el codigo, y veran su hola mundo en forma de alerta, felicitaciones! has creado tu primer hola mundo con JavaScript, ahora puedes presumirselo a todo el mundo como un gran logro. Deben tener en cuenta que los strings tambien tienen en cuenta los espacios en blanco por lo que pueden separar las palabras, para poder guardar comillas adentro de una variable string solo hay que usar comillas diferentes y asi se podran "escapar" como se le dice, si quieren escapar comillas dobles deberan usar por ejemplo ' "cadena" ', y para comillas simples " 'cadena' ", `` las templates strings tambien puede escapar ambas, en el ejemplo use espacios para que se note la diferencia pero como dije los espacios tambien cuentan y se guardaran por lo que es algo a tomar en cuenta. Una ultima interaccion es con el operador "-" que es para la resta, ya que el lenguaje tiene una particularidad muy interesante que es que si tienes cadenas de texto que son numeros y usas el operador - lo que hara sera que se restaran, por ejemplo:<br>
                 <code class="code">
                     let numero1 = "1";<br>
                     let numero2 = "1";<br>
@@ -318,7 +319,7 @@
             </p>
             <h3>Undefined</h3>
             <p>
-                este tipo de dato como su nombre en ingles lo indica, es un tipo de dato sin definir, cuando no se le agrega null para que este vacio, si no que no se le ha dicho que contendra.<br>
+                este tipo de dato como su nombre en ingles lo indica, es un tipo de dato sin definir, cuando no se le agrega null para que este vacio, en lugar de es no se le dice lo que contendra.<br>
                 <code class="code">
                     let sinDato;<br>
                     alert(sinDato);<br>
@@ -428,13 +429,13 @@
                 <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
                 </code>
-                el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave valor se separa por comas, para acceder a sus valores se puede hacer algo asi:
+                el objeto persona es util en caso de que querramos concentrar informacion relacionado a algo, en este caso personas, que contendran nombres, edades, y si trabajan o no, se ponen llaves {}, se coloca adentro de las llaves la clave, luego colocar dos puntos : y por ultimo el valor, cada clave valor se separa por comas, para acceder a sus valores se puede hacer algo asi:<br>
                 <code class="code">
                     let persona = {nombre: "julio", edad: 22, trabaja: true};<br>
                     console.log(persona.nombre);<br>
                     console.log(persona);<br>
                 </code>
-                donde ya no accedemos al valor por su posicion si no por su clave, los arrays y objetos pueden hacer combinaciones interesantes ya que, los objetos pueden contener a su vez, otros objetos, los arrays pueden contener arrays, los arrays pueden contener objetos, y los objetos arrays, por lo lo que algo frecuentemente usado es tener arrays de objetos, estas listas tambien pueden guardar variables, tambien se suelen usar saltos de linea para hacer que todo sea mas legible, por lo que mostrare unos ejemplos:<br>
+                donde ya no accedemos al valor por su posicion si no por su clave, los arrays y objetos pueden hacer combinaciones interesantes ya que, los objetos pueden contener a su vez, otros objetos, los arrays pueden contener arrays, los arrays pueden contener objetos, y los objetos arrays, por lo que algo frecuentemente usado es tener arrays de objetos, estas listas tambien pueden guardar variables, tambien se suelen usar saltos de linea para hacer que todo sea mas legible, por lo que mostrare unos ejemplos:<br>
                 <code class="code">
                     let listaDeEstudiantes = [<br>
                         { nombre: "julia", promedio: 75, cursos: ["matematicas","calculo"]},<br>
@@ -446,10 +447,10 @@
                     console.log(listaDeEstudiantes[0].cursos[0]);<br>
                     listaDeEstudiantes[0].cursos[0] = "ingles";<br>
                 </code>
-                que primero buscara la posicion 0, luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codigo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, para saber que hace el codigo de los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
+                que primero buscara la posicion 0 en el array "listaDeEstudiantes", luego buscara la clave cursos, y luego buscara en la posicion 0 de la lista de cursos y mostrara su valor, y en la segunda linea de codigo estamos cambiando su valor por otro, en este caso deberia recibir el curso de ingles en lugar de matematicas. antes de seguir con el siguiente tema les mostrare como comentar el codigo, algo muy importante al trabajar con otros en un mismo proyecto, para saber que hace el codigo de los demas, o incluso comentar tu propio codigo para que te sea mas claro en caso de querer cambiarlo en un futuro.<br>
                 <code class="code">
                     // este es un comentario de una sola linea, para comentar algo especifico del programa<br>
-                    /* este es un comentario multilinea y se emple cuando el comentario es muy grande */<br>
+                    /* este es un comentario multilinea y se empleaa cuando el comentario es muy grande */<br>
                     /*<br>
                         el /* indica cuando el comentario empieza<br>
                         */ indica el final de un comentario<br>
@@ -460,7 +461,7 @@
 
             <h3>Parte practica</h3>
             <p>
-                tendran que crear otro archivo .js donde deberan hacer el siguiente ejercicio: crearan sus propios arreglos, tambien sus propios objetos, tendran que crear un objeto que contenga al menos dos arrays, esos arrays contendran a su vez almenos dos variables ya inicializadas con datos, y mostrarlos todos en la consola, y el ultimo el objeto con arrays que contienen variables deberan mostrar el valor de las cuatro variables que estan ahi tambien en la consola, y por ultimo si les molesta que su pagina se vea blanco fuerte pueden agregar la siguiente etiqueta y asi dañar menos su vista:
+                tendran que crear otro archivo .js donde deberan hacer el siguiente ejercicio: crearan sus propios arreglos, tambien sus propios objetos, almenos tres arrays y almenos tres objetos, tendran que crear un objeto que contenga al menos dos arrays, esos arrays contendran a su vez almenos dos variables ya inicializadas con datos, y mostrarlos todos en la consola, y el ultimo el objeto con arrays que contienen variables deberan mostrar el valor de las cuatro variables que estan ahi tambien en la consola, y por ultimo si les molesta que su pagina se vea blanco fuerte pueden agregar la siguiente etiqueta y asi dañar menos su vista:
             </p>
             <pre>
 &lt;style&gt;
@@ -551,7 +552,7 @@ num %= 2; // num vale 0
             </p>
             <h3>Operadores condicionales</h3>
             <p>
-                con estos operadores puedes indicar que condiciones necesitas que se cumplan, dependiendo de si la condicion se cumple o no retornara valores booleanos, true en caso de que la condicion se cumpla, false en caso de que no se cumpla la condicion &lt;body&gt;<br>
+                con estos operadores puedes indicar que condiciones necesitas que se cumplan, dependiendo de si la condicion se cumple o no retornara valores booleanos, true en caso de que la condicion se cumpla, false en caso de que no se cumpla la condicion<br>
                 <code class="code">
                     /*<br>
                         &gt mayor que<br>
@@ -568,7 +569,7 @@ num %= 2; // num vale 0
                     let variable2 = 1 &gt 2; // false<br>
                     let variable3 = 1 &lt= 1; // true<br>
                     let variable4 = 1 &gt= 2; // false 1 no es mayor o igual que 2<br>
-                    let variable5 = 1 == 1; // 1 es iugual que 1 asi que es true<br>
+                    let variable5 = 1 == 1; // 1 es iSgual que 1 asi que es true<br>
                     let variable6 = 1 != 1; // 1 no es diferente de 1 asi que es false<br>
                     let variable7 = 1 === "1"; // este es false, compara tanto si el valor es igual como si el tipo de dato tambien lo es<br>
                     let variable8 = 1 !== "1"; // true<br>
@@ -589,7 +590,7 @@ num %= 2; // num vale 0
                     let var3 = !true; // retornara un false<br>
                     let var4 = !(false);<br>
                     /*<br>
-                        esta es otra forma de negar, donde le decimos que lo que este adentro de los parentesis es una expreion y lo que devuelva se tiene que negar por lo que se puede hacer un !(true && false) estos operadores son muy utiles y veremos el porque cuando lleguemos a la parte de los if else, y otra curiosidad es que otras cosas tambien devuelven booleanos por que JavaScript intenta convertir tipos de datos a otros para que tu programa funcione, si es tipo numerico un 0 es un false, en texto una cadena vacia "" es un false por lo que hacer un:<br>
+                        esta es otra forma de negar, donde le decimos que lo que este adentro de los parentesis es una expresion y lo que devuelva se tiene que negar por lo que se puede hacer un !(true && false) estos operadores son muy utiles y veremos el porque cuando lleguemos a la parte de los if else, y otra curiosidad es que otras cosas tambien devuelven booleanos por que JavaScript intenta convertir tipos de datos a otros para que tu programa funcione, si es tipo numerico un 0 es un false, en texto una cadena vacia "" es un false por lo que hacer un:<br>
                     */<br>
                     alert(!("")); // retornara un true
                 </code><br><br>
@@ -642,7 +643,7 @@ console.log(a); // imprime 5
             <pre class="code">
 /*
 if: el bloque se ejecutara si la condicion es verdadera
-else if: si el bloque if no se ejecuto, buscara un if else y vera si este cumple para ejecutar la logica dentro
+else if: si el bloque if no se ejecuto, buscara un else ig y vera si este cumple para ejecutar la logica dentro
 else: este se ejecutara en caso de que no se haya ejecutado if, y tampoco se haya ejecutado los if else
 
 para crear una condicion if hay que usar su palabra reservada "if" luego hay que colocar unos parentesis, adentro de estos parentesis estara la condicion que debe cumplirse, por ultimo un bloque de codigo {} donde ira la logica que quieras que se ejecute, y tambien se puede no poner los bloques de codigo en caso de que solo requieras de una linea de codigo, ejemplo:
@@ -730,7 +731,7 @@ persona.nombre == "juan" ? console.log("hola") : console.log("adios");
 let juan = persona.nombre == "juan" ? "juan" : "no es juan";
 console.log(juan);
 /*
-tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" es un if, se ejecutara si es verdadera, ":" es un else que se ejecutara si es falsa, por el signo de asignacion = espera un valor, que si solo es la condicion retornara un  booleano, pero con el operador ternario podemos hacer que devuelva mas valores
+tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" es un if, se ejecutara si la expresion es verdadera, ":" es un else que se ejecutara si es falsa, por el signo de asignacion = espera un valor, que si solo es la condicion retornara un  booleano, pero con el operador ternario podemos hacer que devuelva mas valores
 */
             </pre>
             <p>
@@ -739,7 +740,7 @@ tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" e
             <p>
                 en un nuevo archivo llamado condicionales.js y en el debaran realizar varios ejercicios usando condicionales<br>
                 ejercicio 1: crear un condicional if que verifique si un array esta vacio, si esta vacio debera mostrar en consola que esta vacio<br>
-                ejercicio 2: creen un array de objetos, los objetos contendran el nombre de una fruta, el precio y la cantidad que hay guardada, almenos tres frutas, tendran una variable dinero, deberan simular que compran las frutas, restando su variable con el precio de la fruta, o si no hay frutas disponibles no las podran comprar<br>
+                ejercicio 2: creen un array de objetos, los objetos contendran el nombre de una fruta, el precio y la cantidad que hay guardada, almenos tres frutas, tendran una variable dinero, deberan simular que compran las frutas, restando su variable con el precio de la fruta, si no tienen suficiente dinero no podran comprar mas, tambien si no hay frutas disponibles no las podran comprar<br>
                 ejercicio 3: copiaran y pegaran el ejercicio que yo escribi de la invitacion a la fiesta, crearan un objeto con sus datos y veran cual es el resultado que tendrian<br>
             </p>
         </section>
@@ -756,7 +757,7 @@ tambien puede retornar valores, evalua (persona.nombre == "juan") el signo "?" e
             </p>
             <pre>
 /*
-cada vez que el bucle haya ejecutado una vez todo el bloque de codigo se dice que ha terminado una iteracion, puede hacer tantas iteraciones como querramos u la logica lo requiera, antes de entrar al siguiente ejemplo veremos el operador "++" es para incrementar un valor numerico en una unidad y les mostrare un ejemplo rapido:
+cada vez que el bucle haya ejecutado una vez todo el bloque de codigo se dice que ha terminado una "iteracion", recuerden esta palabra ya que la usare muy amenudo en el curso, puede hacer tantas iteraciones como querramos u la logica lo requiera, antes de entrar al siguiente ejemplo veremos el operador "++", es para incrementar un valor numerico en una unidad y les mostrare un ejemplo rapido:
 i = 0;
 i++
 console.log(i); // imprime 1
@@ -773,7 +774,7 @@ while ( i &lt 100 ) {
 }
 
 /*
-primero declaramos una variable i afuera y esto es importante, luego se coloca la sintaxis basica de un bucle while "while () {}"", y adentro del bloque de codigo se imprime el numero y luego se incrementa el numero, imprimira 100 veces la variable y, osea del 0 al 99, un error que yo cometi fue el declarar la variable i adentro del bucle lo que genero un bucle infinito por que en cada iteracion la variable i se reseteaba por lo que siempre era 0, si le pasas adentro de los parentesis true o 1, los tomara como verdaderos siempre por lo que generara un bucle infinito, pero esto si se puede hacer de manera intencional gracias a que existe la palabra reservada "break" para detener el bucle por completo, el hacer lo del numero incremental no se usa con el while ya que es mejor hacerlo con el bucle for que veremos un momento, el bucle while se va a querer utilizar cuando no se sabe cuantas veces se necesita iterer sober el codigo.
+primero declaramos una variable i afuera y esto es importante, luego se coloca la sintaxis basica de un bucle while "while () {}"", y adentro del bloque de codigo se imprime el numero y luego se incrementa el numero, imprimira 100 veces la variable i, imprimiendo desde el 0 hasta al 99, un error que yo cometi fue el declarar la variable i adentro del bucle lo que genero un bucle infinito por que en cada iteracion la variable i se reseteaba por lo que siempre era 0, si le pasas adentro de los parentesis true o 1, los tomara como verdaderos siempre por lo que generara un bucle infinito, pero esto si se puede hacer de manera intencional gracias a que existe la palabra reservada "break" para detener el bucle por completo, el hacer lo del numero incremental no se usa con el while ya que es mejor hacerlo con el bucle for que veremos un momento, el bucle while se va a querer utilizar cuando no se sabe cuantas veces se necesita iterar sober el codigo.
 */
 
 while ( true ) {
@@ -789,7 +790,7 @@ no pasa nada si no entienden todo el codigo, solo tienen que saber que primero p
             </pre>
             <h4>Do while</h4>
             <p>
-                este es casi lo mismo que el bucle while, pero con la diferencia es que el primero verifica una condicion, si la condicion se cumple se ejecuta el codigo y empieza el bucle, en el do while primero ejecutara el codigo y luego verificara que la condicion se cumpla para volver a ajecutar el programa, se llama a la palapra reservada "do" luego las llaves donde tendran su logica, al final de las llaves la palabra "while" y por ultimo parentesis do {} while (), que si lo traducimos podemos darnos una buena idea de lo que hace, do: hacer, while: mientras, haz { /*codigo*/}  mientras ( /*condicion*/ )
+                este es casi lo mismo que el bucle while, pero con la diferencia es que el primero verifica una condicion, si la condicion se cumple se ejecuta el codigo y empieza el bucle, en el do while primero ejecutara el codigo y luego verificara que la condicion se cumpla para volver a ajecutar el programa, se llama a la palapra reservada "do" luego las llaves donde tendran su logica, al final de las llaves la palabra "while" y por ultimo parentesis "do {} while ()", que si lo traducimos podemos darnos una buena idea de lo que hace, do: hacer, while: mientras, haz { /*codigo*/}  mientras ( /*condicion*/ )
             </p>
             <pre>
 do {
