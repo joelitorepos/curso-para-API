@@ -1193,7 +1193,7 @@ console.log(conA); // ["manzana", "pera", "uva", "mango"]
 
         <!-- seccion para callbacks -->
         <section>
-            <h3>Callbacks</h3>
+            <h2>Callbacks</h2>
             <p>
                 los callbacks como vimos anteriormente son funciones que se pasan como parametro a otras funciones, y ya hemos visto su utilidad en accion con filter y map que reciben una funcion como parametro, ejemplo de un callback:
             </p>
@@ -1212,11 +1212,121 @@ function miCallback () {
 saludo(miCallback); // le pasamos la funcion adentro de los parametros
 // y asi podemos ejecutar funciones adentro de otras funciones
             </pre>
-        </section>
 
+            <h3>Bonus</h3>
+            <p>
+                hasta el momento todo lo que vimos en JavaScript son cosas que tambien estan en otro lenguajes de programacion, lo cual es bueno ya que si quieren aprender otro lenguaje la tendran mas facil, metodos, condicionales, bucles, entre otros, y la sintaxis entre lenguajes son diferentes pero si ya entienden el concepto lo podran usar, pero hay una razon por la que JavaScript es tan popular, uno es por su ecosistema y comunidad, que se han creado muchas herramientas para crear de todo con esta herramienta, y otra es que JavaScript es el lenguaje que utilizan los navegadores, por lo haremos un ejercicio simple sobre manipulacion del DOM. Haremos un contador de clicks, y antes de ir al ejercicio hablare sobre 'use strict' que es una directiva que se pone al principio del codigo, debe ser lo primero que se ponga en el codigo, entre comillas pondran use strict y tiene una utilidad para depuracion, hace que el codigo que nosotros creemos sea menos propenso a errores, ya que si escriben lo que sea como su nombre en el codigo asumira que es una variable global, pero con use strict deberas declarar una variable usando, var, let o const "pedrito = 10; Error: pedrito is not defined", prohibe que una variable const se le cambie el valor "se reasigne", evita que en funciones hayan nombres de parametros duplicados "function suma (a,a,b) {}", entre unas cuantas mas, te protege de errores que pudiste pasar por alto, tambien eliminar malas practicas.
+            </p>
+            <h3>Contador de clicks</h3>
+            <p>
+                utilizaremos un archivo HTML, uno JavaScript y un archivo CSS, ya que no es un curso de desarrollo web no tienen por que entender todo lo que yo les de, tan solo copienlo y miren la magia, pero JavaScript si veremos un poco mas en profundidad. asi que creen tres archivos, index.html, script.js, styles.css, todos en una misma carpeta.
+            </p>
+            <h4>index.html</h4>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Contador&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="contador-wrapper"&gt;
+            &lt;div id="contenedor"&gt;&lt;/div&gt;
+            &lt;button id="boton"&gt;Click&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;script src="app.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <h4>styles.css</h4>
+            <pre>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #12122f;
+    background-color: #9f55ff;
+    color: #fff;
+    font-family: 'montserrat', Sans-serif;
+    margin: 0;
+}
+
+.contador-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: clamp(300px, 100%, 400px);
+    background-color: #12122f;
+    height: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+#contenedor {
+    width: 250px;
+    height: 250px;
+    background-color: #1d2433;
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+}
+
+#boton {
+    background-color: #48e;
+    outline: none;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 15px;
+    width: clamp(100px, 100%, 250px);
+    border-radius: 7px;
+}
+            </pre>
+            <h4>script.js</h4>
+            <pre>
+'use strict'
+const contenedor = document.getElementById('contenedor');
+const boton = document.getElementById('boton');
+
+let count = 0;
+
+boton.addEventListener('click', () => {
+  count++;
+  contenedor.innerHTML = `${count}`;
+});
+            </pre>
+            <p>
+                y ahora solo debemos ejecutar el proyecto, veremos que hay cosas creadas, un cuadro en el centro con un boton y un cuadrado mas, el cuadro mas grande es una etiqueta div, que podemos darles tanto una clase como un id, para poder referirnos a ese elemento, hay dos etiquetas que tienen id, uno con el id contenedor y otro con el id boton, con clases o ids podemos trabajar con estos elementos adentro de nuestra logica, en el script.js que hicimos guardamos algo adentro de unas variables, estos son los elementos HTML que hay en nuestra pagina web, document.getElementById(); entre comillas adentro de los parentesis le agregamos el id que queremos que busque y nos devuelva ese elemento, el boton de nuestra pagina y el contenedor que contendra los numeros que aumentaran cuando se le de click al boton, creamos una variable que empieza en 0, tenemos la variable boton que contiene al elemento boton en nuestra pagina, addEventListener es un metodo que si lo traducimos dira algo como add: agregar, event: evento, listener: escuchador, por lo que el boton va a escuchar a un evento, estos eventos pueden ser muchos pero en este caso el evento click, el evento click no es exclusivo de los botones pero tiene sentido que se lo demos al boton en este caso, addEventListener() recibe dos parametros, el primero es el evento al que va a escuchar, el segundo parametro es una funcion, esta funcion se ejecutara cuando se escuche al evento, se puede deducir que la funcion se ejecutara cuando se haga click en el boton, y si se hace 100 clicks en el boton este se ejecutara 100 veces, se puede crear una funcion clasica y colocarla como segundo parametro a modo de callback, se crea una funcion flecha anonima para que sea mas directo, pero les mostrare un ejemplo de una funcion clasica.
+            </p>
+            <pre>
+'use strict'
+const contenedor = document.getElementById('contenedor');
+const boton = document.getElementById('boton');
+
+let count = 0;
+
+boton.addEventListener('click', contar);
+
+function contar() {
+  count++;
+  contenedor.innerHTML = `${count}`;
+}
+            </pre>
+            <p>
+                esta tambien es otra forma pero de la primera forma es comun verla o usarla al ser mas directa, por ultimo lo que hace la funcion es que en cada llamada a la funcion la variable count se le sumara 1, luego innerHTML es un metodo que permite obtener o remplazar el contenido de un elemento HMTL, que si se le asigna algo con el operador de asignacion "=" va a remplazar su contenido por el contenido que le indiquemos entre comillas, por lo que al agregarle la variable podemos verla en nuestra pagina web.
+            </p>
+        </section>
         <!-- seccion para modulos -->
         <section>
             <h3>Modulos</h3>
+            <p>
+                en JavaScript podemos trabajar con mas de un archivo que maneje logica, trabajar de esta forma es comun y una buena practica en general,
+            </p>
             <p><span>en JavaScript podemos trabajar con diferentes archivos separados para en un archivo trabajar una cosa y en otro archivo manejamos la logica de otra cosa y hay dos formas de trabajar con archivos separados</span></p>
             <p>
                 // existe una version antigua y una moderna y recomendada <br>
