@@ -28,7 +28,7 @@
             </div>
             <p>
                 <span class="subtitle">Halcyon theme: </span>
-                es para añadir un tema oscuro que no daña los ojos, hace que el codigo se diferencie mejor, otra extension para tema de colores es One Dark Pro, lo pueden perzonalizar a su gusto
+                es para añadir un tema oscuro que no daña los ojos, hace que el codigo se diferencie mejor, otra extension para tema de colores es "One Dark Pro", pueden personalizar el tema de su editor a su gusto con mas calma, esta es solo mi recomendacion.
             </p>
             <div class="imagen-container">
                 <img src="./imagenes/extensiones-n3.png" class="imagen-extencion">
@@ -1321,163 +1321,166 @@ function contar() {
                 esta tambien es otra forma pero de la primera forma es comun verla o usarla al ser mas directa, por ultimo lo que hace la funcion es que en cada llamada a la funcion la variable count se le sumara 1, luego innerHTML es un metodo que permite obtener o remplazar el contenido de un elemento HMTL, que si se le asigna algo con el operador de asignacion "=" va a remplazar su contenido por el contenido que le indiquemos entre comillas, por lo que al agregarle la variable podemos verla en nuestra pagina web.
             </p>
         </section>
-        <!-- seccion para modulos -->
-        <section>
-            <h3>Modulos</h3>
-            <p>
-                en JavaScript podemos trabajar con mas de un archivo que maneje logica, trabajar de esta forma es comun y una buena practica en general,
-            </p>
-            <p><span>en JavaScript podemos trabajar con diferentes archivos separados para en un archivo trabajar una cosa y en otro archivo manejamos la logica de otra cosa y hay dos formas de trabajar con archivos separados</span></p>
-            <p>
-                // existe una version antigua y una moderna y recomendada <br>
-                // en la version antigua se usaba require() y exports <br>
-                // en la version mas reciente se utiliza import y export <br>
-            </p>
-            <p>
-                // version con require de commonJs <br>
-                // normalmente se exportan funciones y tambien hay dos maneras de exportarlas, unas es cuando <br>
-                // queremos exportar una sola cosa y otra cuando exportamos varias cosas <br>
-                // cosas que podemos exportar son variables, funciones, objetos, clases, etc  pero lo mas comun es exportar funciones<br>
-                function sumar(){ <br>
-                    console.log(1 + 2); <br>
-                } <br>
-                module.exports = sumar; // exportamos<br>
-                // esto es para cuando hay solo una funcion a exportar, ahora que lo exportamos podemos importarla<br>
-                // lo que nos permitira usarla en cualquier otro archivo de JavaScript <br>
-                // ahora que lo exportamos lo vamos a querer usar asi que creamos un archivo aparte importando la funcion<br>
-                // aqui s sera una referencia a la funcion sumar que exportamos puede ser cualquier nombre<br>
-                const s = require("./codigo.js"); debemos poner la ruta del codigo y su nombre <br>
-                s(); // imprime 3<br>
-            </p>
-            <p>
-                // exportando dos funciones<br>
-                const suma = () => console.log(1 + 2); <br>
-                const resta = () => console.log(1 - 2); <br>
-                module.exports = { suma, resta }; // exportamos<br>
-                // otro archivo aparte <br>
-                const { suma, resta } = require("./codigo.js"); // entre llaves ponemos los nombres<br>
-                suma(); <br>
-                // creo que en este caso si son los nombres exactos y no alias, para poner alias se pone<br>
-                // const { sumar: add, resta: add } = require("./codigo.js"); add hace referencia a la funcion sumar que exportamos<br>
-                add();<br>
-                // una forma mas es: <br>
-                const math = require("./codigo.js"); // math sera el alias con el que llamaremos a las funciones<br>
-                math.suma(); // suma, en forma de metodos<br>
-                math.resta(); // resta<br>
-            </p>
-            <p><span>Node.js usa la version anterior por defecto, para usar la otra deberemos hacer algo mas que veremos luego</span></p>
-            <p>version moderna y recomendada</p>
-            <p>
-                // cuando queremos exportar solo una funcion usamos export default <br>
-                function sumar(){<br>
-                    console.log(1 + 2);<br>
-                }<br>
-                export default sumar; // exportamos<br>
-                // archivo diferente
-                // utilizamos la palabra import, luego el alias, luego from y por ultimo la ruta donde esta <br>
-                import sumar from "./codigo.js"; <br>
-                sumar();<br>
-                // version para exportar mas de uno, ponemos export antes del nombre de la funcion <br>
-                // no importa si es funcion flecha o no en ninguno de los dos casos pero es mi forma preferida de hacerlo<br>
-                export sumar() => console.log(1 + 2); <br>
-                export resta() => console.log(1 - 2); <br>
-                // archivo aparte
-                // nombres reales de la funcion y no alias <br>
-                import { sumar, resta } from "./codigo.js"; <br>
-                sumar();<br>
-                // version con alias
-                const { sumar: add, resta: sub } = require("./codigo.js"); <br>
-                add();<br>
-                sub();<br>
-                version con alias mas recomendada usando metodos para llamar funciones<br>
-                // "*" hace referencia a todo, importa todo, as es para darle un alias<br>
-                // importa todo con el alias seguido del nombre del alias<br>
-                import * as math from "./codigo.js"; <br>
-                math.sumar();
-            </p>
-            <p><span>prueben ambos</span></p>
-        </section>
 
-        <!-- seccion para eventos -->
+                <!-- seccion para eventos -->
         <section>
             <h2>Eventos</h2>
-            <p style="color: #ef6b73;">en Javascript podemos manejar eventos pero no lo veremos aqui ya que los eventos que podemos manejar en una pagina web son cuando se da click a un boton, cuando se envia un formulario, cuando se hace scroll, en Node.js los eventos suelen ser cuando se hace una peticion no estamos viendo para paginas web asi que chau</p>
+            <p>
+                como ya hemos visto podemos trabajar con eventos, que los eventos son lo que se llaman triggers que en español serian desencadenadores, en ejemplo anterior se ve su funcionamiento, un evento desencadenara un suceso, que en JavaScript lo que desencadenara sera que se ejecute alguna funcion, hay muchos eventos en JavaScript para el navegador como el hacer scroll o cambiar el ancho de la pagina son eventos, pero en Node.js el evento suele ser las peticiones, cuando se hace una peticion este es un evento que desencadenara una serie de codigo para que podramos obtener una respuesta, ya que una API es un comunicador entre aplicaciones, o mas preciso, Interfaz que define como un software se comunica con otro software, que es basicamente pedir una peticion y recibir una respuesta por parte de algun servicio, asi podremos tener una base de datos o conectarnos con algun servicio dentro de nuestra aplicacion.
+            </p>
         </section>
 
         <!-- seccion para la parte de Node.js -->
         <section>
             <h2>Node.js</h2>
-            <p>Node.js es un entorno de ejecucion de JavaScript, en el navegador existen ciertas restricciones, en Node.js el entorno de ejecucion ya no es una pagina web si no un entorno local, con el tiene aceso a mucha informacion sobre tu computadora</p>
-            <p><a href="https://nodejs.org/en/download" target="_blank" style="color:#ef6b73;">Instalacion Node.js</a></p>
+            <p>
+                Node.js es un entorno de ejecucion de JavaScript, no es otro lenguaje de programacion, lo que utiliza Node.js es JavaScript pero fuera del navegador y por eso el .js por JavaScript, es por eso que en este curso nos enfocamos mas en JavaScript que en node, muchas aplicaciones o software esta creado con JavaScript, incluso el editor de codigo de Visual Studio Code esta hecho con TypeScript, Typescript es un "superset" de JavaScript, que para no agobiarlos tanto con nuevos nombres, TypeScript ayuda con la seguridad del codigo, y el codigo de Typescript se convierte a codigo JavaScript, por lo que este mismo editor utiliza tecnologias web, asi que si conoces las tecnologias web podras crear tus propias extensiones para este editor, el que se ejecute JavaScript fuera del navegador hace que podamos acceder a informacion sobre nuestra computadora, por lo que podremos tener procesamiento de archivos como audio o video, crear herramientas de automatizacion, aplicaciones de escritorio como este mismo editor, bots y procesamiento de datos, incluso se puede usar para inteligencia artificial, por todo esto es que apesar de que JavaScript puede llegar a ser menos seguro o menos optimo que otros lenguajes de programacion, genero una comunidad bastante grande, se ha creado TypeScript para mejorar la seguridad en la creacion de codigo con JavaScript, hay una cantidad muy grande de codigo de otras personas para no tener que crear desde cero todo, y tambien es muy versatil para lo muchisimas cosas. Para utilizar Node.js primero hay que instalarlo, asi que aqui les dejare el enlace de la instalacion: 
+                <a href="https://nodejs.org/en/download" target="_blank">Instalacion Node.js</a>
+            </p>
+            <h3>Instalacion</h3>
+            <p>
+                La instalacion es bastante sencilla, una recomendacion es que en la pagina de descarga hay diferentes versiones, una recomendada es la que tengan LTS en son a las que le daran soporte durante mucho tiempo que puede ser de varios años, y abajo instalar el prebuilt, o lo que seria su archivo ejecutable para instalar una aplicacion, y cuando ya obtienes el ejecutable solo es de darle a siguiente todo el rato hasta que lo instales, para saber si tienes instaladoNode.js tendras que abrir un cmd, para presionaran la tecla window, o le daran click al icono window abajo a la izquierda en la cinta de opciones de su computadora, y en la barra de busqueda escribiran cmd, que les puede aparecer como "simbolo del sistema" al abrir el cmd deberan escribir: <span>node -v</span> lo que les deberia mostrar la version de node que se haya instalado, tambien deberan ejecutar: <span>npm -v</span> que es una herramienta para instalar diferentes paquetes que utilizaremos en el curso.
+            </p>
+        </section>
+
+        <!-- seccion para npm -->
+        <section>
+            <h2>npm</h2>
+            <p>npm significaria Node package manager, que traducido seria un gestor que paquetes de node, que como ya dijimos sirve para instalar paquetes que puede ser codigo de otras personas, librerias para integrar nuevas funcionalidades, incluso express.js que se define como un framework minimalista, son nombres nuevos pero veremos que es lo que es express, que nos ayudara a crear nuestra API.</p>
+        </section>
+
+        <!-- seccion para modulos -->
+        <section>
+            <h2>Modulos</h2>
+            <p>
+                en JavaScript podemos trabajar con mas de un archivo que maneje logica, esto nos permite crear variables, funciones y otras cosas mas que podremos usar desde cualquier otro archivo de JavaScript, trabajar de esta forma es comun y una buena practica en general, y existen dos maneras de trabajar con diferentes archivos que tengan logica, una es clasica que es de commnJS y otra forma moderna y recomendada es la de ESM, la forma clasica fue diseñada especificamente para Node.js, por lo que si lo usan en el navegador seguramente les aparezca un error, esta forma clasica utiliza las palabras exports y require, la version mas moderna fue introducida para que fuera compatible con los navegadores y utiliza las palabras import y export, pero esta no esta diseñada para utilizarse directamente en una pagina web, hay que generar lo que se llama un "cliente", si usamos modulos con HTML y Javascript y lo ejecutamos en el avegador en la consola veran que les mostrara un error y una palabra "CORS" ya que los navegadores impelamentan esto como una medida de seguridad y es por eso que utilizamos Node.js, aunque nosotros no lo haremos en el navegador, no haremos lo que es un "servidor local", lo utilizaremos en el propio entorno de Node.js con la consola, por lo que aprovechare para introducirlos a coo trabajar con Node.
+            </p>
+            <h3>Introduccion</h3>
+            <p>
+                en una carpeta aparte, llamenla Node, creen un archivo de JavaScript, ya que no sera en el navegador no necesitaremos ningun archivo HTML, lleven y suelten la carpeta adentro del editor, y por ultimo escribiran adentro de su archivo creado lo siguiente.<br>
+                <code class="code">
+                    console.log("hola mundo");<br>
+                </code>
+                para poder ejecutar el codigo tendran que ejecutarlo en la terminal de comandos que lo pueden hacer desde el editor de codigo con un atajo de teclado, el comando es: "CTRL + `" la tecla control seguido de la tecla de comilla invertida o template string, esto les abrra una pestaña. que si se confunden que me ha pasado y  he colocado la tecla control seguido de la tecla "+" esto les agrandara la pantalla, solo tendran que usar otra vez control mas la tecla "-" para achicarla, ya que estan en la terminal habran varias cosas, pero no explicare todo, solo los iconos de la derecha en su pestaña de terminal en la parte de arriba, que son la equis para ocultar la pestaña. una flecha hacia arriba o "^" para agrandar la pestaña. hay tres puntos con diferentes opciones que no explicare una por una asi que seguiremos con mas iconos, un bote de basura que es si colocamos el cursor encima veremos que dice kill terminal que es para finalizar lo que este haciendo la terminal, en caso de que generemos un loop infinito por accidente podemos finalizar lo que se este ejecutando, un icono de un dos rectangulos que es para tener dos terminales en la misma vista de la pestaña y a su derecha en la pestaña generara dos iconos para eliminar las terminales que no necesiten, y un signo mas con una flechita hacia abajo, esto es por que tienen cmd, o powershell para ejecutar comandos de terminal y podran elegir uno de ellos, o no querer una terminal que este en la misma vista, hasta ahi terminare la explicacion hacerca de esta pestaña. Ahora si retomando lo de la ejecucion de su programa, solo tendran que escribir la palabra node, espacio y el nombre de su archivo, y deberian ver en la consola su mensaje, si soltaron su carpeta en el editor este los situa en esa ruta, pero si u codigo esta en otra carpeta pueden usar rutas relativas como <span>node ../app.js</span> o <span>./codigo/app.js</span> o cambiarse de carpeta, que pueden hacerlo con cd, que no se la traduccion literal pero lo entiendo como change directory o cambio de directorio, <span>cd ../</span> que te llevara una carpeta atras o ya conocen las rutas relativas, lo pueden repasar.
+            </p>
+            <h3>commonJS</h3>
+            <p>
+                ahora que ya sabemos como ejecutar codigo con node varemos unos ejemplos trabajando con codigo de JavaScript en diferentes archivos
+            </p>
+            <h4>exportar.js</h4>
+            <pre>
+function sumar(a.b){
+    console.log(a + b);
+}
+
+module.exports = sumar;
+            </pre>
+            <h4>importar.js</h4>
+            <pre>
+const sum = require("./exportar.js");
+sum(12,3);
+            </pre>
+            <p>
+                al ejecutar el archivo importar.js veremos que nos ha ejecutado la funcion que creamos en exportar.js y esta es la manera de trabajar con diferentes archivos, como vemos estamos guardando la funcion que nos devuelve en la variable sum, por lo que podremos usarla aunque no con el nombre exacto de la funcion, pero esto cambia cuando queremos importar mas de una funcion o otra cosa que queramos exportar para usarlo en otro archivo, y se intuye que adentro del requitre ira la ruta al archivo donde exportaremos estas fuciones.
+            </p>
+            <h4>exportar.js</h4>
+            <pre>
+const suma = (a,b) => a + b;
+const resta = (a,b) => a - b;
+const multiplicacion = (a,b) => a * b;
+
+module.exports = {suma, resta, multiplicacion};
+            </pre>
+            <h4>importar.js</h4>
+            <pre>
+const { suma: sum, resta: rest, multiplicacion: mult } = require('./exportar.js');
+
+console.log(sum(1,2));
+console.log(rest(1,2));
+console.log(mult(1,2));
+            </pre>
+            <p>
+                entre llaves se colocan las funciones que se quieran usar, pero a diferencia del anterior, en este caso hay que colocar el nombre exacto de la funcion { suma, resta, multiplicacion } ya que en otro caso no funcionara, los dos puntos es para ponerle un alias, tenemos una funcion con un nombre largo pero le podemos poner un nombre corto para ser mas agil, { suma: s }, tambien otra forma es reasignarlas a otra variable como por ejemplo.
+            </p>
+            <pre>
+const Funciones = require('./funciones');
+const s = Funciones.sumar;
+console.log(s(2,3));
+            </pre>
+
+            <h3>ESM</h3>
+            <p>
+                por defecto node usa commonJS, por lo que tendran que abrir la terminal, verificar que esten en la carpeta de su proyecto, y por ultimo ejecutar el siguiente comando <span>npm init -y</span> esto le creara un rchivo llamado package.json que sirve para gestionar los paquetes, deberan agregar esta a su archivo .json
+                <span>"type": "module"</span> ejemplo:
+            </p>
+            <pre>
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "main": "metodos.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+            </pre>
+            <p>
+                <span class="important">
+                    este es un ejemplo, no lo copien y lo peguen
+                </span>
+            </p>
+            <h4>export.js</h4>
+            <pre>
+function saludo() {
+  console.log("hola")
+} 
+
+export default saludo;
+            </pre>
+            <h4>import.js</h4>
+            <pre>
+import saludo from "./export.js";
+saludo();
+            </pre>
+            <p>
+                se utiliza export default cuando solo queremos exportar una sola cosa, por lo que al importarla podemos usar el nombre que querramos "import s from './s.js'"
+            </p>
+            <h4>export.js</h4>
+            <pre>
+export const suma = (a,b) => a + b;
+export const resta = (a,b) => a - b;
+/*
+const suma = (a,b) => a + b;
+const resta = (a,b) => a - b;
+
+export {suma, resta}
+*/
+            </pre>
+            <p>
+                hay dos formas de exportar mas de una funcion y una esta comentada ya que ambas funcionan, tanto colocando export antes de la funcion como exportandolo como en un objeto
+            </p>
+            <pre>
+import { suma as sum, resta as rest } from './export.js';
+
+console.log(sum(1,2));
+console.log(rest(1,2));'
+            </pre>
+            <p>
+                tambien aqui hay que usar el nombre correcto de la funcion, si se le quiere agregar un nombre mas corto como alias se utiliza la palabra "as", todo esto se puede entender como importar {/*funciones*/} desde "lugar", y con eso terminaria esta parte de modulos.
+            </p>
+        </section>
+
+        <!-- seccion para la parte de Express.js -->
+        <section>
             <h2>Express.js</h2>
-            <p>Una vez que sabes usar Javascript utilizas Node.js y Express.js es muy sencillo porque son lo mismo, es JavaScript y lo unico que veremos extra del tema es <span>Asincronia</span></p>
-            <h4>Asincronia</h4>
-            <p>Cuando queremos leer un archivo o hacer una peticion a un servidor usamos asincronia</p>
-            <p>Javascript utiliza un modelo de concurrencia basado en un bucle de eventos(Event Loop) y un sistema de colas,Javascript es un lenguaje de un solo hilo, lo que significa que solo puede ejecutar una tarea a la vez, sin embargo puede manejar multiples tareas de manera asincrona, hay muchas formas de tener asincronia, lo que ayuda a que no se quede esperando a que se ejecute una tarea, pero nosotros solo veremos <span>Async/Await</span> esto es importante porque puede pasar que no devuelva informacion porque el servidor se tardo en responder y el codigo ya se ejecuto, tiene que esperar a la respuesta de la base de datos de hecho los <span>callbacks</span> tambien funcionan como metodos asincronos y lo veremos tambien luego ya que Async/Await es para una peticion a una base de datos y callback es para peticion de archivos</p>
-            <h3>npm</h3>
-            <p>es un gestor de paquetes, permite instalar, actualizar y desinstalar paquetes, maneja dependencias del proyecto, resuelve conflictos entre versiones, gestiona proyectos, crea y mantiene el archivo package.json define scripts para automatizar tareas, gestiona la configuracion del proyecto, npm init: inicializa un nuevo proyecto, npm install: instala dependencias, nom run: ejecuta scripts definidos en package.json, npm update: actualiza paquetes, npm autit: verifica vulnerabilidades</p>
-            <h4>como usar npm</h4>
-            <p>si estan en vscode sera mas sencillo, tienen que presionar las teclas Ctrl + ` la tecla control seguido de template string que esta alapar de la p esto abre la terminal de visual studio code, para cerrarlo pueden usar el mismo comando o arriba a la derecha hay una equis <span>importante: deberan verificar en la terminal que estan en la carpeta correcta ya que si no podrian instalar las dependencias en otro lugar, una cosa que pueden hacer es arrastrar la carpeta donde van a hacer su app con express, crean la carpeta llamada express la arrastran hasta vscode para que en la terminal esten en el lugar correcto y en esa misma carpeta crear el archivo Javascript, app.js, si lo ponen en una carpeta mas adelante puede que ocurran errores</span></p>
-            <p>ya que estan en el lugar correcto abren la terminal de vscode y ponen el siguiente comando: npm init <span>este comando creara un archivo llamado package,json, que es un archivo para administrar las dependencias que se usaran como express, importante no tocar nada de ahi y si le instala alguna otra cosa tampoco tocarlo ya que les puede dar error</span></p>
-            <p style="color:#ef6b73;">para instalar express en su carpeta primero pondran el comando npm init si no lo han hecho ya y luego el comando npm install express  para usar express en ese proyecto otras dependencias que pueden usar, body-parser: npm install body-parser importante y necesario, cors: npm installl cors, soluciona unos problemas especificos importante, dotenv: npm install dotenv ,para trabajar con bases de datos</p>
             <p>
-                <span>empezaremos con algo muy sencillo, crearan un archivo llamado app.js, en Node no tienen que hacer un index.html, asi que haran un console.log que imprima cualquier cosa, lo que haran sera escribir en la terminal: node app.js ,eso imprimira en la terminal lo que hayan puesto en el console.log();</span>
+                Se define como un framework minimalista, que significa que nos va a permitir simplificar el desarrolo de aplicaciones web y APIs, es muy personalizable y es lo que utilizaremos, aunque no abarcare muchoen adelante ya que lo que para mi era lo mas importante era que llegaran hasta aqui conociendo JavaScript, veremos asincronia, como crear nuestra API, y por ultimo un les mostrare un ejemplo de lectura de archivos de texto.
             </p>
-            <p style="color:#ffd580;">los archivos .json son una forma de guardar informacion que pueden ser como un objeto en JavaScript o un array de objetos, pero en un archivo.js no lo puede leer como un objeto o array, lo lee como si fuera texto, hay que "parsearlos" que les explicare luego como hacer para que no tengan problemas, el siguiente archivo es de peliculas para que se den una idea de como se guarda la informacion, que en nuestro caso puede ser la informacion del usuario, que son el nombre del usuario, la edad, y su correo o informacion de las partidas con la partida uno que es un objeto con las claves de las cuentas y sus valores en dinero</p>
-            <p style="color:#ffd580;">descarguen este archivo <a href="./archivo.json" style="color:#5ccfe6;" download="archivo.json">archivo.json</a></p>
-            <p style="color:#ffd580;">Estas ya son las rectas finales, en su app.js eliminaran su codigo que crearon porque empezaremos con la API comenzando por importar las dependencias que descargamos</p>
-            <p style="color:#ffd580;">
-                //usaremos la version antigua para importar ya que es la que tiene por defecto<br>
-                // si no han descargado express, cors, path o dotenv les dara error el codigo, solo fs creo que es nativo <br>
-                const express = require('express');// para usar express<br>
-                const cors = require('cors'); // para un solucionar un error muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
-                const fs = require('fs'); // para leer el archivo<br>
-                const path = require('path'); // para las rutas<br>
-                require('dotenv').config(); // para cargar variables de entorno<br>
-            </p>
-            <p style="color:#ffd580;">
-                const app = express(); // en app se guardara lo que devuelva express() que es como el corazon de la API, con la variable app <br>
-                //que puede tener el nombre que quieran ahi usaremos los metodos para poder crear la API<br>
-            </p>
-            <p style="color:#ffd580;">
-                // le asignaremos un puerto<br>
-                // le ponemos el puerto 3000 pero puede ser el numero que quieran<br>
-                // process.env.PORT es importante ya que lo que hacemos aqui es una comparacion logica<br>
-                // si process.env.PORT es undefined tomara el puerto 3000 que en local siempre tomara el numero que le demos<br>
-                // pero cuando se despliegue la API no lo hara en el puerto 3000, lo desplegara en cualquier puerto que tenga disponible el servidor que se guardara precisamente en process.env.PORT<br>
-                const PORT = process.env.PORT ?? 3000;<br>
-            </p>
-            <p style="color:#ffd580;">
-                // luego pondremos los middlewares que significa:<br>
-                //que no importa si es una peticion GET(para que el cliente reciba informacion) o POST(para que el cliente mande informacion), es algo que se ejecutara en todas las peticiones<br>
-                // app.use() primero es el nombre de la varieble al que le asignamos express();<br>
-                // .use es un metodo que sirve como este middleware<br>
-                // express.json() convertira todo o a objeto json(texto) o a algo que podemos manejar en JavaScript<br>
-                app.use(express.json());<br>
-                // app.use CORS, es un problema muy pero muy tecnico que esto lo resuelve y no profundisare en el<br>
-                app.use(cors());<br>
-            </p>
-            <p style="color:#ffd580;">
-                // despues de configurarlo todo hay que usar los metodos app.get() y app.post que son funciones que reciben varios parametros pero no se los explicare yo, preguntenle a Chat GPT o a su IA de confianza ya que lo que espero, lo que yo espero es que puedan conectar a una base de datos, y puedan hacer esto solos, son funciones que reciben parametros, asi que preguntenles que parametros usa, uno de esos parametros es uan funcion o callback y lo que guardara es toda la informacion de las cuentas, habra una tabla llamada plantilla que con las cuentas y la cantidad de dinero que manejaran, asi cuando yo llame a la API se pueda guardar la informacion del libro diario de ese mes
-                <span style="color:#ef6b73;">les recomiendo usar turso ya que es gratuito y no pide nisiquiera tarjeta de credito, tiene un plan gratuito generoso</span>
-                <a href="https://turso.tech/pricing" target="_blank" style="color:#5ccfe6;">ir a la pagina de turso</a>
-            </p>
-            <p>
-                //lo ultimo que lleva el archivo app.js es escuchar al puerto<br>
-                // Inicia el servidor<br>
-                app.listen(PORT, () => {<br>
-                    console.log(`servidor corriendo en el puerto ${PORT}`);<br>
-                });<br>
-                // esto iniciara el puerto, 
-            </p>
-            <p>
-                si han hecho todo correctamente solo les deberia salir el console log de servidor corriendo en el puerto 3000 o donde lo hayan puest0, y tienen que escribir en su navegador, tienen que buscar la en la URL http://localhost:3000 o enves de 3000 el puerto que hayan puesto si les sale un mensaje de: Cannot GET / <br>
-                significa que han hecho todo bien y solo hay que configurarlo para recibir informacion del cliente osea yo, si les salio mal les dira que no encontro la pagina
-            </p>
-            <p>
-                Por ultimo para probar que su API funcione correctamente instalen la extencion en vscode de REST Client, creen un archivo llamado api.http importante la extencion .http y preguntenle a una IA, porque tengo que seguir con otras cosas, suerte
-            </p>
-            <p>codigo ejemplo de una API: <a href="./app.js" style="color:#5ccfe6;" download="app.js">app.js</a></p>
         </section>
     </body>
 </html>
