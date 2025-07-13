@@ -1482,5 +1482,33 @@ console.log(rest(1,2));'
                 Se define como un framework minimalista, que significa que nos va a permitir simplificar el desarrolo de aplicaciones web y APIs, es muy personalizable y es lo que utilizaremos, aunque no abarcare muchoen adelante ya que lo que para mi era lo mas importante era que llegaran hasta aqui conociendo JavaScript, veremos asincronia, como crear nuestra API, y por ultimo un les mostrare un ejemplo de lectura de archivos de texto.
             </p>
         </section>
+
+        <!-- seccion para asincronia -->
+        <section>
+            <h2>asincronia</h2>
+            <p>
+                La asincronia sirve para evitar que nuestra aplicacion no se bloquee completamente, aunque Node.js tenga un fuerte enfasis en eventos y asincronia, estos dos temas son mas propios del lenguaje JavaScript, con el ejemplo de una peticion, para leer un archivo, eso se deja para que la computadora lo devuelva, realmente no sabemos cuanto tiempo se tardara la computadora en devolvernos el archivo, durante ese lapso de tiempo nuestro programa se estaria pausando totalmente, pero tambien nuestro programa tiene que esperar a que se devuelva el archivo, si no lo espera no devolvera nada aunque el archivo exista, y nos devolvera undefined. Se puede tener asincronia de diferentes formas, con callbacks, con promesas y con async await, aunque la forma mas recurrente es usando async await, para comprender bien esto debemos ir a los temas anteriores, ya que las promesas enrealidad son callbacks, y async await son enrealidad promesas, para que me entiendan mejor les dare un ejemplo mas visual:
+            </p>
+            <pre>
+'use strict'
+
+function  salida(mensaje) {
+  console.log(`${mensaje}`);
+}
+
+salida("primera peticion");
+salida("segunda peticion");
+salida("tercera peticion");
+
+            </pre>
+            <p>
+                un ejemplo simple sin asincronia (sincrono), se mostraran en consola de forma secuencial, hay algo llamado "call stack", el call stack preguntara si hay alguna funcion que deba ejecutarse, si lo hay, entrara al call stack, se ejecutara, y saldra del call stack, en este acso se veria algo como:<br>
+                <code class="code">
+                    peticion1: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
+                    peticion2: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
+                    peticion3: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
+                </code>
+            </p>
+        </section>
     </body>
 </html>
