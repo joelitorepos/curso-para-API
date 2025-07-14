@@ -10,7 +10,10 @@
     <body>
         <!-- seccion para configuraciones y recomendaciones antes de empezar a programar -->
         <section class="configuraciones">
-            <h1>Plan de Estudios: JavaScript, Node.js y Express.js para Crear una API</h1>
+            <h1>Curso de JavaScript y Node.js</h1>
+            <p>
+                curso enfocado en aprender JavaScript, donde nos enfocaremos en aprender principalmente del lenguaje de programacion, tambien aprenderemos sobre Node.js y el proyecto final sera crear nuestra propia API, al final se daran recomendaciones de como se puede ampliar para que sigan estudiando por su cuenta, sera un temario enfocado en aquellas personas que aun no han programado en ningun lenguaje.
+            </p>
             <h2>Herramientas recomendadas:</h2>
             <h3>Visual Studio Code</h3>
             <p>
@@ -18,7 +21,9 @@
                 <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>
             </p>
             <h4>Configuracion y extensiones recomendadas</h4>
-            <p>Ala izquierda veran opciones que son herramientas utiles, estos iconos en la barra lateral izquierda seria bueno que los conozcan pero en este curso solo veremos una de ellas, que es el de las extensiones, su icono son cuatro cuadritos que deberan dar click.</p>
+            <p>
+                Ala izquierda veran opciones que son herramientas utiles, estos iconos en la barra lateral izquierda seria bueno que los conozcan pero en este curso solo veremos una de ellas, que es el de las extensiones, su icono son cuatro cuadritos que deberan dar click.
+            </p>
             <div class="imagen-container">
                 <img src="./imagenes/extensiones-n1.png" class="imagen-extencion">
             </div>
@@ -1353,7 +1358,7 @@ function contar() {
         <section>
             <h2>Modulos</h2>
             <p>
-                en JavaScript podemos trabajar con mas de un archivo que maneje logica, esto nos permite crear variables, funciones y otras cosas mas que podremos usar desde cualquier otro archivo de JavaScript, trabajar de esta forma es comun y una buena practica en general, y existen dos maneras de trabajar con diferentes archivos que tengan logica, una es clasica que es de commnJS y otra forma moderna y recomendada es la de ESM, la forma clasica fue diseñada especificamente para Node.js, por lo que si lo usan en el navegador seguramente les aparezca un error, esta forma clasica utiliza las palabras exports y require, la version mas moderna fue introducida para que fuera compatible con los navegadores y utiliza las palabras import y export, pero esta no esta diseñada para utilizarse directamente en una pagina web, hay que generar lo que se llama un "cliente", si usamos modulos con HTML y Javascript y lo ejecutamos en el avegador en la consola veran que les mostrara un error y una palabra "CORS" ya que los navegadores impelamentan esto como una medida de seguridad y es por eso que utilizamos Node.js, aunque nosotros no lo haremos en el navegador, no haremos lo que es un "servidor local", lo utilizaremos en el propio entorno de Node.js con la consola, por lo que aprovechare para introducirlos a coo trabajar con Node.
+                en JavaScript podemos trabajar con mas de un archivo que maneje logica, esto nos permite crear variables, funciones y otras cosas mas que podremos usar desde cualquier otro archivo de JavaScript, trabajar de esta forma es comun y una buena practica en general, y existen dos maneras de trabajar con diferentes archivos que tengan logica, una es clasica que es de commnJS y otra forma moderna y recomendada es la de ESM, la forma clasica fue diseñada especificamente para Node.js, por lo que si lo usan en el navegador seguramente les aparezca un error, esta forma clasica utiliza las palabras exports y require, la version mas moderna fue introducida para que fuera compatible con los navegadores y utiliza las palabras import y export, pero esta no esta diseñada para utilizarse directamente en una pagina web, hay que generar lo que se llama un "cliente", si usamos modulos con HTML y Javascript y lo ejecutamos en el avegador en la consola veran que les mostrara un error y una palabra "CORS" ya que los navegadores impelamentan esto como una medida de seguridad y es por eso que utilizamos Node.js, aunque nosotros no lo haremos en el navegador, no haremos lo que es un "servidor local", lo utilizaremos en el propio entorno de Node.js con la consola, por lo que aprovechare para introducirlos a como trabajar con Node.
             </p>
             <h3>Introduccion</h3>
             <p>
@@ -1479,7 +1484,7 @@ console.log(rest(1,2));'
         <section>
             <h2>Express.js</h2>
             <p>
-                Se define como un framework minimalista, que significa que nos va a permitir simplificar el desarrolo de aplicaciones web y APIs, es muy personalizable y es lo que utilizaremos, aunque no abarcare muchoen adelante ya que lo que para mi era lo mas importante era que llegaran hasta aqui conociendo JavaScript, veremos asincronia, como crear nuestra API, y por ultimo un les mostrare un ejemplo de lectura de archivos de texto.
+                Se define como un framework minimalista, que significa que nos va a permitir simplificar el desarrolo de aplicaciones web y APIs, es muy personalizable y es lo que utilizaremos, aunque no abarcare mucho en adelante ya que lo que para mi era lo mas importante era que llegaran hasta aqui conociendo JavaScript, veremos asincronia, aprenderemos a como podemos leer archivos, y por ultimo crearemos nuestra API.
             </p>
         </section>
 
@@ -1691,7 +1696,65 @@ leerArchivo('./archivo.txt', 'utf8');
             <p>
                 y asi terminariamos con la parte de asincronia, si lo comparamos con el primer ejemplo el cambio es muy grande, ahora no solo saben usar asincronia si no que tambien saben como funciona, ya estan llegando a los tramos finales, y lo mejor es que tanto el manejar errores, como tambien asincronia son conceptos que se pueden ver en otros lenguajes de programacion.
             </p>
-            
+            <h2>JSON</h2>
+            <p>
+                significa JavaScript Object Notacion, esto se podria traducir como Notacion de Objetos de JavaScript, pero enrealidad esto no es unico de JavaScript, solo usa una sintaxis que parece a la de un objeto en JavaScript y de ahi su nombre, y ya lo habran visto cuando usaron el <span>npm init -y</span> que nos creara un pakcage.json que contiene configuraciones del proyecto tambien nos mostrara lo que hayamos añadido con npm, como por ejemplo <span>npm install express</span> que se encargara de instalar todo lo necesario para que tengamos express instalado y podamos utilizarlo para nuestro proyecto, importante que es una instalacion por proyecto, no se aplicara para multiples proyectos, y les mostrare un ejemplo tanto de package.json como de un json normal, que nos servira para guardar informacion, que tambien es utilizado para configuraciones, como este editor de codigo donde al principio del curso les di una configuracion en formato JSON.
+            </p>
+            <h3>package.json</h3>
+            <pre>
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "5.1.0",
+    "zod": "3.24.3"
+  }
+}
+
+            </pre>
+            <p>
+                es una configuracion de un proyecto que yo hice, donde tiene el <span>"type": "module"</span> para las importaciones recomendadas, la version de mi propio proyecto, y en "scripts" en <span>"start": "node app.js"</span> contiene el script que yo utilizaria para iniciar el proyecto, en mi terminal escribiria <span>npm run dev</span> esto ejecutaria el comando para inicializar mi proyecto, que puede ser una mejor en un proyecto grande, y <span>"dependencies</span> que nos indican las dependencias que hayamos instalado con <span>npm install</span> que son cors, express y zod, que utilizaremos express para crear nuestra API
+            </p>
+            <h3></h3>
+            <pre>
+{
+  {
+    "id": 1,
+    "title": "The Last Stand",
+    "year": 2015,
+    "director": "John Smith",
+    "duration": 120,
+    "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBJFQ3wCKVi_RSOPndOQyvO-6yooAIb1rScQ&s",
+    "genre": ["Action"],
+    "rate": 7.5
+  },
+  {
+    "id": 2,
+    "title": "Love in the City",
+    "year": 2018,
+    "director": "Emily Johnson",
+    "duration": 95,
+    "poster": "https://postercinema.eu/cdn/shop/files/daedosiui-salangbeob_o6kitvl9.jpg?v=1728415438",
+    "genre": ["Romance"],
+    "rate": 6.8
+  }
+}
+            </pre>
+            <p>
+                guardamos como si fuese un objeto en JavaScript peliculas de manera estructurada.
+            </p>
         </section>
     </body>
 </html>
