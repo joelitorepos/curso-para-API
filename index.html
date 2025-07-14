@@ -1499,16 +1499,199 @@ function  salida(mensaje) {
 salida("primera peticion");
 salida("segunda peticion");
 salida("tercera peticion");
-
             </pre>
             <p>
-                un ejemplo simple sin asincronia (sincrono), se mostraran en consola de forma secuencial, hay algo llamado "call stack", el call stack preguntara si hay alguna funcion que deba ejecutarse, si lo hay, entrara al call stack, se ejecutara, y saldra del call stack, en este acso se veria algo como:<br>
+                un ejemplo simple sin asincronia (sincrono), se mostraran en consola de forma secuencial, hay algo llamado "call stack", el call stack preguntara si hay alguna funcion que deba ejecutarse, si lo hay, entrara al call stack, se ejecutara, y saldra del call stack, en este caso se veria algo como:<br>
                 <code class="code">
-                    peticion1: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
-                    peticion2: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
-                    peticion3: (entra al call stack)->(se ejecuta)->(sale del call stack)<br>
+                    Callstack:<br>
+                    peticion1: (entra)->(se ejecuta)->(sale del call stack)<br>
+                    peticion2: (entra)->(se ejecuta)->(sale del call stack)<br>
+                    peticion3: (entra)->(se ejecuta)->(sale del call stack)<br>
                 </code>
+                este es el normal que todos hemos trabajado hasta ahora, donde lo ejecutara en orden cada uno, el problema esque aqui estamos simulando peticiones, pero si esas fuesen peticiones reales nos devolverian undefined por que no esta esperando a que nos devuelva algo, asi que veremos como solucionar esto con las diferentes formas de asincronia.
             </p>
+            <h3>Callbacks</h3>
+            <p>
+                los callback o funciones que se pasan por parametro nos permiten tener asincronia, es complicado explicarlo asi que lo veremos con un ejemplo.
+            </p>
+            <h4>archivo.txt</h4>
+            <code class="code">
+                este es un texto para leer
+            </code>
+            <h4>app.js</h4>
+            <pre>
+'use strict';
+import fs from 'node:fs';
+
+function tareaIntermedia() {
+  console.log("haciendo algun proceso...")
+}
+
+function leerArchivoAsincono(nombreArchivo, callback) {
+  console.log(`intentando leer el archivo ${nombreArchivo}`);
+  fs.readFile(nombreArchivo, 'utf8', (err, data) => {
+
+    // si hay un error al leer el archivo
+    if(err) {
+      console.error(`error al leer el archivo '${nombreArchivo}: `, err.message);
+      callback(err, null);
+      return;
+    }
+
+    // si la lectura fue exitosa
+    console.log(`lectura del archivo ${nombreArchivo} exitosa`);
+    callback(null, data);
+  });
+}
+
+function manejarContenido(err, data) {
+  if (err) {
+    console.log('no se pudo procesar el contenido del archivo');
+  } else {
+    console.log('\ncontenido del archivo');
+    console.log(data);
+  }
+}
+
+tareaIntermedia();
+
+// leemos el archivo
+leerArchivoAsincono('archivo.txt', manejarContenido);
+
+tareaIntermedia();
+            </pre>
+            <p>
+                intentare explicarles cuidadosamente todo, <span>import fs rom 'node:fs'</span> es un modulo nativo de Node.js que nos permite trabajar con archivos, leer, escribir, crear archivos o carpetas, entre muchos otros, se puede importar desde <span>'fs'</span> pero esta bien indicar que es un modulo nativo de node con <span>'node:fs'</span>, creamos tres funciones, la primera es una funcion que simulara otros procesos en el transcurso de la lectura, otro que sera nuestra funcion que leera el archivo, y el callback que se ejecutara cuando termine de leer el archivo, nuestra funcion callback manejarContenido(err, data) si err existe, si le pasamos el paremetro de err cuando llamemos a la funcion solo ejecutara el console.log() con el mensaje que no pudo leer el archivo, en caso contrario nos mostrara el contenido del archivo, fs.readFile(); es el que nos permitira que pueda leer el archivo, para este programa podriamos solo usar .readFile() para que nos devuelva el texto del archivo de texto, pero el utilizarlo de esta forma nos permite una funcion mas util que puede aplicarse para leer otros archivos de texto, y podemos ver de mejor manera como es que se trabaja el callback, .readFile() recibe tres parametros, el primer parametro es el nombre del archivo, el segundo parametro es la codificacion, que para texto normal el utf8, que solo quiere decir que nos devolvera texto normal, el tercer parametro es el callback, una funcion flecha anonima que tiene dos parametros, pero en ningun momento nosotros le tenemos que pasar el valor de esos parametros, eso nos lo devolvera .readFile(), ya sea que no encuentre el archivo o que si lo encuentre, cuando ya tenga algo que devolver entonces llamara a la funcion callback y le devolvera por medio de los parametros, nosotros creamos un callback para funcion, que realmente podemos quitarlo y manejar nosotros adentro del callback que ya esta en .readFile() si hay algun error o si hay un resultado exitoso, pero este callback extra nos muestra algo importante, como es que .readFile() maneja el callback, el primer parametro es el error y el segundo son los datos en caso de que todo salga bien, el error es el primer parametro ya que nos obliga a colocarlo para manejar el error, si fuese el segundo parametro podriamos no colocarlo y seria una mala practica, en la funcion callback de .readFile() llamamos a la funcion callback que creamos afuera, if (err), si al finalizar no encontro un archivo con el nombre que le indicamos nos devolvera un error, osea que nos devolvera el primer parametro y el segundo lo dejara vacio, porque no encontro nada que puediera leer, por lo que en la condicion de if (err) nosotros llamamos a la funcion que creamos afuera, con los parametros callback(err,null); el primer parametro con un error y el segundo vacio que nos muestra como llamaria  la funcion en caso de un error, y si no hay error se llama al la funcion de esta forma: calback(null,data); y asi vemos como es que maneja el callback .readFile(), por lo que tenemos sincronia, aunque solo hemos visto como funciona el ejemplo, pero veremos un ejemplo mas para que terminen de captar la idea y el porque es tan importante.
+            </p>
+            <h4>ejemplo.js</h4>
+            <pre>
+'use strict';
+import fs from 'node:fs';
+
+function tareaIntermedia() {
+  console.log("haciendo algun proceso...")
+}
+
+tareaIntermedia();
+
+fs.readFile('./archivo.txt', 'utf8', (err, data) => {
+  // si hay un error al leer el archivo
+  if(err) {
+    console.error(`error al leer el archivo: `, err.message);
+    return;
+  }
+  // si la lectura fue exitosa
+  console.log(`lectura del archivo exitosa`);
+  console.log(data)
+});
+
+tareaIntermedia();
+            </pre>
+            <p>
+                es lo mismo pero quitando las funciones extra que creamos, intentara leer archivo.txt y como ya conocemos de rutas relativas tambien las podemos usar para indicar donde esta el archivo en caso de que lo querramos (./archivo.txt), mucho mas pequeño y facil de leer, aun asi tareaIntermedia sigue ahi que nos mostrara mas acerca de la asincronia, y es que si ejecutamos el programa podremos ver algo como:<br>
+                <code class="code">
+                    haciendo algun proceso...<br>
+                    haciendo algun proceso...<br>
+                    lectura de archivo exitosa<br>
+                    este es un texto para leer<br>
+                </code>
+                algo que no tiene mucho sentido a simple vista, ya que primero se llama a tareaIntermedia() luego se llama al metodo para que nos muestre el archivo en consola, y luego volvemos a llamar a tareaIntermedia, y es que es debido a que la asincronia es no bloqueante, no va a bloquear el fujo de nuestro programa, ya que hay que esperar a que nos devuelva un resultado que es el texto de nuestro archivo, pero si fuera sincrono tendria que esperar el resultado, pero no ejecutaria nada mas, nuestro programa entero esta pausado mientras espera, no puede hacer nada mas, si tarda dos segudos en responder son dos segundos en que nuestro programa pudo haber hecho algo mientras tanto, pero sin embargo solo espero, y se veria algo asi:<br>
+                <code class="code">
+                    Callstack:<br>
+                    tarea1: (entra)->(se ejecuta)->(sale)<br>
+                    peticion: (espera que devuelva algo)->(entra)->(se ejecuta)->(sale)<br>
+                    tarea2: (entra)->(se ejecuta)->(sale)<br>
+                </code>
+                todo ese tiempo que espero el programa no es que no pudiera ejecutar mas cosas, solo que esta esperando, por esto la asincronia es no bloqueante, lo que hara es reprogramar a la funcion para que se ejecute cuando ya este libre, con sincrono el callstack no ejecutara mas funciones hasta que este listo, con asincrono el callstack lo reprogramara para despues, pudiendo ejecutar mas funciones, y cuando este lista la peticion ahi la ejecutara.<br>
+                <code class="code">
+                    Callstack:<br>
+                    tarea1: (entra)->(se ejecuta)->(sale)<br>
+                    peticion: (lo reprograma hasta que este listo)<br>
+                    tarea2: (entra)->(se ejecuta)->(sale)<br>
+                    peticion lista: (entra)->(se ejecuta)->(sale)<br>
+                </code>
+                de esta forma podemos tener asincronia, una funcion que se ejecuta cuando ya este lista la peticion, pero los callbacks pueden llevar a lo que se llama como callbacks hell, donde pueden haber callbacks adetro de otros callbacks anidandose y haciendo que nuestro programa sea tan ilegible que ni nosotros mismos que lo creamos sepamos ya como funciona, es por eso que existen las promesas.
+            </p>
+            <h3>Promesas</h3>
+            <p>
+                las promesas en su interior son callbacks, son dos callbacks, uno es para manejar en caso de que todo haya salido bien, el otro callback se utiliza para manejar en el caso de que haya ocurrido algun error, ejemplo:
+            </p>
+            <h4>app.js</h4>
+            <pre>
+'use strict';
+import fs from 'node:fs';
+
+function leerArchivoPromesa(path, encoding) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, encoding, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
+
+leerArchivoPromesa('./archivo.txt', 'utf8')
+  .then( data => console.log('contenido:', data))
+  .catch( err => console.error('error:', err.message))
+            </pre>
+            <p>
+                llamamos a "new Promise" para poder usar las promesas en nuestro programa, Promise recibira un callback como parametro, y ese callback tambien recibe como parametro otros dos cllbacks (resolve, reject) => {}, resolve es un callback que se ejecutara en caso de haber un resultado exitoso, o como en el programa, nosotros deberiamos usarlo en caso de un resultado exitoso pasandole los datos, y reject otro callback para manejar el error, leerArchivoPromesa() retorna una promesa, este Promise es enrealidad un objeto, es por eso que al final se llama a metodos con "." otra forma muy comun de ver los parametros es (res, rej) => {}, el resultado ya sea buena o mala tendremos que "consumir" la promesa, que solo quiere decir que vamos a decir que haremos en caso de el resultado sea exitoso llamando al metodo .then(), y tambien podemos manejar el error llamando al metodo .catch(), .then() recibe como parametro una funcion y nos devuelve los datos para que nosotros lo manejemos, al igual pasa con .catch() pero aqui le pasaremos la funcion que definira lo que hara en caso de que haya ocurrido un error, si no se resuelve la promesa se quedara pending, que es que se le ha llamado pero nunca se la he dicho que hacer cuando se resuelva, es otra manera de tener asincronia mucho mas limpio que con callbacks pero hay una manera aun mejor de tener asincronia, que es usando async await.
+            </p>
+            <h3>Async/await</h3>
+            <p>
+                y esque async/await en su interior utiliza promesas, pero es muchisimo mejor al ser mas legible que los anteriores, el mejor para trabajar con asincronia de manera limpia, es lo que se le llama "sugar syntax" o azucar sintactico, lo que significa que estamos escribiendo el codigo con promesas pero esto se esconde para tener un codigo mas legible, para usar asincronia con async/wait lo que se utilizaba era envolver la peticion en una funcion que tuviera el nombre async, y usar await en la linea de codigo donde se espera retornar el valor de manera asincrona, aunque es mejor si lo vemos con un ejemplo:
+            </p>
+            <h4>async.js</h4>
+            <pre>
+'use strict';
+import fs from 'node:fs/promises';
+
+async function leerArchivo(path, encoding) {
+  const data = await fs.readFile(path, encoding);
+  console.log(data);
+}
+
+leerArchivo('./archivo.txt', 'utf8');
+            </pre>
+            <p>
+                para usar async/await con fs, hay que usar el modulo 'fs/promises', se usa la palabra "async" antes de una funcion, y se fs.readFile() es donde se trabajara de manera asincrina, asi que esperara a que se resuelva y nos devolvera algo, con el modulo 'fs' no se podria hacer esto debido a que 'fs/promise' fue un modulo agregado para modernizarse y tener esta caracteristica, y habia comentado que async/await utilizaba promesas, asi que en la llamada a la funcion leerArchivo() aun nosotros podremos usar el metodo .then() pero esto no tendria mucho sentido, ya que async/await se encargan de "desenvolver" estas promesas, si await resolvio todo bien el programa seguira funcionando, con una sintaxis parecida al sincrono, pero si await falla nos lanzara un error, pero eso es malo, si nos lanza un error lo que hara el programa sera detener su ejecucion, por lo que hay que manejar el error, y eso es usando try/catch, antes de ver try/catch veremos un ejemplo de otra forma de asincronia con await, sin async, y es que hace tiempo que node.js permite que se pueda esperar algo de manera asincrona sin tener que envolverlo en una funcion async, ejemplo:
+            </p>
+            <pre>
+'use strict';
+import fs from 'node:fs/promises';
+
+data = await fs.promises.readFile('./archivo.txt', 'utf8');
+console.log(data);
+            </pre>
+            <p>
+                mucho mas limpio, mucho mas claro, y con poquisimas lineas de codigo, pero aun esta el problema de que tenemos que manejar el error, el que nuestro programa se detenga es un error demasiado grande para proyectos serios, y hay que usar los bloques try/catch
+            </p>
+            <h3>try/catch</h3>
+            <p>
+                los bloques try catch nos ayudan como ya dijimos a manejar errores, y lo podran ver con esta sintaxis "try {} catch (e) {}" se utilizan en donde se sepa que algo puede romperse en nuestra aplicacion, esa parte del codigo donde creamos que pueda surgir un error, eso iria en el bloque try {}, y en el bloque catch iria como nosotros manejariamos el error, lleva () ya que nos devolvera informacion sobre el error en forma de objeto "catch (e) {}", por ultimo esta finally que es un bloque de codigo opcional quees como el else en condicionales, se utiliza ya sea que el codigo dio error como si se resolvio e iria al final de todo con esta sintaxis "finally {}", el ejemplo con codigo seria algo asi:
+            </p>
+            <pre>
+'use strict';
+import fs from 'node:fs/promises';
+
+async function leerArchivo(path, encoding) {
+  try {
+    const data = await fs.readFile(path, encoding);
+    console.log(data);;
+  } catch (err) {
+    console.error('error:', err.message);
+  }
+}
+
+leerArchivo('./archivo.txt', 'utf8');
+            </pre>
+            <p>
+                y asi terminariamos con la parte de asincronia, si lo comparamos con el primer ejemplo el cambio es muy grande, ahora no solo saben usar asincronia si no que tambien saben como funciona, ya estan llegando a los tramos finales, y lo mejor es que tanto el manejar errores, como tambien asincronia son conceptos que se pueden ver en otros lenguajes de programacion.
+            </p>
+            
         </section>
     </body>
 </html>
