@@ -94,7 +94,7 @@
             </p>
             <h3>Lenguaje con orientacion a objetos</h3>
             <p>
-                es un paradigma de programacion muy util que lo veremos mas adelante cuando entremos a Node.js, un lenguaje puede ser orientado a objetos cuando usa como base este paradigma, pero tiene orientacion a objetos cuando es algo opcional, el lenguaje soporta esta caracteristica.
+                Un lenguaje puede ser orientado a objetos cuando usa como base este paradigma, pero tiene orientacion a objetos cuando es algo opcional, el lenguaje soporta esta caracteristica, y es un paradigma muy util que veremos un poco de el.
             </p>
             <h3>Tipado dinamico</h3>
             <p>
@@ -1753,7 +1753,46 @@ leerArchivo('./archivo.txt', 'utf8');
 }
             </pre>
             <p>
-                guardamos como si fuese un objeto en JavaScript peliculas de manera estructurada.
+                guardamos como si fuese un objeto en JavaScript peliculas de manera estructurada, pero si desde nuestro proyecto, leemos el archivo no lo podremos usr como un objeto, ya que es considerado como texto, que se ha hecho asi aproposito, es mejor que se pueda mandar eso a manera de texto, por lo que en nuestro programa tendremos que "parsearlo", que significa que en nuestro programa lo utilizaremos como un objeto por lo que hay que convertirlo, y cuando nosotros mandemos un json, lo deberemos mandar como texto.
+            </p>
+        </section>
+
+        <!-- seccion para API -->
+        <section>
+            <h2>API</h2>
+            <p>
+                una API es un comunicador entre aplicaciones, estos se suelen usar para conectar una pagina web con una base de datos, ya que la API nos devolvera un JSON, que es algo que nosotros en una pagina web lo podemos llegar a manejar mejor por su forma organizada de almacenar los datos, una API lo que hara es abstraer lo que hay por detras, te lo van a ocultar dicho de otra forma, ya que no necesitas conocer toda la estructura de la API, solo gregar la nueva funcionalidad, es por eso que se trabaja con JSON, tu recibes un JSON, ero por detras se esta trabajando con bases de datos, servicios complejos, haciendo que tu trabajo sea mas facil, muchas cosas son API porque te esconden todo esta parte interna, pero que es una herramienta para tu trabajo como async/await. Para poder crear nuestra API debemos crear un servidor, y usaremos express.js para esto.
+            </p>
+            <h3>Parte practica</h3>
+            <p>
+                crearemos nuestro propio servidor con express.js, en una carpeta crearemos un archivo app.js y lo llevaremos al editor de codigo, en la terminal crearemos el package.json con <span>nom init -y</span> y luego instalaremos express con <span>nom install express</span> cuando termine veran que se ha creado en su pcarpeta algo llamado <span>node_modules</span> que no hay que tocarlos, manipularlos, son solo para desarrollo, contiene las dependencias para que podamos trabajar con en este caso express o alguna otra herramienta que necesitemos, importante que debemos agregar <span>"type": "module"</span> a nuestro package.json para que podamos usar import/export, y en nuestro proyecto solo tendremos que importar express y escribir lo siguiente
+            </p>
+            <h4>app.js</h4>
+            <pre>
+'use strict';
+import express from 'express';
+
+const app = express();
+const PORT = process.env.PORT ?? 3000;
+
+app.get('/', (req, res) =>  {
+  res.send("hello world");
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+            </pre>
+            <p>
+                y listo, solo hay que usar <span>node app.js</span>, veran que cuando lo ejecuten eso seguira estando, esto es por que es un servidor local, lo que quiere decir que no lo podra usar alguien afuera, solo lo podremos ver nosotros desde para usarlo desde nuestro proyecto, y para verlo, nosotros creamos una variable PORT, en esa variable le indicamos el puerto donde esta corriendo, por lo que en el navegador solo tendriamos que poner un http://localhost:3000/ o gracias a visual studio code podemos ir directamente presionando "CTRL" mientras nuestro cursor esta en el link que esta en la terminal, nuestro cursor cambara a ser una manita y con solo darle click nos llevara directamente.
+            </p>
+        </section>
+
+        <!-- seccion para parte final -->
+        <section>
+            <h2>Parte final</h2>
+            <p>
+                esto se puede mejorar mucho mas para que lea un JSON y lo devuelva y hay muchas cosas que no explique porque este es unn curso mas que nada de JavaScript, esta es la parte final del curso, ahora que ya sabe todo esto, pueden crear sus propias aplicaciones de consola que les haga mas facil el realizar operaciones, pueden configurar el IDE ya que conocen JSON, y explorar mucho mas del lenguaje ya que hay cosas que no llegue a ver del lenguaje como el objeto Date() que nos devuelve la fecha, programacion orientada a objetos mas alla de los metodos y propiedades estaticas, para cosas que pueden seguir aprendiendo es aprender TypeScript que es JavaScript pero con esteroides, tambien tecnologias web con HTML y CSS que pueden hacer cosas como crear paginas web, crear extensiones para el navegador, crear extensiones para este mismo editor, "slides" que es una pagina que nos puede ayudar a crear presentaciones como un powerpoint pero mejorado que usa reveal.js que es un framework de JavaScript y asuman que todo lo que tenga ".js" sera un framework de JvaScript, entre otras cosas, seguir viendo Node.js y poder llevar a JavScript mas alla de las tecnologias web, como el mismo express para API o REST API, tambien se pueden crear aplicaciones para el escritorio con "Electron" otro framework de JavaScript que este mismo IDE visual studio code utilizo electron para crear la aplicacion, tambien otra cosa que se puede llegar a hacer con JavaScript son videojuegos que pueden funcionar tanto dentro como fuera del navegador ya que exiwsten motores de videojuegos o frameworks para esto, y entre otra de las cosas que puede hacer este lenguaje es crear aplicaciones moviles usando "ionic" que usa tecnologias web con frameworks de JavaScript para la web, por lo que si conoces estas tecnologias podras crear tus propias aplcicacionees de celular, e incluso machine learning(inteligencia artificial) con tensorflow.js, asi que podria hablar tanto del lenguaje que no acabaria nunca pero mucho de lo que les enseñe lo podran aplicar en cualquier futuro proyecto que tengan, si llegaste hasta aqui debo felicitarte por tan gran esfuerzo que le has puesto al aprender, espero que esto pueda abrirte la curiosidad a seguir aprendiendo, ya que la programacion es una herramienta, que considero que es la mejor herramienta que ha existido gracias a que con ella podemos crear todo lo que podamos imaginar y mas.
             </p>
         </section>
     </body>
